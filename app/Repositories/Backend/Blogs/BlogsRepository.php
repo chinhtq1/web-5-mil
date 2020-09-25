@@ -20,7 +20,7 @@ use Illuminate\Support\Str;
 /**
  * Class BlogsRepository.
  */
-class BlogsRepository extends BaseRepository
+class BlogsRepository extends BaseRepository implements BlogRepositoryInterface
 {
     /**
      * Associated Repository Model.
@@ -270,5 +270,20 @@ class BlogsRepository extends BaseRepository
      */
     public function findByStatus($status) {
         return $this->query()->whereStatus($status);
+    }
+
+    /**
+     * @param $category BlogCategory
+     * @param $status
+     */
+    public function getByCategory($category)
+    {
+        // Lấy danh sách bài viết theo danh mục
+        return $category->blogs()->get();
+    }
+
+    public function getRandomBlogList($count)
+    {
+        return Blog::all()->take(3);
     }
 }

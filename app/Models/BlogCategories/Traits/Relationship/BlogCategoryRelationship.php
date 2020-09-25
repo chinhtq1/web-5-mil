@@ -3,6 +3,8 @@
 namespace App\Models\BlogCategories\Traits\Relationship;
 
 use App\Models\Access\User\User;
+use App\Models\BlogCategories\BlogCategory;
+use App\Models\Blogs\Blog;
 
 /**
  * Class BlogCategoryRelationship.
@@ -15,5 +17,12 @@ trait BlogCategoryRelationship
     public function creator()
     {
         return $this->belongsTo(User::class, 'created_by');
+    }
+
+    /**
+     * Get Blogs
+     */
+    public function blogs() {
+        return $this->belongsToMany(Blog::class, 'blog_map_categories', 'category_id', 'blog_id');
     }
 }

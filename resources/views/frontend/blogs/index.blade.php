@@ -10,8 +10,13 @@
         <div class="container">
             <div class="breadcrumbs-main">
                 <ol class="breadcrumb">
-                    <li><a href="index.html">Trang chủ</a></li>
-                    <li class="active">Tin tức</li>
+                        <li><a href="{{ route('frontend.index') }}">Trang chủ</a></li>
+                    @isset($active_category)
+                        <li><a href="{{ route('frontend.blogs.index') }}">Tin tức</a></li>
+                        <li class="active">{{ $active_category->name }}</li>
+                    @else
+                        <li class="active">Tin tức</li>
+                    @endisset
                 </ol>
             </div>
         </div>
@@ -26,37 +31,15 @@
             </div>
             <div class="blog-bottom">
                 <div class="col-md-3 blog-left">
-                    <div class="section2_left1 menu">
-                        <ul>
-                            <li class=" active"><a class="muiten" href="#">Tin
-                                    công ty</a>
-                            </li>
-                            <li class=" "><a class="muiten" href="#">Tin
-                                    chuyên ngành</a>
-                            </li>
-                            <li class=" "><a class="muiten" href="#">Tin
-                                    khuyến mại</a>
-                            </li>
-                            <li class=" "><a class="muiten" href="#">Tin
-                                    tuyển dụng</a>
-                            </li>
-                            <li class=" "><a class="muiten" href="#">Quan
-                                    hệ cổ đông</a>
-                            </li>
-                            <li class=" "><a class="muiten" href="#">Tin phần mềm trong
-                                    nước</a>
-                            </li>
-                        </ul>
-
-                    </div>
+                    @include('frontend.blogs.partials.categories-menu')
                 </div>
 
                 <!-- LIST BLOG -->
-
-                @foreach($blogs->chunk(2) as $chunk_blog)
-                    <div class="col-md-3 blog-left">
+                <div class="col-md-9 blog-left">
+                @foreach($blogs->chunk(3) as $chunk_blog)
+                    <div class="row">
                         @foreach($chunk_blog as $blog)
-                            <div class="blog-one">
+                            <div class="col-md-4 blog-one">
                                 <a href="{{ route('frontend.blogs.detail', ['slug' => $blog->slug]) }}">
                                     <img class="img-blog-thumbnail" src="{{ Storage::disk('public')->url('img/blog/' . $blog->featured_image) }}" alt="" />
                                 </a>
@@ -77,7 +60,7 @@
                         @endforeach
                     </div>
                 @endforeach
-
+                </div>
                 <!-- END LIST BLOG -->
 
                 <div class="clearfix"></div>

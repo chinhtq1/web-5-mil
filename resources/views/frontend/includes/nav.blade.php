@@ -2,7 +2,7 @@
 <div class="navigation menu">
     <div class="menu-top-content">
         <ul class="navig cl-effect-1">
-            <li class="menu-item active"><a  class="menu-link" href="index.html">Trang chủ</a></li>
+            <li class="menu-item active"><a  class="menu-link" href="{{ route('frontend.index') }}">Trang chủ</a></li>
             <li class="menu-item">
                 <a class="menu-link" href="products.html">Sản Phẩm</a>
                 <div class="menu-mega-sub">
@@ -25,7 +25,7 @@
                         @isset($menus)
                             @foreach($menus as $menu)
                                 <li class="menu-item ">
-                                    <a href="#" class="menu-link">{{ $menu->name }}</a>
+                                    <a href="{{ route('frontend.blogs.listByCategory', ['slug' => $menu->slug]) }}" class="menu-link">{{ $menu->name }}</a>
                                 </li>
                             @endforeach
                         @endisset

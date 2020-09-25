@@ -114,4 +114,15 @@ class BlogCategoriesRepository extends BaseRepository
             throw new GeneralException(trans('exceptions.backend.blogcategories.delete_error'));
         });
     }
+
+    /**
+     * Get category by slug
+     */
+    public function findBySlug($slug) {
+        if (!is_null($this->query()->whereSlug($slug)->firstOrFail())) {
+            return $this->query()->whereSlug($slug)->firstOrFail();
+        }
+
+        throw new GeneralException(trans('exceptions.backend.access.pages.not_found'));
+    }
 }

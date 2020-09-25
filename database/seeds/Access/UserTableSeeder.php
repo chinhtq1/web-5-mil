@@ -27,9 +27,9 @@ class UserTableSeeder extends Seeder
         //Add the master administrator, user id of 1
         $users = [
             [
-                'first_name'        => 'Chinh',
-                'last_name'         => 'Ta Quang',
-                'email'             => 'superadmin@admin.com',
+                'first_name'        => 'Viral',
+                'last_name'         => 'Solani',
+                'email'             => 'admin@admin.com',
                 'password'          => bcrypt('1234'),
                 'confirmation_code' => md5(uniqid(mt_rand(), true)),
                 'confirmed'         => true,
@@ -40,9 +40,9 @@ class UserTableSeeder extends Seeder
                 'deleted_at'        => null,
             ],
             [
-                'first_name'        => 'Chinh',
-                'last_name'         => 'Ta Quang',
-                'email'             => 'admin@admin.com',
+                'first_name'        => 'Vipul',
+                'last_name'         => 'Basapati',
+                'email'             => 'executive@executive.com',
                 'password'          => bcrypt('1234'),
                 'confirmation_code' => md5(uniqid(mt_rand(), true)),
                 'confirmed'         => true,
