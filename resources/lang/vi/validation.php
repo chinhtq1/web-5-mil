@@ -181,6 +181,7 @@ return [
                 'title'            => 'Tiêu đề bài viết',
                 'category'         => 'Danh mục bài viết',
                 'publish'          => 'Ngày publish',
+                'description'      => 'Mô tả',
                 'image'            => 'Ảnh ',
                 'content'          => 'Nội dung',
                 'tags'             => 'Tags',

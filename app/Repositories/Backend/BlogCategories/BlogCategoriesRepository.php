@@ -118,7 +118,7 @@ class BlogCategoriesRepository extends BaseRepository
     /**
      * Get category by slug
      */
-    public function findBySlug($slug) {
+    public function getBySlug($slug) {
         if (!is_null($this->query()->whereSlug($slug)->firstOrFail())) {
             return $this->query()->whereSlug($slug)->firstOrFail();
         }

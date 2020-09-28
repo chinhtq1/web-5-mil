@@ -14,12 +14,14 @@
         "php": "^7.3",
         "arcanedev/log-viewer": "^5.1",
         "beyondcode/laravel-self-diagnosis": "^1.2",
+        "bvipul/generator": "6",
         "creativeorange/gravatar": "~1.0",
         "davejamesmiller/laravel-breadcrumbs": "^5.0",
         "doctrine/dbal": "^2.9",
         "fideloper/proxy": "^4.0",
         "krgupta/active": "^4.0",
         "laravel/framework": "^6.0",
+        "laravel/helpers": "^1.3",
         "laravel/passport": "^7.3.3",
         "laravel/socialite": "^4.2",
         "laravel/tinker": "~1.0",
@@ -29,7 +31,6 @@
         "yajra/laravel-datatables-oracle": "~9.0"
     },
     "require-dev": {
-        "bvipul/generator": "^v6",
         "codedungeon/phpunit-result-printer": "^0.26",
         "friendsofphp/php-cs-fixer": "^2.14",
         "fzaninotto/faker": "^1.4",

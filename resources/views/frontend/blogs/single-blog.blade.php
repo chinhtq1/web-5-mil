@@ -24,7 +24,7 @@
                 <div class="single-bottom">
                     <h4>{{ $blog->name }}</h4>
                     <p class="sn">{{ $blog->publish_datetime }}</p>
-                    <div style="margin-top: 3rem;">
+                    <div class="blog-content" style="margin-top: 3rem;">
                         {!! $blog->content !!}
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                                 <div class="col-md-4 post-left">
                                     <a href="{{ route('frontend.blogs.detail', ['slug' => $blog->slug]) }}"><img class="img-blog-thumbnail " src="{{ Storage::disk('public')->url('img/blog/' . $blog->featured_image) }}" alt=""></a>
                                     <a href="{{ route('frontend.blogs.detail', ['slug' => $blog->slug]) }}"><h6>{{  $blog->name }}</h6></a>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer .</p>
+                                    <p class="fz-80">{{ $blog->description }}</p>
                                 </div>
                             @endforeach
 

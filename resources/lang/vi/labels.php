@@ -132,17 +132,17 @@ return [
         ],
 
         'blogcategories' => [
-            'create'     => 'Create Blog Category',
-            'edit'       => 'Edit Blog Category',
-            'management' => 'Blog Category Management',
-            'title'      => 'Blog Category',
+            'create'     => 'Tạo danh mục',
+            'edit'       => 'Chỉnh sửa danh mục',
+            'management' => 'Quản lý danh mục',
+            'title'      => 'Danh mục',
 
             'table' => [
-                'title'     => 'Blog Category',
+                'title'     => 'Danh mục bài viết',
                 'status'    => 'Status',
                 'createdat' => 'Created At',
                 'createdby' => 'Created By',
-                'all'       => 'All',
+                'all'       => 'Tất cả',
             ],
         ],
 

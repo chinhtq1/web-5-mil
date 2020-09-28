@@ -27,7 +27,11 @@
     <div class="blog">
         <div class="container">
             <div class="blog-top heading">
-                <h3>Tin tức</h3>
+                @isset($active_category)
+                    <h3>{{ $active_category->name }}</h3>
+                    @else
+                    <h3>Tin tức</h3>
+                @endisset
             </div>
             <div class="blog-bottom">
                 <div class="col-md-3 blog-left">
@@ -48,10 +52,7 @@
                                         <h2>{{ $blog->name }}</h2>
                                     </a>
                                     <p>{{ $blog->publish_datetime }}</p>
-                                    <p class="one">Vestibulum mollis metus et ligula lacinia tempus. Duis aliquet mi pretium
-                                        purus
-                                        sagittis fringilla. Fusce vulputate varius erat quis egestas. Proin tempus condimentum
-                                        sodales.</p>
+                                    <p class="one">{{ $blog->description }}</p>
                                     <div class="b-btn">
                                         <a href="{{ route('frontend.blogs.detail', ['slug' => $blog->slug]) }}">Xem tiếp</a>
                                     </div>
@@ -69,16 +70,10 @@
             <div>
                 <div class="col-md-3 blog-left">
                 </div>
-                <div class="pagination">
-                    <a href="#">&laquo;</a>
-                    <a href="#">1</a>
-                    <a href="#" class="active">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                    <a href="#">6</a>
-                    <a href="#">&raquo;</a>
+                <div>
+                    {{ $blogs->links() }}
                 </div>
+
             </div>
         </div>
     </div>

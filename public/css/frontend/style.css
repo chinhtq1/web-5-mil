@@ -3194,3 +3194,11 @@ img.logo-footer {
 	width: 100%;
 	height: auto
 }
+
+.fz-80 {
+	font-size: 90% !important;
+}
+
+.blog-content img {
+	max-width: 100%;
+}

@@ -54,6 +54,14 @@
     </div><!--form control-->
 
     <div class="form-group">
+        {{ Form::label('description', trans('validation.attributes.backend.blogs.description'), ['class' => 'col-lg-2 control-label required']) }}
+
+        <div class="col-lg-10 mce-box">
+            {{ Form::text('description', null, ['class' => 'form-control box-size', 'placeholder' => trans('validation.attributes.backend.blogs.description'), 'maxlength' => 512]) }}
+        </div><!--col-lg-10-->
+    </div><!--form control-->
+
+    <div class="form-group">
         {{ Form::label('content', trans('validation.attributes.backend.blogs.content'), ['class' => 'col-lg-2 control-label required']) }}
 
         <div class="col-lg-10 mce-box">

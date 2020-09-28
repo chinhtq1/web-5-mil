@@ -183,6 +183,7 @@ return [
                 'publish'          => 'Publish Date & Time',
                 'image'            => 'Featured Image',
                 'content'          => 'Content',
+                'description'      => 'Mô tả',
                 'tags'             => 'Tags',
                 'meta-title'       => 'Meta Title',
                 'slug'             => 'Slug',

@@ -255,12 +255,11 @@ class BlogsRepository extends BaseRepository implements BlogRepositoryInterface
      * Find by Slug
      * @param string $blog_slug
      */
-    public function findBySlug($blog_slug)
+    public function getBySlug($blog_slug)
     {
         if (!is_null($this->query()->whereSlug($blog_slug)->firstOrFail())) {
             return $this->query()->whereSlug($blog_slug)->firstOrFail();
         }
-
         throw new GeneralException(trans('exceptions.backend.access.pages.not_found'));
     }
 
@@ -268,22 +267,26 @@ class BlogsRepository extends BaseRepository implements BlogRepositoryInterface
      * Find by status
      * @param string status
      */
-    public function findByStatus($status) {
+    public function getByStatus($status) {
         return $this->query()->whereStatus($status);
     }
 
     /**
      * @param $category BlogCategory
-     * @param $status
+     * @param $per_page
+     * @param $order_by
+     * @param $sort
+     * @return
      */
-    public function getByCategory($category)
+    public function getByCategory($category, $per_page, $order_by, $sort)
     {
         // Lấy danh sách bài viết theo danh mục
-        return $category->blogs()->get();
+        return $category->blogs()->orderBy($order_by, $sort)
+            ->paginate($per_page);
     }
 
     public function getRandomBlogList($count)
     {
-        return Blog::all()->take(3);
+        return $this->getByStatus(['Published'])->take($count);
     }
 }

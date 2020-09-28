@@ -21,6 +21,7 @@ class Blog extends BaseModel
         'name',
         'slug',
         'publish_datetime',
+        'description',
         'content',
         'meta_title',
         'cannonical_link',

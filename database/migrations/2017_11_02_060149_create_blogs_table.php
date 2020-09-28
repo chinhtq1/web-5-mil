@@ -17,6 +17,7 @@ class CreateBlogsTable extends Migration
             $table->string('name', 191);
             $table->dateTime('publish_datetime');
             $table->string('featured_image', 191);
+            $table->string('description', 512);
             $table->text('content');
             $table->string('meta_title', 191)->nullable();
             $table->string('cannonical_link', 191)->nullable();
