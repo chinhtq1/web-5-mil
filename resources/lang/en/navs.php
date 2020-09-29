@@ -14,21 +14,21 @@ return [
     */
 
     'general' => [
-        'home'   => 'Home',
-        'logout' => 'Logout',
+        'home'   => 'Trang chủ',
+        'logout' => 'Thoát ra',
     ],
 
     'frontend' => [
         'dashboard' => 'Dashboard',
-        'login'     => 'Login',
+        'login'     => 'Đăng nhập',
         'macros'    => 'Macros',
-        'register'  => 'Register',
+        'register'  => 'Đăng ký',
 
         'user' => [
-            'account'         => 'My Account',
+            'account'         => 'Tài khoản của tôi',
             'administration'  => 'Administration',
-            'change_password' => 'Change Password',
-            'my_information'  => 'My Information',
+            'change_password' => 'Thay đổi password',
+            'my_information'  => 'Thông tin tài khoản',
             'profile'         => 'Profile',
         ],
     ],

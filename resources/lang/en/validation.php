@@ -167,7 +167,7 @@ return [
             ],
 
             'blogcategories' => [
-                'title'     => 'Blog Category',
+                'title'     => 'Danh mục',
                 'is_active' => 'Active',
                 'slug' => 'Slug'
             ],
@@ -178,19 +178,40 @@ return [
             ],
 
             'blogs' => [
-                'title'            => 'Blog Title',
-                'category'         => 'Blog Category',
-                'publish'          => 'Publish Date & Time',
-                'image'            => 'Featured Image',
-                'content'          => 'Content',
+                'title'            => 'Tiêu đề bài viết',
+                'category'         => 'Danh mục bài viết',
+                'publish'          => 'Ngày publish',
                 'description'      => 'Mô tả',
+                'image'            => 'Ảnh ',
+                'content'          => 'Nội dung',
                 'tags'             => 'Tags',
-                'meta-title'       => 'Meta Title',
+                'meta-title'       => 'Thẻ Meta Title',
                 'slug'             => 'Slug',
                 'cannonical_link'  => 'Cannonical Link',
-                'meta_keyword'     => 'Meta Keyword',
-                'meta_description' => 'Meta Description',
-                'status'           => 'Status',
+                'meta_keyword'     => 'Thẻ Meta Keyword',
+                'meta_description' => 'Thẻ Meta Description',
+                'status'           => 'Trạng thái',
+            ],
+			'productcategories' => [
+                'title'     => 'Danh mục',
+                'is_active' => 'Active',
+                'slug' => 'Slug'
+            ],
+			'products' => [
+                'title'            => 'Tiêu đề bài viết',
+                'category'         => 'Danh mục bài viết',
+                'publish'          => 'Ngày publish',
+                'base_feature'      => 'Tính năng cơ bản',
+				'detail_feature'      => 'Tính năng chi tiết',
+                'image'            => 'Ảnh ',
+                'content'          => 'Tổng quan',
+                'tags'             => 'Tags',
+                'meta-title'       => 'Thẻ Meta Title',
+                'slug'             => 'Slug',
+                'cannonical_link'  => 'Cannonical Link',
+                'meta_keyword'     => 'Thẻ Meta Keyword',
+                'meta_description' => 'Thẻ Meta Description',
+                'status'           => 'Trạng thái',
             ],
 
             'settings' => [

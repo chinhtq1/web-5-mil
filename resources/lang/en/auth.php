@@ -13,11 +13,11 @@ return [
     |
     */
 
-    'failed'        => 'These credentials do not match our records.',
-    'general_error' => 'You do not have access to do that.',
+    'failed'        => 'Đăng nhập sai. Vui lòng thử lại',
+    'general_error' => 'Bạn không có quyền truy cập.',
     'socialite'     => [
         'unacceptable' => ':provider is not an acceptable login type.',
     ],
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-    'unknown'  => 'An unknown error occurred',
+    'throttle' => 'Nhập sai nhiều lần. Vui lòng thử lại sau :seconds giây.',
+    'unknown'  => 'Lỗi không xác định',
 ];

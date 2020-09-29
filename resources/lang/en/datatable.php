@@ -15,10 +15,10 @@ return [
         "sSearch":         "Search:",
         "sZeroRecords":    "No matching records found",
         "oPaginate": {
-                "sFirst":    "First",
-        "sLast":     "Last",
-        "sNext":     "Next",
-        "sPrevious": "Previous"
+        "sFirst":    "Đầu tiên",
+        "sLast":     "Cuối cùng",
+        "sNext":     "Sau",
+        "sPrevious": "Trước"
         },
         "oAria": {
             "sSortAscending":  ": activate to sort column ascending",

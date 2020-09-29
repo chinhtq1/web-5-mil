@@ -17,39 +17,39 @@ return [
         'access' => [
             'users' => [
                 'activate'           => 'Activate',
-                'change_password'    => 'Thay đổi mật khẩu',
+                'change_password'    => 'Đổi mật khẩu',
                 'clear_session'      => 'Clear Session',
                 'deactivate'         => 'Deactivate',
                 'delete_permanently' => 'Delete Permanently',
-                'login_as'           => 'Login As :user',
-                'resend_email'       => 'Resend Confirmation E-mail',
-                'restore_user'       => 'Restore User',
+                'login_as'           => 'Login với tư cách :user',
+                'resend_email'       => 'Gửi lại email xác nhận',
+                'restore_user'       => 'Khôi phục người dùng',
             ],
         ],
     ],
 
     'emails' => [
         'auth' => [
-            'confirm_account' => 'Confirm Account',
-            'reset_password'  => 'Reset Password',
+            'confirm_account' => 'Xác nhận tài khoản',
+            'reset_password'  => 'Đổi lại mật khẩu',
         ],
     ],
 
     'general' => [
-        'cancel'   => 'Cancel',
-        'continue' => 'Continue',
-        'preview'  => 'Preview',
+        'cancel'   => 'Hủy',
+        'continue' => 'Tiếp tục',
+        'preview'  => 'Xem trước',
 
         'crud' => [
-            'create' => 'Create',
-            'add'    => 'Add',
-            'delete' => 'Delete',
-            'edit'   => 'Edit',
-            'update' => 'Update',
-            'view'   => 'View',
+            'create' => 'Thêm',
+            'add'    => 'Thêm mới',
+            'delete' => 'Xóa',
+            'edit'   => 'Chỉnh sửa',
+            'update' => 'Cập nhật',
+            'view'   => 'Xem',
         ],
 
-        'save' => 'Save',
-        'view' => 'View',
+        'save' => 'Lưu',
+        'view' => 'Xem',
     ],
 ];

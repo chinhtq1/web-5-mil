@@ -4,24 +4,24 @@ return [
 
     'messages' => [
         'registeration' => [
-            'success' => 'You have registered successfully. Please check your email for activation!',
+            'success' => 'Bạn đã đăng ký thành công. Vui lòng kiểm tra email để kích hoạt',
         ],
         'login' => [
-            'success' => 'Login Successfull.',
-            'failed'  => 'Invalid Credentials! Please try again.',
+            'success' => 'Đăng nhập thành công',
+            'failed'  => 'Đăng nhập sai. Vui lòng thử lại',
         ],
         'logout' => [
-            'success' => 'Successfully logged out.',
+            'success' => 'Thoát ra thành công',
         ],
         'forgot_password' => [
-            'success'    => 'We have sent email with reset password link. Please check your inbox!.',
+            'success'    => 'Chúng tôi đã gửi link reset mật khẩu. Vui lòng kiểm tra email của bạn',
             'validation' => [
-                'email_not_found' => 'This email address is not registered.',
+                'email_not_found' => 'Email chưa được đăng ký',
             ],
         ],
         'refresh' => [
             'token' => [
-                'not_provided' => 'Token not provided.',
+                'not_provided' => 'Token hết hạn',
             ],
             'status' => 'Ok',
         ],

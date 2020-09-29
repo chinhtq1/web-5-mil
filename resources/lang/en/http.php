@@ -12,8 +12,8 @@ return [
     */
 
     '404' => [
-        'title'       => 'Page Not Found',
-        'description' => 'Sorry, but the page you were trying to view does not exist.',
+        'title'       => 'Trang không tìm thấy',
+        'description' => 'Sorry, trang không tồn tại. Vui lòng thử lại',
     ],
 
     '503' => [
