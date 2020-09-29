@@ -97,4 +97,15 @@ class ProductCategoryRepository extends BaseRepository
             throw new GeneralException(trans('exceptions.backend.productcategories.delete_error'));
         });
     }
+
+    /**
+     * Get category by slug
+     */
+    public function getBySlug($slug) {
+        if (!is_null($this->query()->whereSlug($slug)->firstOrFail())) {
+            return $this->query()->whereSlug($slug)->firstOrFail();
+        }
+
+        throw new GeneralException(trans('exceptions.backend.access.pages.not_found'));
+    }
 }

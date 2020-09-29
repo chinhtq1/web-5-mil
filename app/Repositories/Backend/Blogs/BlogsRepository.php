@@ -228,8 +228,6 @@ class BlogsRepository extends BaseRepository implements BlogRepositoryInterface
     {
         $avatar = $input['featured_image'];
 
-        dd($avatar);
-
         if (isset($input['featured_image']) && !empty($input['featured_image'])) {
             $fileName = time().$avatar->getClientOriginalName();
 
@@ -273,13 +271,7 @@ class BlogsRepository extends BaseRepository implements BlogRepositoryInterface
         return $this->query()->whereStatus($status);
     }
 
-    /**
-     * @param $category BlogCategory
-     * @param $per_page
-     * @param $order_by
-     * @param $sort
-     * @return
-     */
+
     public function getByCategory($category, $per_page, $order_by, $sort)
     {
         // Lấy danh sách bài viết theo danh mục

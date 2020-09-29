@@ -4,26 +4,24 @@
         <ul class="navig cl-effect-1">
             <li class="menu-item active"><a  class="menu-link" href="{{ route('frontend.index') }}">Trang chủ</a></li>
             <li class="menu-item">
-                <a class="menu-link" href="products.html">Sản Phẩm</a>
+                <a class="menu-link" href="{{ route('frontend.products.index') }}">Sản Phẩm</a>
                 <div class="menu-mega-sub">
                     <ul class="sub-menu">
-                        <li class="menu-item ">
-                            <a href="#" class="menu-link">Menu-Sub 2</a>
-                        </li>
-                        <li class="menu-item ">
-                            <a href="#" class="menu-link">Menu-Sub 2</a>
-                        </li>
-                        <li class="menu-item ">
-                            <a href="#" class="menu-link">Menu-Sub 2</a>
-                        </li>
+                        @isset($productMenus)
+                            @foreach($productMenus as $menu)
+                                <li class="menu-item ">
+                                    <a href="{{ route('frontend.products.listByCategory', ['slug' => $menu->slug]) }}" class="menu-link">{{ $menu->name }}</a>
+                                </li>
+                            @endforeach
+                        @endisset
                     </ul>
                 </div>
             </li>
             <li class="menu-item"><a class="menu-link" href="{{ route('frontend.blogs.index') }}">Tin tức</a>
                 <div class="menu-mega-sub">
                     <ul class="sub-menu">
-                        @isset($menus)
-                            @foreach($menus as $menu)
+                        @isset($blogMenus)
+                            @foreach($blogMenus as $menu)
                                 <li class="menu-item ">
                                     <a href="{{ route('frontend.blogs.listByCategory', ['slug' => $menu->slug]) }}" class="menu-link">{{ $menu->name }}</a>
                                 </li>

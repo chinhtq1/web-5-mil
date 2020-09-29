@@ -70,21 +70,15 @@ class ProductsController extends Controller
         //Input received from the request
         $input = $request->except(['_token']);
         //Update the model using repository update method
-        $this->repository->update( $product, $input );
+        $this->product->update( $product, $input );
         //return with successfull message
         return new RedirectResponse(route('admin.products.index'), ['flash_success' => trans('alerts.backend.products.updated')]);
     }
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  DeleteProductRequestNamespace  $request
-     * @param  App\Models\Products\Product  $product
-     * @return \App\Http\Responses\RedirectResponse
-     */
+
     public function destroy(Product $product, DeleteProductRequest $request)
     {
         //Calling the delete method on repository
-        $this->repository->delete($product);
+        $this->product->delete($product);
         //returning with successfull message
         return new RedirectResponse(route('admin.products.index'), ['flash_success' => trans('alerts.backend.products.deleted')]);
     }

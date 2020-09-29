@@ -23,7 +23,7 @@ trait ProductCategoryRelationship
      */
     public function products()
     {
-        return $this->belongsTo(
+        return $this->belongsToMany(
             Product::class,
             'product_map_categories',
             'category_id',

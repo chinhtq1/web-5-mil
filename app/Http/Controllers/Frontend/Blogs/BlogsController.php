@@ -23,47 +23,39 @@ class BlogsController extends BaseController
         parent::__construct();
         $this->blogCategoryRepo = $blogCategoryRepo;
         $this->blogRepo = $blosRepository;
-        $this->categories = $this->blogCategoryRepo->getAll();
+        $this->categories = $this->blogCategoryRepo->query()->whereStatus(1)->get();
     }
 
     public function index() {
         $blogs = $this->blogRepo->getPaginated(6, $this->status,'publish_datetime', 'asc');
         return view('frontend.blogs.index')->with([
             'blogs' => $blogs,
-            'menus' => $this->menus,
+            'blogMenus' => $this->blogMenus,
+            'productMenus' => $this->productMenus,
             'categories' => $this->categories,
         ]);
     }
 
-    /**
-     * List Post by Category
-     * @param $slug
-     * @throws \App\Exceptions\GeneralException
-     */
     public function listByCategory($slug)
     {
         $category = $this->blogCategoryRepo->getBySlug($slug);
         $blogs = $this->blogRepo->getByCategory($category, 6,'publish_datetime', 'asc' );
         return view('frontend.blogs.index')->with([
             'blogs' => $blogs,
-            'menus' => $this->menus,
+            'blogMenus' => $this->blogMenus,
+            'productMenus' => $this->productMenus,
             'categories' => $this->categories,
             'active_category' => $category
         ]);
     }
-
-    /**
-     * @param $slug
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     * @throws \App\Exceptions\GeneralException
-     */
 
     public function detail($slug) {
         $blog = $this->blogRepo->getBySlug($slug);
         $relatedBlogs = $this->blogRepo->getRandomBlogList(3)->get();
         return view('frontend.blogs.single-blog')->with([
             'blog' => $blog,
-            'menus' => $this->menus,
+            'blogMenus' => $this->blogMenus,
+            'productMenus' => $this->productMenus,
             'categories' => $this->categories,
             'related_blogs' => $relatedBlogs
         ]);

@@ -291,3 +291,19 @@ if (!function_exists('checkDatabaseConnection')) {
         }
     }
 }
+
+if (!function_exists('truncateStr')) {
+
+    /**
+     * @return bool
+     */
+    function truncateStr($str, $limit = 64 )
+    {
+        if ($str == null || $limit == null) return $str;
+        if (strlen($str) > $limit) {
+            return \Illuminate\Support\Str::limit($str, $limit, ' ...');
+        } else {
+            return str_pad($str, $limit,"//");
+        }
+    }
+}

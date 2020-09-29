@@ -12159,9 +12159,9 @@ var Backend = {}; // common variable used in all the files of the backend
                 tinymce.init({
                     language: (locale === 'en_US' ? undefined : locale),
                     path_absolute: "/",
-                    selector: 'textarea',
+                    selector: 'textarea.editor',
                     height: 200,
-                    width: 725,
+                    width: '80%',
                     theme: 'silver', // New theme available in latest tinymce
                     plugins: [
                         'advlist autolink lists link image charmap print preview hr anchor pagebreak',

@@ -125,4 +125,5 @@ class BlogCategoriesRepository extends BaseRepository
 
         throw new GeneralException(trans('exceptions.backend.access.pages.not_found'));
     }
+
 }

@@ -4,11 +4,23 @@
     .container {
         width: 1200px;
     }
+   .wrap-text>p.content {
+        width: 100%;
+        height: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 }
 
 @media screen and (min-width:1200px) and (max-width:1365px) {
     .container {
         width: 1200px;
+    }
+   .wrap-text>p.content {
+        width: 100%;
+        height: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }
 
@@ -40,6 +52,13 @@
         padding: 0 15px;
         border-right: 1px solid #e5e5e5;
     }
+
+   .wrap-text>p.content {
+        width: 100%;
+        height: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 }
 
 @media screen and (max-width:992px) {
@@ -53,6 +72,12 @@
 
     .menu-footer {
         padding-left: 15px;
+    }
+   .wrap-text > p.content {
+        width: 100%;
+        height: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }
 
@@ -102,6 +127,13 @@
     .monkey-group-item-bot {
         display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+
+   .wrap-text>p.content {
+        width: 100%;
+        height: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }
 

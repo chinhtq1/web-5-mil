@@ -30,34 +30,18 @@ class BlogsController extends Controller
         'Scheduled' => 'Scheduled',
     ];
 
-    /**
-     * @var BlogsRepository
-     */
     protected $blog;
 
-    /**
-     * @param \App\Repositories\Backend\Blogs\BlogsRepository $blog
-     */
     public function __construct(BlogsRepository $blog)
     {
         $this->blog = $blog;
     }
 
-    /**
-     * @param \App\Http\Requests\Backend\Blogs\ManageBlogsRequest $request
-     *
-     * @return \App\Http\Responses\Backend\Blog\IndexResponse
-     */
     public function index(ManageBlogsRequest $request)
     {
         return new IndexResponse($this->status);
     }
 
-    /**
-     * @param \App\Http\Requests\Backend\Blogs\ManageBlogsRequest $request
-     *
-     * @return mixed
-     */
     public function create(ManageBlogsRequest $request)
     {
         $blogTags = BlogTag::getSelectData();
@@ -66,11 +50,6 @@ class BlogsController extends Controller
         return new CreateResponse($this->status, $blogCategories, $blogTags);
     }
 
-    /**
-     * @param \App\Http\Requests\Backend\Blogs\StoreBlogsRequest $request
-     *
-     * @return \App\Http\Responses\RedirectResponse
-     */
     public function store(StoreBlogsRequest $request)
     {
         $this->blog->create($request->except('_token'));
@@ -87,12 +66,6 @@ class BlogsController extends Controller
         return new EditResponse($blog, $this->status, $blogCategories, $blogTags);
     }
 
-    /**
-     * @param \App\Models\Blogs\Blog                              $blog
-     * @param \App\Http\Requests\Backend\Blogs\UpdateBlogsRequest $request
-     *
-     * @return \App\Http\Responses\RedirectResponse
-     */
     public function update(Blog $blog, UpdateBlogsRequest $request)
     {
         $input = $request->all();
@@ -102,12 +75,7 @@ class BlogsController extends Controller
         return new RedirectResponse(route('admin.blogs.index'), ['flash_success' => trans('alerts.backend.blogs.updated')]);
     }
 
-    /**
-     * @param \App\Models\Blogs\Blog                              $blog
-     * @param \App\Http\Requests\Backend\Blogs\ManageBlogsRequest $request
-     *
-     * @return \App\Http\Responses\RedirectResponse
-     */
+
     public function destroy(Blog $blog, ManageBlogsRequest $request)
     {
         $this->blog->delete($blog);

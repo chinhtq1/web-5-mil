@@ -96,7 +96,7 @@ class ProductRepository extends BaseRepository
         $input['updated_by'] = access()->user()->id;
 
         // Uploading Image
-        if (array_key_exists('featured_image', $input)) {
+        if (array_key_exists('feature_image', $input)) {
             $this->deleteOldFile($product);
             $input = $this->uploadImage($input);
         }
@@ -186,5 +186,32 @@ class ProductRepository extends BaseRepository
         $fileName = $model->feature_image;
 
         return $this->storage->delete($this->upload_path.$fileName);
+    }
+
+    public function getByCategory($category, $per_page, $order_by, $sort)
+    {
+        // Lấy danh sách bài viết theo danh mục
+        return $category->products()->orderBy($order_by, $sort)
+            ->paginate($per_page);
+    }
+
+    /**
+     * Get category by slug
+     */
+    public function getBySlug($slug) {
+        if (!is_null($this->query()->whereSlug($slug)->firstOrFail())) {
+            return $this->query()->whereSlug($slug)->firstOrFail();
+        }
+
+        throw new GeneralException(trans('exceptions.backend.access.pages.not_found'));
+    }
+
+    public function getByStatus($status) {
+        return $this->query()->whereStatus($status);
+    }
+
+    public function getRandomBlogList($count)
+    {
+        return $this->getByStatus(['Published'])->take($count);
     }
 }

@@ -14,7 +14,7 @@
             @if(!empty($selectedCategories))
                 {{ Form::select('categories[]', $productCategories, $selectedCategories, ['class' => 'form-control tags box-size', 'required' => 'required', 'multiple' => 'multiple']) }}
             @else
-                {{ Form::select('categories[]', $productCategories, null, ['class' => 'form-control tags box-size', 'required' => 'required', 'multiple' => 'multiple']) }}
+                {{ Form::select('categories[]', $productCategories, null, ['class' => 'form-control select2 tags box-size', 'required' => 'required', 'multiple' => 'multiple']) }}
             @endif
         </div><!--col-lg-10-->
     </div><!--form control-->
@@ -65,7 +65,7 @@
         {{ Form::label('base_feature', trans('validation.attributes.backend.products.detail_feature'), ['class' => 'col-lg-2 control-label required']) }}
 
         <div class="col-lg-10 mce-box">
-            {{ Form::textarea('detail_feature', null, ['class' => 'form-control box-size', 'placeholder' => trans('validation.attributes.backend.products.detail_feature'), 'maxlength' => 512]) }}
+            {{ Form::textarea('detail_feature', null, ['class' => 'form-control box-size editor', 'placeholder' => trans('validation.attributes.backend.products.detail_feature'), 'maxlength' => 512]) }}
         </div><!--col-lg-10-->
     </div><!--form control-->
 
@@ -73,7 +73,7 @@
         {{ Form::label('content', trans('validation.attributes.backend.products.content'), ['class' => 'col-lg-2 control-label required']) }}
 
         <div class="col-lg-10 mce-box">
-            {{ Form::textarea('content', null, ['class' => 'form-control', 'placeholder' => trans('validation.attributes.backend.products.content')]) }}
+            {{ Form::textarea('content', null, ['class' => 'form-control editor', 'placeholder' => trans('validation.attributes.backend.products.content')]) }}
         </div><!--col-lg-10-->
     </div><!--form control-->
 
