@@ -87,6 +87,27 @@ class ModulesTableSeeder extends Seeder
                 'created_at'            => Carbon::now(),
             ],
             [
+                'name'                  => trans('menus.backend.products.management'),
+                'url'                   => null,
+                'view_permission_id'    => 'view-product',
+                'created_by'            => 1,
+                'created_at'            => Carbon::now(),
+            ],
+            [
+                'name'                  => trans('menus.backend.productcategories.management'),
+                'url'                   => 'admin.productcategories.index',
+                'view_permission_id'    => 'view-product-category',
+                'created_by'            => 1,
+                'created_at'            => Carbon::now(),
+            ],
+            [
+                'name'                  => trans('menus.backend.products.management'),
+                'url'                   => 'admin.products.index',
+                'view_permission_id'    => 'view-product',
+                'created_by'            => 1,
+                'created_at'            => Carbon::now(),
+            ],
+            [
                 'name'                  => trans('menus.backend.blogtags.management'),
                 'url'                   => 'admin.blogtags.index',
                 'view_permission_id'    => 'view-blog-tag',

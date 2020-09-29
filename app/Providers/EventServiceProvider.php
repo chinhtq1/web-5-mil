@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Listeners\Backend\ProductCategories\ProductCategoryEventListener;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
 /**
@@ -45,6 +46,8 @@ class EventServiceProvider extends ServiceProvider
         \App\Listeners\Backend\BlogCategories\BlogCategoryEventListener::class,
         \App\Listeners\Backend\BlogTags\BlogTagEventListener::class,
         \App\Listeners\Backend\Blogs\BlogEventListener::class,
+        \App\Listeners\Backend\ProductCategories\ProductCategoryEventListener::class,
+        \App\Listeners\Backend\Products\ProductEventListener::class,
     ];
 
     /**

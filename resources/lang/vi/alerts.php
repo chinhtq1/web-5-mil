@@ -60,7 +60,11 @@ return [
             'deleted' => 'The Blog was successfully deleted.',
             'updated' => 'The Blog was successfully updated.',
         ],
-
+		'productcategories' => [
+            'created' => 'The Product Category was successfully created.',
+            'deleted' => 'The Product Category was successfully deleted.',
+            'updated' => 'The Product Category was successfully updated.',
+        ],
         'settings' => [
             'updated' => 'The Setting was successfully updated.',
         ],

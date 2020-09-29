@@ -80,6 +80,14 @@ return [
             'not_found'      => 'That Blog Tag does not exist.',
             'update_error'   => 'There was a problem updating this Blog Tag. Please try again.',
         ],
+		
+		'productcategories' => [
+            'already_exists' => 'That Product Category already exists. Please choose a different name.',
+            'create_error'   => 'There was a problem creating this Product Category. Please try again.',
+            'delete_error'   => 'There was a problem deleting this Product Category. Please try again.',
+            'not_found'      => 'That Product Category does not exist.',
+            'update_error'   => 'There was a problem updating this Product Category. Please try again.',
+        ],
 
         'settings' => [
             'update_error' => 'There was a problem updating this Settings. Please try again.',

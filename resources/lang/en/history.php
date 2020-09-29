@@ -48,6 +48,16 @@ return [
             'deleted' => 'deleted Blog',
             'updated' => 'updated Blog',
         ],
+		'productCategories' => [
+		    'created' => 'created Product Category',
+            'deleted' => 'deleted Product Category',
+            'updated' => 'updated Product Category',
+		],
+		'products' => [
+		    'created' => 'created Product',
+            'deleted' => 'deleted Product',
+            'updated' => 'updated Product',
+		],
         'users' => [
             'changed_password'    => 'changed password for user',
             'created'             => 'created user',

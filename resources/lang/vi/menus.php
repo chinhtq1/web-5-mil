@@ -135,6 +135,27 @@ return [
             'management' => 'Module Management',
             'main'       => 'Module Pages',
         ],
+		"products" => [
+			"all" => "Tất cả sản phẩm",
+			"create" => "Thêm mới sản phẩm",
+			"edit" => "Chỉnh sửa sản phẩm",
+			"management" => "Quản lý sản phẩm",
+			"main" => "Các sản phẩm",
+		],
+	"files" => [
+		"all" => "All FileManagers",
+		"create" => "Create FileManager",
+		"edit" => "Edit FileManager",
+		"management" => "FileManager Management",
+		"main" => "FileManagers",
+	],
+	"productcategories" => [
+		"all" => "Tất cả danh mục sản phẩm",
+		"create" => "Thêm mới danh mục sản phẩm",
+		"edit" => "Chỉnh sửa danh mục sản phẩm",
+		"management" => "Quản lý danh mục sản phẩm",
+		"main" => "Các danh mục sản ph",
+	]
     ],
 
     'language-picker' => [

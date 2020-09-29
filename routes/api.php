@@ -51,5 +51,7 @@ Route::group(['namespace' => 'Api\V1', 'prefix' => 'v1', 'as' => 'v1.'], functio
 
         // Blogs
         Route::resource('blogs', 'BlogsController', ['except' => ['create', 'edit']]);
+
+
     });
 });

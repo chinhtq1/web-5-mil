@@ -16,13 +16,19 @@ trait BlogCategoryRelationship
      */
     public function creator()
     {
-        return $this->belongsTo(User::class, 'created_by');
+        return $this->belongsTo(
+            User::class,
+            'created_by');
     }
 
     /**
      * Get Blogs
      */
     public function blogs() {
-        return $this->belongsToMany(Blog::class, 'blog_map_categories', 'category_id', 'blog_id');
+        return $this->belongsToMany(
+            Blog::class,
+            'blog_map_categories',
+            'category_id',
+            'blog_id');
     }
 }

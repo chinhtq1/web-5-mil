@@ -176,7 +176,44 @@ return [
                 'all'       => 'Tất cả',
             ],
         ],
-
+        "products" => [
+            "create" => "Thêm mới sản phẩm",
+            "edit" => "Chỉnh sửa sản phẩm",
+            "management" => "Quản lý sản phẩm",
+            "title" => "Các sản phẩm",
+            "table" => [
+                'title'     => 'Bài viết',
+                'publish'   => 'Ngày publish',
+                'status'    => 'Trạng thái',
+                'createdat' => 'Ngày thêm mới',
+                'createdby' => 'Người thêm mới',
+                'all'       => 'Tất cả',
+            ],
+        ],
+        "files" => [
+            "create" => "Create FileManager",
+            "edit" => "Edit FileManager",
+            "management" => "FileManager Management",
+            "title" => "FileManagers",
+            "table" => [
+                "id" => "Id",
+                "createdat" => "Created At",
+            ],
+        ],
+        "productcategories" => [
+            "create" => "Tạo mới danh mục sản phẩm",
+            "edit" => "Chỉnh sửa danh mục sản phẩm",
+            "management" => "Quản lý danh mục sản phẩm",
+            "title" => "Quản lý danh mục sản phẩm",
+            "table" => [
+                "id" => "Id",
+                "name" => "Tên danh mục",
+                "status" => "Trạng thái",
+                "createdby" => "Người tạo",
+                "createdat" => "Ngày tạo",
+                "all"       => "Tất cả",
+            ],
+        ],
         'settings' => [
             'edit'           => 'Edit Settings',
             'management'     => 'Settings Management',

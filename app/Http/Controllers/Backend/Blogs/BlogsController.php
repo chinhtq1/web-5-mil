@@ -78,12 +78,7 @@ class BlogsController extends Controller
         return new RedirectResponse(route('admin.blogs.index'), ['flash_success' => trans('alerts.backend.blogs.created')]);
     }
 
-    /**
-     * @param \App\Models\Blogs\Blog                              $blog
-     * @param \App\Http\Requests\Backend\Blogs\ManageBlogsRequest $request
-     *
-     * @return \App\Http\Responses\Backend\Blog\EditResponse
-     */
+
     public function edit(Blog $blog, ManageBlogsRequest $request)
     {
         $blogCategories = BlogCategory::getSelectData();

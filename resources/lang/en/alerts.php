@@ -64,5 +64,10 @@ return [
 	"deleted" => "The FileManager was successfully deleted.",
 	"updated" => "The FileManager was successfully updated.",
 	],
+	"productcategories" => [
+	"created" => "The Product Category was successfully created.",
+	"deleted" => "The Product Category was successfully deleted.",
+	"updated" => "The Product Category was successfully updated.",
+	],
 	],
 ];

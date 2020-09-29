@@ -22,39 +22,21 @@ class BlogCategoriesController extends Controller
 {
     protected $blogcategory;
 
-    /**
-     * @param BlogCategoriesRepository $blogcategory
-     */
     public function __construct(BlogCategoriesRepository $blogcategory)
     {
         $this->blogcategory = $blogcategory;
     }
 
-    /**
-     * @param \App\Http\Requests\Backend\BlogCategories\ManageBlogCategoriesRequest $request
-     *
-     * @return ViewResponse
-     */
     public function index(ManageBlogCategoriesRequest $request)
     {
-        return new ViewResponse('backend.blogcategories.index');
+        return new ViewResponse('backend.blogCategories.index');
     }
 
-    /**
-     * @param \App\Http\Requests\Backend\BlogCategories\CreateBlogCategoriesRequest $request
-     *
-     * @return \App\Http\Responses\ViewResponse
-     */
     public function create(CreateBlogCategoriesRequest $request)
     {
-        return new ViewResponse('backend.blogcategories.create');
+        return new ViewResponse('backend.blogCategories.create');
     }
 
-    /**
-     * @param \App\Http\Requests\Backend\BlogCategories\StoreBlogCategoriesRequest $request
-     *
-     * @return mixed
-     */
     public function store(StoreBlogCategoriesRequest $request)
     {
         $this->blogcategory->create($request->all());
@@ -62,23 +44,11 @@ class BlogCategoriesController extends Controller
         return new RedirectResponse(route('admin.blogCategories.index'), ['flash_success' => trans('alerts.backend.blogcategories.created')]);
     }
 
-    /**
-     * @param \App\Models\BlogCategories\BlogCategory                             $blogCategory
-     * @param \App\Http\Requests\Backend\BlogCategories\EditBlogCategoriesRequest $request
-     *
-     * @return \App\Http\Responses\Backend\BlogCategory\EditResponse
-     */
     public function edit(BlogCategory $blogCategory, EditBlogCategoriesRequest $request)
     {
         return new EditResponse($blogCategory);
     }
 
-    /**
-     * @param \App\Models\BlogCategories\BlogCategory                               $blogCategory
-     * @param \App\Http\Requests\Backend\BlogCategories\UpdateBlogCategoriesRequest $request
-     *
-     * @return \App\Http\Responses\RedirectResponse
-     */
     public function update(BlogCategory $blogCategory, UpdateBlogCategoriesRequest $request)
     {
         $this->blogcategory->update($blogCategory, $request->all());
@@ -86,12 +56,6 @@ class BlogCategoriesController extends Controller
         return new RedirectResponse(route('admin.blogCategories.index'), ['flash_success' => trans('alerts.backend.blogcategories.updated')]);
     }
 
-    /**
-     * @param \App\Models\BlogCategories\BlogCategory                               $blogCategory
-     * @param \App\Http\Requests\Backend\BlogCategories\DeleteBlogCategoriesRequest $request
-     *
-     * @return \App\Http\Responses\RedirectResponse
-     */
     public function destroy(BlogCategory $blogCategory, DeleteBlogCategoriesRequest $request)
     {
         $this->blogcategory->delete($blogCategory);

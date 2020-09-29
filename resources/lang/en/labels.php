@@ -256,6 +256,16 @@ return [
 	"createdat" => "Created At",
 	],
 	],
+	"productcategories" => [
+	"create" => "Create Product Category",
+	"edit" => "Edit Product Category",
+	"management" => "Product Category Management",
+	"title" => "Product Category Managements",
+	"table" => [
+	"id" => "Id",
+	"createdat" => "Created At",
+	],
+	],
 	],
 	"frontend" => [
 	"auth" => [

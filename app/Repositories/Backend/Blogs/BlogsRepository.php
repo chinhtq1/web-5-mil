@@ -228,6 +228,8 @@ class BlogsRepository extends BaseRepository implements BlogRepositoryInterface
     {
         $avatar = $input['featured_image'];
 
+        dd($avatar);
+
         if (isset($input['featured_image']) && !empty($input['featured_image'])) {
             $fileName = time().$avatar->getClientOriginalName();
 

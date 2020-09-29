@@ -122,6 +122,13 @@ return [
 	"management" => "FileManager Management",
 	"main" => "FileManagers",
 	],
+	"productcategories" => [
+	"all" => "All Product Categorys",
+	"create" => "Create Product Category",
+	"edit" => "Edit Product Category",
+	"management" => "Product Category Management",
+	"main" => "Product Categorys",
+	],
 	],
 	"language-picker" => [
 	"language" => "Language",

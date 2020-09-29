@@ -11843,6 +11843,99 @@ var Backend = {}; // common variable used in all the files of the backend
 
             }
         },
+        /**
+         * ProductCategory
+         */
+        ProductCategory: {
+            selectors: {
+                GenerateSlugUrl: "",
+                name: document.getElementById("name"),
+                SlugUrl: "",
+                slug: document.getElementById("slug"),
+            },
+
+            init: function () {
+                this.addHandlers();
+            },
+
+            addHandlers: function () {
+                // For generating the Slug  //changing slug on blur event
+                this.selectors.name.onblur = function (event) {
+                    url = event.target.value;
+                    if (url !== '') {
+                        callback = {
+                            success: function (request) {
+                                if (request.status >= 200 && request.status < 400) {
+                                    // Success!
+                                    response = request.responseText;
+                                    Backend.ProductCategory.selectors.slug.value = Backend.ProductCategory.selectors.SlugUrl + '/' + response.trim();
+                                }
+                            },
+                            error: function (request) {
+
+                            }
+                        };
+                        Backend.Utils.ajaxrequest(Backend.ProductCategory.selectors.GenerateSlugUrl, "post", {
+                            text: url
+                        }, Backend.Utils.csrf, callback);
+                    }
+                };
+            }
+        },
+
+        /**
+         * Product
+         */
+        Product: {
+            selectors: {
+                categories: jQuery(".categories"),
+                toDisplay: jQuery(".toDisplay"),
+                status: jQuery(".status"),
+                datetimepicker1: jQuery("#datetimepicker1"),
+                GenerateSlugUrl: "",
+                name: document.getElementById("name"),
+                SlugUrl: "",
+                slug: document.getElementById("slug"),
+            },
+
+            init: function () {
+                this.addHandlers();
+                Backend.tinyMCE.init();
+            },
+
+            addHandlers: function () {
+                console.log(this.selectors.categories);
+                this.selectors.categories.select2();
+                this.selectors.toDisplay.select2();
+                this.selectors.status.select2();
+
+                //For Product datetimepicker for publish_datetime
+                this.selectors.datetimepicker1.datetimepicker();
+
+                // For generating the Slug  //changing slug on blur event
+                this.selectors.name.onblur = function (event) {
+                    url = event.target.value;
+                    if (url !== '') {
+                        callback = {
+                            success: function (request) {
+                                if (request.status >= 200 && request.status < 400) {
+                                    // Success!
+                                    response = request.responseText;
+                                    Backend.Product.selectors.slug.value = Backend.Product.selectors.SlugUrl + '/' + response.trim();
+                                }
+                            },
+                            error: function (request) {
+
+                            }
+                        };
+                        Backend.Utils.ajaxrequest(Backend.Product.selectors.GenerateSlugUrl, "post", {
+                            text: url
+                        }, Backend.Utils.csrf, callback);
+                    }
+                };
+
+            }
+        },
 
         Menu: {
             selectors: {

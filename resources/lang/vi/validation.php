@@ -192,6 +192,27 @@ return [
                 'meta_description' => 'Thẻ Meta Description',
                 'status'           => 'Trạng thái',
             ],
+			'productcategories' => [
+                'title'     => 'Danh mục',
+                'is_active' => 'Active',
+                'slug' => 'Slug'
+            ],
+			'products' => [
+                'title'            => 'Tiêu đề bài viết',
+                'category'         => 'Danh mục bài viết',
+                'publish'          => 'Ngày publish',
+                'base_feature'      => 'Tính năng cơ bản',
+				'detail_feature'      => 'Tính năng chi tiết',
+                'image'            => 'Ảnh ',
+                'content'          => 'Tổng quan',
+                'tags'             => 'Tags',
+                'meta-title'       => 'Thẻ Meta Title',
+                'slug'             => 'Slug',
+                'cannonical_link'  => 'Cannonical Link',
+                'meta_keyword'     => 'Thẻ Meta Keyword',
+                'meta_description' => 'Thẻ Meta Description',
+                'status'           => 'Trạng thái',
+            ],
 
             'settings' => [
                 'sitelogo'        => 'Site Logo',

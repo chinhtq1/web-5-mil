@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "435ed80cf9767956fea749bc7094ee39",
+    "content-hash": "421ab3e8e57db6b200ddf8e9ca331905",
     "packages": [
         {
             "name": "arcanedev/log-viewer",
@@ -193,6 +193,39 @@
             "time": "2019-09-03T15:01:16+00:00"
         },
         {
+            "name": "bvipul/generator",
+            "version": "v6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bvipul/generator.git",
+                "reference": "3acbcf43f2ddd2b1abfe288e365edeaec42700d5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bvipul/generator/zipball/3acbcf43f2ddd2b1abfe288e365edeaec42700d5",
+                "reference": "3acbcf43f2ddd2b1abfe288e365edeaec42700d5",
+                "shasum": ""
+            },
+            "type": "package",
+            "autoload": {
+                "psr-4": {
+                    "Bvipul\\Generator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vipul Basapati",
+                    "email": "basapativipulkumar@gmail.com"
+                }
+            ],
+            "description": "To create a whole module with all related files like model, controller, repository, routes, views etc with a simple GUI.",
+            "time": "2019-11-22T04:31:02+00:00"
+        },
+        {
             "name": "composer/semver",
             "version": "1.5.0",
             "source": {
@@ -365,6 +398,7 @@
             "keywords": [
                 "laravel"
             ],
+            "abandoned": true,
             "time": "2019-09-03T15:24:57+00:00"
         },
         {
@@ -1455,6 +1489,7 @@
                     "email": "jakub.onderka@gmail.com"
                 }
             ],
+            "abandoned": "php-parallel-lint/php-console-color",
             "time": "2018-09-29T17:23:10+00:00"
         },
         {
@@ -1501,6 +1536,7 @@
                 }
             ],
             "description": "Highlight PHP code in terminal",
+            "abandoned": "php-parallel-lint/php-console-highlighter",
             "time": "2018-09-29T18:48:56+00:00"
         },
         {
@@ -1708,6 +1744,59 @@
                 "laravel"
             ],
             "time": "2019-10-15T13:38:24+00:00"
+        },
+        {
+            "name": "laravel/helpers",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/helpers.git",
+                "reference": "b4b8d6e84a6306fc88870f61a244d8c537779f2d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/helpers/zipball/b4b8d6e84a6306fc88870f61a244d8c537779f2d",
+                "reference": "b4b8d6e84a6306fc88870f61a244d8c537779f2d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.8.0|^6.0|^7.0|^8.0",
+                "php": ">=7.1.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.0|^8.0|^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                },
+                {
+                    "name": "Dries Vints",
+                    "email": "dries.vints@gmail.com"
+                }
+            ],
+            "description": "Provides backwards compatibility for helpers in the latest Laravel release.",
+            "keywords": [
+                "helpers",
+                "laravel"
+            ],
+            "time": "2020-08-25T17:54:37+00:00"
         },
         {
             "name": "laravel/passport",
@@ -3250,6 +3339,7 @@
                 "request",
                 "spatie"
             ],
+            "abandoned": "laravel/framework",
             "time": "2019-09-04T06:55:15+00:00"
         },
         {
@@ -5003,6 +5093,7 @@
                 "psr",
                 "psr-7"
             ],
+            "abandoned": "laminas/laminas-diactoros",
             "time": "2019-10-10T17:38:20+00:00"
         }
     ],
@@ -5051,39 +5142,6 @@
                 "phanybar"
             ],
             "time": "2015-03-06T12:14:28+00:00"
-        },
-        {
-            "name": "bvipul/generator",
-            "version": "v5.8.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/bvipul/generator.git",
-                "reference": "10df87f87965de6b6f9d18a084b2d2abe075a2a9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/bvipul/generator/zipball/10df87f87965de6b6f9d18a084b2d2abe075a2a9",
-                "reference": "10df87f87965de6b6f9d18a084b2d2abe075a2a9",
-                "shasum": ""
-            },
-            "type": "package",
-            "autoload": {
-                "psr-4": {
-                    "Bvipul\\Generator\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Vipul Basapati",
-                    "email": "basapativipulkumar@gmail.com"
-                }
-            ],
-            "description": "To create a whole module with all related files like model, controller, repository, routes, views etc with a simple GUI.",
-            "time": "2019-08-31T16:00:50+00:00"
         },
         {
             "name": "codedungeon/php-cli-colors",
@@ -7820,7 +7878,8 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.2"
+        "php": "^7.3"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }
