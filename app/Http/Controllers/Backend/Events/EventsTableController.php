@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\Backend\Events;
 
-use Carbon\Carbon;
 use App\Http\Controllers\Controller;
-use Yajra\DataTables\Facades\DataTables;
-use App\Repositories\Backend\Events\EventRepository;
 use App\Http\Requests\Backend\Events\ManageEventRequest;
+use App\Repositories\Backend\Events\EventRepository;
+use Yajra\DataTables\Facades\DataTables;
 
 /**
  * Class EventsTableController.

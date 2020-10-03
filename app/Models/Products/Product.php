@@ -6,7 +6,6 @@ use App\Models\BaseModel;
 use App\Models\ModelTrait;
 use App\Models\Products\Traits\Attribute\ProductAttribute;
 use App\Models\Products\Traits\Relationship\ProductRelationship;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 

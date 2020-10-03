@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\Backend\Documents;
 
-use Carbon\Carbon;
 use App\Http\Controllers\Controller;
-use Yajra\DataTables\Facades\DataTables;
-use App\Repositories\Backend\Documents\DocumentRepository;
 use App\Http\Requests\Backend\Documents\ManageDocumentRequest;
+use App\Repositories\Backend\Documents\DocumentRepository;
+use Yajra\DataTables\Facades\DataTables;
 
 /**
  * Class DocumentsTableController.

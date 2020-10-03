@@ -2,20 +2,18 @@
 
 namespace App\Http\Controllers\Backend\DocumentCategories;
 
-use App\Models\DocumentCategories\DocumentCategory;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Backend\DocumentCategories\CreateDocumentCategoryRequest;
+use App\Http\Requests\Backend\DocumentCategories\DeleteDocumentCategoryRequest;
+use App\Http\Requests\Backend\DocumentCategories\EditDocumentCategoryRequest;
+use App\Http\Requests\Backend\DocumentCategories\ManageDocumentCategoryRequest;
+use App\Http\Requests\Backend\DocumentCategories\StoreDocumentCategoryRequest;
+use App\Http\Requests\Backend\DocumentCategories\UpdateDocumentCategoryRequest;
+use App\Http\Responses\Backend\DocumentCategories\EditResponse;
 use App\Http\Responses\RedirectResponse;
 use App\Http\Responses\ViewResponse;
-use App\Http\Responses\Backend\DocumentCategories\CreateResponse;
-use App\Http\Responses\Backend\DocumentCategories\EditResponse;
+use App\Models\DocumentCategories\DocumentCategory;
 use App\Repositories\Backend\DocumentCategories\DocumentCategoryRepository;
-use App\Http\Requests\Backend\DocumentCategories\ManageDocumentCategoryRequest;
-use App\Http\Requests\Backend\DocumentCategories\CreateDocumentCategoryRequest;
-use App\Http\Requests\Backend\DocumentCategories\StoreDocumentCategoryRequest;
-use App\Http\Requests\Backend\DocumentCategories\EditDocumentCategoryRequest;
-use App\Http\Requests\Backend\DocumentCategories\UpdateDocumentCategoryRequest;
-use App\Http\Requests\Backend\DocumentCategories\DeleteDocumentCategoryRequest;
 
 /**
  * DocumentCategoriesController

@@ -2,21 +2,19 @@
 
 namespace App\Http\Controllers\Backend\Events;
 
-use App\Http\Responses\Backend\Events\IndexResponse;
-use App\Models\Events\Event;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Responses\RedirectResponse;
-use App\Http\Responses\ViewResponse;
+use App\Http\Requests\Backend\Events\CreateEventRequest;
+use App\Http\Requests\Backend\Events\DeleteEventRequest;
+use App\Http\Requests\Backend\Events\EditEventRequest;
+use App\Http\Requests\Backend\Events\ManageEventRequest;
+use App\Http\Requests\Backend\Events\StoreEventRequest;
+use App\Http\Requests\Backend\Events\UpdateEventRequest;
 use App\Http\Responses\Backend\Events\CreateResponse;
 use App\Http\Responses\Backend\Events\EditResponse;
+use App\Http\Responses\Backend\Events\IndexResponse;
+use App\Http\Responses\RedirectResponse;
+use App\Models\Events\Event;
 use App\Repositories\Backend\Events\EventRepository;
-use App\Http\Requests\Backend\Events\ManageEventRequest;
-use App\Http\Requests\Backend\Events\CreateEventRequest;
-use App\Http\Requests\Backend\Events\StoreEventRequest;
-use App\Http\Requests\Backend\Events\EditEventRequest;
-use App\Http\Requests\Backend\Events\UpdateEventRequest;
-use App\Http\Requests\Backend\Events\DeleteEventRequest;
 
 /**
  * EventsController

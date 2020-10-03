@@ -5,12 +5,11 @@ namespace App\Repositories\Backend\Events;
 use App\Events\Backend\Events\EventCreated;
 use App\Events\Backend\Events\EventDeleted;
 use App\Events\Backend\Events\EventUpdated;
-use DB;
-use Carbon\Carbon;
-use App\Models\Events\Event;
 use App\Exceptions\GeneralException;
+use App\Models\Events\Event;
 use App\Repositories\BaseRepository;
-use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
+use DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 

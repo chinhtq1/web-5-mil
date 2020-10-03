@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers\Backend\Products;
 
-use App\Http\Responses\Backend\Products\IndexResponse;
-use App\Models\ProductCategories\ProductCategory;
-use App\Models\Products\Product;
 use App\Http\Controllers\Controller;
-use App\Http\Responses\RedirectResponse;
+use App\Http\Requests\Backend\Products\CreateProductRequest;
+use App\Http\Requests\Backend\Products\DeleteProductRequest;
+use App\Http\Requests\Backend\Products\EditProductRequest;
+use App\Http\Requests\Backend\Products\ManageProductRequest;
+use App\Http\Requests\Backend\Products\StoreProductRequest;
+use App\Http\Requests\Backend\Products\UpdateProductRequest;
 use App\Http\Responses\Backend\Products\CreateResponse;
 use App\Http\Responses\Backend\Products\EditResponse;
+use App\Http\Responses\Backend\Products\IndexResponse;
+use App\Http\Responses\RedirectResponse;
+use App\Models\ProductCategories\ProductCategory;
+use App\Models\Products\Product;
 use App\Repositories\Backend\Products\ProductRepository;
-use App\Http\Requests\Backend\Products\ManageProductRequest;
-use App\Http\Requests\Backend\Products\CreateProductRequest;
-use App\Http\Requests\Backend\Products\StoreProductRequest;
-use App\Http\Requests\Backend\Products\EditProductRequest;
-use App\Http\Requests\Backend\Products\UpdateProductRequest;
-use App\Http\Requests\Backend\Products\DeleteProductRequest;
 
 /**
  * ProductsController

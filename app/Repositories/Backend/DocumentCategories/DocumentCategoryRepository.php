@@ -5,12 +5,10 @@ namespace App\Repositories\Backend\DocumentCategories;
 use App\Events\Backend\DocumentCategories\DocumentCategoryCreated;
 use App\Events\Backend\DocumentCategories\DocumentCategoryDeleted;
 use App\Events\Backend\DocumentCategories\DocumentCategoryUpdated;
-use DB;
-use Carbon\Carbon;
-use App\Models\DocumentCategories\DocumentCategory;
 use App\Exceptions\GeneralException;
+use App\Models\DocumentCategories\DocumentCategory;
 use App\Repositories\BaseRepository;
-use Illuminate\Database\Eloquent\Model;
+use DB;
 use Illuminate\Support\Str;
 
 /**

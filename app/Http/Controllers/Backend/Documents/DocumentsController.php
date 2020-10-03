@@ -2,22 +2,20 @@
 
 namespace App\Http\Controllers\Backend\Documents;
 
-use App\Http\Responses\Backend\Documents\IndexResponse;
-use App\Models\DocumentCategories\DocumentCategory;
-use App\Models\Documents\Document;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Responses\RedirectResponse;
-use App\Http\Responses\ViewResponse;
+use App\Http\Requests\Backend\Documents\CreateDocumentRequest;
+use App\Http\Requests\Backend\Documents\DeleteDocumentRequest;
+use App\Http\Requests\Backend\Documents\EditDocumentRequest;
+use App\Http\Requests\Backend\Documents\ManageDocumentRequest;
+use App\Http\Requests\Backend\Documents\StoreDocumentRequest;
+use App\Http\Requests\Backend\Documents\UpdateDocumentRequest;
 use App\Http\Responses\Backend\Documents\CreateResponse;
 use App\Http\Responses\Backend\Documents\EditResponse;
+use App\Http\Responses\Backend\Documents\IndexResponse;
+use App\Http\Responses\RedirectResponse;
+use App\Models\DocumentCategories\DocumentCategory;
+use App\Models\Documents\Document;
 use App\Repositories\Backend\Documents\DocumentRepository;
-use App\Http\Requests\Backend\Documents\ManageDocumentRequest;
-use App\Http\Requests\Backend\Documents\CreateDocumentRequest;
-use App\Http\Requests\Backend\Documents\StoreDocumentRequest;
-use App\Http\Requests\Backend\Documents\EditDocumentRequest;
-use App\Http\Requests\Backend\Documents\UpdateDocumentRequest;
-use App\Http\Requests\Backend\Documents\DeleteDocumentRequest;
 
 /**
  * DocumentsController

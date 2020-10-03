@@ -5,7 +5,6 @@ namespace App\Repositories\Backend\Menu;
 use App\Exceptions\GeneralException;
 use App\Models\Menu\Menu;
 use App\Repositories\BaseRepository;
-use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class MenuRepository.

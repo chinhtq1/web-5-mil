@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Backend\ProductCategories;
 
-use Carbon\Carbon;
 use App\Http\Controllers\Controller;
-use Yajra\DataTables\Facades\DataTables;
-use App\Repositories\Backend\ProductCategories\ProductCategoryRepository;
 use App\Http\Requests\Backend\ProductCategories\ManageProductCategoryRequest;
+use App\Repositories\Backend\ProductCategories\ProductCategoryRepository;
+use Carbon\Carbon;
+use Yajra\DataTables\Facades\DataTables;
 
 /**
  * Class ProductCategoriesTableController.

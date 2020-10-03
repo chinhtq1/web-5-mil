@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use App\Listeners\Backend\ProductCategories\ProductCategoryEventListener;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
 /**

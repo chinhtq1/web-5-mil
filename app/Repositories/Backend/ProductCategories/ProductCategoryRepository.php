@@ -2,15 +2,13 @@
 
 namespace App\Repositories\Backend\ProductCategories;
 
-use App\Events\Backend\BlogCategories\BlogCategoryDeleted;
-use App\Events\Backend\BlogCategories\BlogCategoryUpdated;
 use App\Events\Backend\ProductCategories\ProductCategoryCreated;
 use App\Events\Backend\ProductCategories\ProductCategoryDeleted;
 use App\Events\Backend\ProductCategories\ProductCategoryUpdated;
-use DB;
-use App\Models\ProductCategories\ProductCategory;
 use App\Exceptions\GeneralException;
+use App\Models\ProductCategories\ProductCategory;
 use App\Repositories\BaseRepository;
+use DB;
 use Illuminate\Support\Str;
 
 /**

@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers\Backend\ProductCategories;
 
-use App\Models\ProductCategories\ProductCategory;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Backend\ProductCategories\CreateProductCategoryRequest;
+use App\Http\Requests\Backend\ProductCategories\DeleteProductCategoryRequest;
+use App\Http\Requests\Backend\ProductCategories\EditProductCategoryRequest;
+use App\Http\Requests\Backend\ProductCategories\ManageProductCategoryRequest;
+use App\Http\Requests\Backend\ProductCategories\StoreProductCategoryRequest;
+use App\Http\Requests\Backend\ProductCategories\UpdateProductCategoryRequest;
+use App\Http\Responses\Backend\ProductCategories\EditResponse;
 use App\Http\Responses\RedirectResponse;
 use App\Http\Responses\ViewResponse;
-use App\Http\Responses\Backend\ProductCategories\EditResponse;
+use App\Models\ProductCategories\ProductCategory;
 use App\Repositories\Backend\ProductCategories\ProductCategoryRepository;
-use App\Http\Requests\Backend\ProductCategories\ManageProductCategoryRequest;
-use App\Http\Requests\Backend\ProductCategories\CreateProductCategoryRequest;
-use App\Http\Requests\Backend\ProductCategories\StoreProductCategoryRequest;
-use App\Http\Requests\Backend\ProductCategories\EditProductCategoryRequest;
-use App\Http\Requests\Backend\ProductCategories\UpdateProductCategoryRequest;
-use App\Http\Requests\Backend\ProductCategories\DeleteProductCategoryRequest;
 
 /**
  * ProductCategoriesController

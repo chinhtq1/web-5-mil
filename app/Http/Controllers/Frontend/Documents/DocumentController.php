@@ -6,8 +6,6 @@ namespace App\Http\Controllers\Frontend\Documents;
 use App\Http\Controllers\Frontend\BaseController;
 use App\Repositories\Backend\DocumentCategories\DocumentCategoryRepository;
 use App\Repositories\Backend\Documents\DocumentRepository;
-use App\Repositories\Backend\ProductCategories\ProductCategoryRepository;
-use App\Repositories\Backend\Products\ProductRepository;
 
 class DocumentController extends BaseController
 {

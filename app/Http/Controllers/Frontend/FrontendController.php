@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Frontend\BaseController;
 use App\Models\Settings\Setting;
 use App\Repositories\Backend\Blogs\BlogsRepository;
 use App\Repositories\Frontend\Pages\PagesRepository;

@@ -3,7 +3,6 @@
 namespace App\Models\BlogCategories\Traits\Relationship;
 
 use App\Models\Access\User\User;
-use App\Models\BlogCategories\BlogCategory;
 use App\Models\Blogs\Blog;
 
 /**

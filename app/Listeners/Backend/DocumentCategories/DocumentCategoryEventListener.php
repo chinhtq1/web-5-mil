@@ -2,10 +2,6 @@
 
 namespace App\Listeners\Backend\DocumentCategories;
 
-use App\Events\Backend\DocumentCategories\DocumentCategoryCreated;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
-
 class DocumentCategoryEventListener
 {
     private $history_slug = 'DocumentCategory';
