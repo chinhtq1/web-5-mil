@@ -15,11 +15,12 @@ class CreateResponse implements Responsable
         $this->status = $status;
         $this->documentCategories = $documentCategories;
     }
+
     public function toResponse($request)
     {
         return view('backend.documents.create')->with([
             'documentCategories' => $this->documentCategories,
-            'status'  => $this->status,
+            'status' => $this->status,
         ]);
     }
 }

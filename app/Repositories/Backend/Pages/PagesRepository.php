@@ -26,24 +26,24 @@ class PagesRepository extends BaseRepository
     public function getForDataTable()
     {
         return $this->query()
-            ->leftjoin(config('access.users_table'), config('access.users_table').'.id', '=', config('module.pages.table').'.created_by')
+            ->leftjoin(config('access.users_table'), config('access.users_table') . '.id', '=', config('module.pages.table') . '.created_by')
             ->select([
-                config('module.pages.table').'.id',
-                config('module.pages.table').'.title',
-                config('module.pages.table').'.page_slug',
-                config('module.pages.table').'.status',
-                config('module.pages.table').'.created_at',
-                config('module.pages.table').'.updated_at',
-                config('access.users_table').'.first_name as created_by',
+                config('module.pages.table') . '.id',
+                config('module.pages.table') . '.title',
+                config('module.pages.table') . '.page_slug',
+                config('module.pages.table') . '.status',
+                config('module.pages.table') . '.created_at',
+                config('module.pages.table') . '.updated_at',
+                config('access.users_table') . '.first_name as created_by',
             ]);
     }
 
     /**
      * @param array $input
      *
+     * @return bool
      * @throws \App\Exceptions\GeneralException
      *
-     * @return bool
      */
     public function create(array $input)
     {
@@ -67,11 +67,11 @@ class PagesRepository extends BaseRepository
 
     /**
      * @param \App\Models\Page\Page $page
-     * @param array                 $input
-     *
-     * @throws \App\Exceptions\GeneralException
+     * @param array $input
      *
      * @return bool
+     * @throws \App\Exceptions\GeneralException
+     *
      */
     public function update($page, array $input)
     {
@@ -96,9 +96,9 @@ class PagesRepository extends BaseRepository
     /**
      * @param \App\Models\Page\Page $page
      *
+     * @return bool
      * @throws \App\Exceptions\GeneralException
      *
-     * @return bool
      */
     public function delete($page)
     {

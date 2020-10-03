@@ -80,7 +80,7 @@ class UserController extends Controller
     }
 
     /**
-     * @param \App\Models\Access\User\User                           $user
+     * @param \App\Models\Access\User\User $user
      * @param \App\Http\Requests\Backend\Access\User\ShowUserRequest $request
      *
      * @return \App\Http\Responses\Backend\Access\User\ShowResponse
@@ -91,7 +91,7 @@ class UserController extends Controller
     }
 
     /**
-     * @param \App\Models\Access\User\User                           $user
+     * @param \App\Models\Access\User\User $user
      * @param \App\Http\Requests\Backend\Access\User\EditUserRequest $request
      *
      * @return \App\Http\Responses\Backend\Access\User\EditResponse
@@ -105,7 +105,7 @@ class UserController extends Controller
     }
 
     /**
-     * @param \App\Models\Access\User\User                             $user
+     * @param \App\Models\Access\User\User $user
      * @param \App\Http\Requests\Backend\Access\User\UpdateUserRequest $request
      *
      * @return \App\Http\Responses\RedirectResponse
@@ -118,7 +118,7 @@ class UserController extends Controller
     }
 
     /**
-     * @param \App\Models\Access\User\User                             $user
+     * @param \App\Models\Access\User\User $user
      * @param \App\Http\Requests\Backend\Access\User\DeleteUserRequest $request
      *
      * @return \App\Http\Responses\RedirectResponse

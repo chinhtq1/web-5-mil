@@ -26,23 +26,23 @@ class BlogTagsRepository extends BaseRepository
     public function getForDataTable()
     {
         return $this->query()
-            ->leftjoin(config('access.users_table'), config('access.users_table').'.id', '=', config('module.blog_tags.table').'.created_by')
+            ->leftjoin(config('access.users_table'), config('access.users_table') . '.id', '=', config('module.blog_tags.table') . '.created_by')
             ->select([
-                config('module.blog_tags.table').'.id',
-                config('module.blog_tags.table').'.name',
-                config('module.blog_tags.table').'.status',
-                config('module.blog_tags.table').'.created_by',
-                config('module.blog_tags.table').'.created_at',
-                config('access.users_table').'.first_name as user_name',
+                config('module.blog_tags.table') . '.id',
+                config('module.blog_tags.table') . '.name',
+                config('module.blog_tags.table') . '.status',
+                config('module.blog_tags.table') . '.created_by',
+                config('module.blog_tags.table') . '.created_at',
+                config('access.users_table') . '.first_name as user_name',
             ]);
     }
 
     /**
      * @param array $input
      *
+     * @return bool
      * @throws \App\Exceptions\GeneralException
      *
-     * @return bool
      */
     public function create(array $input)
     {
@@ -97,9 +97,9 @@ class BlogTagsRepository extends BaseRepository
     /**
      * @param \App\Models\BlogTags\BlogTag $blogtag
      *
+     * @return bool
      * @throws \App\Exceptions\GeneralException
      *
-     * @return bool
      */
     public function delete(BlogTag $blogtag)
     {

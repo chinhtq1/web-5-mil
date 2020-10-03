@@ -59,7 +59,7 @@ class APIController extends Controller
      * respond with pagincation.
      *
      * @param Paginator $items
-     * @param array     $data
+     * @param array $data
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -67,10 +67,10 @@ class APIController extends Controller
     {
         $data = array_merge($data, [
             'paginator' => [
-                'total_count'  => $items->total(),
-                'total_pages'  => ceil($items->total() / $items->perPage()),
+                'total_count' => $items->total(),
+                'total_pages' => ceil($items->total() / $items->perPage()),
                 'current_page' => $items->currentPage(),
-                'limit'        => $items->perPage(),
+                'limit' => $items->perPage(),
             ],
         ]);
 
@@ -114,10 +114,10 @@ class APIController extends Controller
     {
         return $this->respond([
             'error' => [
-                'message'     => $message,
+                'message' => $message,
                 'status_code' => $this->getStatusCode(),
             ],
-            ]);
+        ]);
     }
 
     /**

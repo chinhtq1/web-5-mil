@@ -63,7 +63,7 @@ class PagesController extends Controller
     }
 
     /**
-     * @param \App\Models\Page\Page                            $page
+     * @param \App\Models\Page\Page $page
      * @param \App\Http\Requests\Backend\Pages\EditPageRequest $request
      *
      * @return \App\Http\Responses\Backend\Page\EditResponse
@@ -74,7 +74,7 @@ class PagesController extends Controller
     }
 
     /**
-     * @param \App\Models\Page\Page                              $page
+     * @param \App\Models\Page\Page $page
      * @param \App\Http\Requests\Backend\Pages\UpdatePageRequest $request
      *
      * @return \App\Http\Responses\RedirectResponse
@@ -87,7 +87,7 @@ class PagesController extends Controller
     }
 
     /**
-     * @param \App\Models\Page\Page                              $page
+     * @param \App\Models\Page\Page $page
      * @param \App\Http\Requests\Backend\Pages\DeletePageRequest $request
      *
      * @return \App\Http\Responses\RedirectResponse

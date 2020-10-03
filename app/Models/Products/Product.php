@@ -15,9 +15,9 @@ class Product extends BaseModel
     use ModelTrait,
         SoftDeletes,
         ProductAttribute,
-    	ProductRelationship {
-            // ProductAttribute::getEditButtonAttribute insteadof ModelTrait;
-        }
+        ProductRelationship {
+        // ProductAttribute::getEditButtonAttribute insteadof ModelTrait;
+    }
 
     /**
      * Mass Assignable fields of model
@@ -50,6 +50,7 @@ class Product extends BaseModel
     ];
 
     protected $table;
+
     /**
      * Constructor of Model
      * @param array $attributes

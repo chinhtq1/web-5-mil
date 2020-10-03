@@ -14,7 +14,7 @@ class DocumentCategoryEventListener
     {
         history()->withType($this->history_slug)
             ->withEntity($event->documentcategory->id)
-            ->withText('trans("history.backend.documentcategories.created") <strong>'.$event->documentcategory->name.'</strong>')
+            ->withText('trans("history.backend.documentcategories.created") <strong>' . $event->documentcategory->name . '</strong>')
             ->withIcon('plus')
             ->withClass('bg-green')
             ->log();
@@ -27,7 +27,7 @@ class DocumentCategoryEventListener
     {
         history()->withType($this->history_slug)
             ->withEntity($event->documentcategory->id)
-            ->withText('trans("history.backend.documentcategories.updated") <strong>'.$event->documentcategory->name.'</strong>')
+            ->withText('trans("history.backend.documentcategories.updated") <strong>' . $event->documentcategory->name . '</strong>')
             ->withIcon('save')
             ->withClass('bg-aqua')
             ->log();
@@ -40,7 +40,7 @@ class DocumentCategoryEventListener
     {
         history()->withType($this->history_slug)
             ->withEntity($event->documentcategory->id)
-            ->withText('trans("history.backend.documentcategories.deleted") <strong>'.$event->documentcategory->name.'</strong>')
+            ->withText('trans("history.backend.documentcategories.deleted") <strong>' . $event->documentcategory->name . '</strong>')
             ->withIcon('trash')
             ->withClass('bg-maroon')
             ->log();

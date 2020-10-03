@@ -15,7 +15,7 @@ class DocumentsTableController extends Controller
 {
 
     protected $documents;
-    
+
     public function __construct(DocumentRepository $documents)
     {
         $this->documents = $documents;

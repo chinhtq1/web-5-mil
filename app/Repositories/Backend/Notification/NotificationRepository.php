@@ -54,9 +54,9 @@ class NotificationRepository extends BaseRepository
      * @param  $id
      * @param  $input
      *
+     * @return bool
      * @throws GeneralException
      *
-     * @return bool
      */
     public function update($id, $request)
     {
@@ -78,9 +78,9 @@ class NotificationRepository extends BaseRepository
      * @param  $id
      * @param  $is_active
      *
+     * @return bool
      * @throws GeneralException
      *
-     * @return bool
      */
     public function mark($id, $status)
     {

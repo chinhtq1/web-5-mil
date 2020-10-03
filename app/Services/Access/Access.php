@@ -47,7 +47,7 @@ class Access
 
     /**
      * @param Authenticatable $user
-     * @param bool            $remember
+     * @param bool $remember
      */
     public function login(Authenticatable $user, $remember = false)
     {

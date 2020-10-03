@@ -27,21 +27,21 @@ class PermissionRepository extends BaseRepository
     {
         return $this->query()
             ->select([
-                config('access.permissions_table').'.id',
-                config('access.permissions_table').'.name',
-                config('access.permissions_table').'.display_name',
-                config('access.permissions_table').'.sort',
-                config('access.permissions_table').'.created_at',
-                config('access.permissions_table').'.updated_at',
+                config('access.permissions_table') . '.id',
+                config('access.permissions_table') . '.name',
+                config('access.permissions_table') . '.display_name',
+                config('access.permissions_table') . '.sort',
+                config('access.permissions_table') . '.created_at',
+                config('access.permissions_table') . '.updated_at',
             ]);
     }
 
     /**
      * @param array $input
      *
+     * @return bool
      * @throws GeneralException
      *
-     * @return bool
      */
     public function create(array $input)
     {
@@ -54,7 +54,7 @@ class PermissionRepository extends BaseRepository
             $permission = new $permission();
             $permission->name = $input['name'];
             $permission->display_name = $input['display_name'];
-            $permission->sort = isset($input['sort']) && strlen($input['sort']) > 0 && is_numeric($input['sort']) ? (int) $input['sort'] : 0;
+            $permission->sort = isset($input['sort']) && strlen($input['sort']) > 0 && is_numeric($input['sort']) ? (int)$input['sort'] : 0;
             $permission->status = 1;
             $permission->created_by = access()->user()->id;
 
@@ -72,9 +72,9 @@ class PermissionRepository extends BaseRepository
      * @param Model $permission
      * @param  $input
      *
+     * @return bool
      * @throws GeneralException
      *
-     * @return bool
      */
     public function update($permission, array $input)
     {
@@ -84,7 +84,7 @@ class PermissionRepository extends BaseRepository
 
         $permission->name = $input['name'];
         $permission->display_name = $input['display_name'];
-        $permission->sort = isset($input['sort']) && strlen($input['sort']) > 0 && is_numeric($input['sort']) ? (int) $input['sort'] : 0;
+        $permission->sort = isset($input['sort']) && strlen($input['sort']) > 0 && is_numeric($input['sort']) ? (int)$input['sort'] : 0;
         $permission->status = 1;
         $permission->updated_by = access()->user()->id;
 
@@ -102,9 +102,9 @@ class PermissionRepository extends BaseRepository
     /**
      * @param Model $permission
      *
+     * @return bool
      * @throws GeneralException
      *
-     * @return bool
      */
     public function delete($permission)
     {

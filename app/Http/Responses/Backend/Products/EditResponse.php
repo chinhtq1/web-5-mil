@@ -24,10 +24,10 @@ class EditResponse implements Responsable
     {
         $selectedCategories = $this->products->categories->pluck('id')->toArray();
         return view('backend.products.edit')->with([
-            'product'               => $this->products,
-            'productCategories'     => $this->productCategories,
+            'product' => $this->products,
+            'productCategories' => $this->productCategories,
             'selectedCategories' => $selectedCategories,
-            'status'             => $this->status,
-            ]);
+            'status' => $this->status,
+        ]);
     }
 }

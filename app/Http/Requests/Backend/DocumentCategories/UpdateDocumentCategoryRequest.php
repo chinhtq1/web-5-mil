@@ -20,16 +20,16 @@ class UpdateDocumentCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:191|unique:documentcategories,name,'.$this->segment(3),
+            'name' => 'required|max:191|unique:documentcategories,name,' . $this->segment(3),
         ];
     }
 
     public function messages()
     {
         return [
-            'name.unique'   => 'Document category name already exists, please enter a different name.',
+            'name.unique' => 'Document category name already exists, please enter a different name.',
             'name.required' => 'Document category name must required',
-            'name.max'      => 'Document category may not be greater than 191 characters.',
+            'name.max' => 'Document category may not be greater than 191 characters.',
         ];
     }
 }

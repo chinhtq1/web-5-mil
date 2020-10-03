@@ -24,7 +24,7 @@ class ProductsController extends Controller
 {
     protected $status = [
         'Published' => 'Published',
-        'InActive'  => 'InActive',
+        'InActive' => 'InActive',
     ];
     /**
      * variable to store the repository object
@@ -70,7 +70,7 @@ class ProductsController extends Controller
         //Input received from the request
         $input = $request->except(['_token']);
         //Update the model using repository update method
-        $this->product->update( $product, $input );
+        $this->product->update($product, $input);
         //return with successfull message
         return new RedirectResponse(route('admin.products.index'), ['flash_success' => trans('alerts.backend.products.updated')]);
     }
@@ -82,5 +82,5 @@ class ProductsController extends Controller
         //returning with successfull message
         return new RedirectResponse(route('admin.products.index'), ['flash_success' => trans('alerts.backend.products.deleted')]);
     }
-    
+
 }

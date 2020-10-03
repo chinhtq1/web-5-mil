@@ -27,7 +27,7 @@ class BlogCategoriesController extends APIController
      *
      * @param Request $request
      *
-     *@return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Http\JsonResponse
      */
     public function index(Request $request)
     {
@@ -45,7 +45,7 @@ class BlogCategoriesController extends APIController
      *
      * @param BlogCategory $blog_category
      *
-     *@return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Http\JsonResponse
      */
     public function show(BlogCategory $blog_category)
     {
@@ -57,7 +57,7 @@ class BlogCategoriesController extends APIController
      *
      * @param Request $request
      *
-     *@return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Http\JsonResponse
      */
     public function store(Request $request)
     {
@@ -73,7 +73,7 @@ class BlogCategoriesController extends APIController
 
     /**
      * @param BlogCategory $blog_category
-     * @param Request      $request
+     * @param Request $request
      *
      * @return mixed
      */
@@ -94,7 +94,7 @@ class BlogCategoriesController extends APIController
 
     /**
      * @param BlogCategory $blog_category
-     * @param Request      $request
+     * @param Request $request
      *
      * @return mixed
      */

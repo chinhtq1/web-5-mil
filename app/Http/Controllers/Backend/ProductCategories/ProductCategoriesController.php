@@ -62,5 +62,5 @@ class ProductCategoriesController extends Controller
         //returning with successfull message
         return new RedirectResponse(route('admin.productcategories.index'), ['flash_success' => trans('alerts.backend.productcategories.deleted')]);
     }
-    
+
 }

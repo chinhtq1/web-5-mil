@@ -21,7 +21,7 @@ class ProductsTableController extends Controller
 
     /**
      * contructor to initialize repository object
-     * @param ProductRepository $product;
+     * @param ProductRepository $product ;
      */
     public function __construct(ProductRepository $product)
     {

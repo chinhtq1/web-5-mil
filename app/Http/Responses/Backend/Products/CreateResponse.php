@@ -20,7 +20,7 @@ class CreateResponse implements Responsable
     {
         return view('backend.products.create')->with([
             'productCategories' => $this->productCategories,
-            'status'         => $this->status,
+            'status' => $this->status,
         ]);
     }
 }

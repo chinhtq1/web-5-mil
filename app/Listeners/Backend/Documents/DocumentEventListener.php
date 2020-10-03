@@ -3,7 +3,6 @@
 namespace App\Listeners\Backend\Documents;
 
 
-
 class DocumentEventListener
 {
     private $history_slug = 'Document';
@@ -12,7 +11,7 @@ class DocumentEventListener
     {
         history()->withType($this->history_slug)
             ->withEntity($event->document->id)
-            ->withText('trans("history.backend.documents.created") <strong>'.$event->document->name.'</strong>')
+            ->withText('trans("history.backend.documents.created") <strong>' . $event->document->name . '</strong>')
             ->withIcon('plus')
             ->withClass('bg-green')
             ->log();
@@ -25,7 +24,7 @@ class DocumentEventListener
     {
         history()->withType($this->history_slug)
             ->withEntity($event->document->id)
-            ->withText('trans("history.backend.documents.updated") <strong>'.$event->document->name.'</strong>')
+            ->withText('trans("history.backend.documents.updated") <strong>' . $event->document->name . '</strong>')
             ->withIcon('save')
             ->withClass('bg-aqua')
             ->log();
@@ -38,7 +37,7 @@ class DocumentEventListener
     {
         history()->withType($this->history_slug)
             ->withEntity($event->document->id)
-            ->withText('trans("history.backend.documents.deleted") <strong>'.$event->document->name.'</strong>')
+            ->withText('trans("history.backend.documents.deleted") <strong>' . $event->document->name . '</strong>')
             ->withIcon('trash')
             ->withClass('bg-maroon')
             ->log();

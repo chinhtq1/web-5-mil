@@ -67,15 +67,15 @@ class NotificationIos extends Notification
 
         foreach ($deviceId as $singleId) {
             // Build the binary notification
-            $msg = chr(0).pack('n', 32).pack('H*', $singleId).pack('n', strlen($payload)).$payload;
+            $msg = chr(0) . pack('n', 32) . pack('H*', $singleId) . pack('n', strlen($payload)) . $payload;
             // Send it to the server
             $result = fwrite($fp, $msg, strlen($msg));
         }
         //echo "<br>-------<br>";
         if (!$result) {
-            return 'Message not delivered'.PHP_EOL;
+            return 'Message not delivered' . PHP_EOL;
         } else {
-            return 'Message successfully delivered'.PHP_EOL;
+            return 'Message successfully delivered' . PHP_EOL;
         }
 
         // Close the connection to the server
@@ -103,7 +103,7 @@ class NotificationIos extends Notification
 
     public function setPemFile($pemFile = 'apns_baseproject_dev.pem')
     {
-        $newPemFilePath = dirname(__FILE__).'/'.$pemFile;
+        $newPemFilePath = dirname(__FILE__) . '/' . $pemFile;
         // echo $_SERVER['DOCUMENT_ROOT'].'/app/Http/Controllers/Utilities/'.$pemFile;exit;
         //echo dirname(__FILE__); exit;
         // echo file_get_contents(dirname(__FILE__).'/'.$pemFile); exit;
@@ -117,7 +117,7 @@ class NotificationIos extends Notification
     {
         return [
             self::ERROR_PEM_NOTACCESSIBLE => 'Pem File Not Found',
-            self::ERROR_PASSPHRASE_EMPTY  => 'Pass Phrase empty',
+            self::ERROR_PASSPHRASE_EMPTY => 'Pass Phrase empty',
             self::ERROR_CONNECTION_FAILED => 'Connect Failed',
         ];
     }

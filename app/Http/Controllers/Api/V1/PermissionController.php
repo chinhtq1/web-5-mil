@@ -74,7 +74,7 @@ class PermissionController extends APIController
 
     /**
      * @param Permission $permission
-     * @param Request    $request
+     * @param Request $request
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -96,7 +96,7 @@ class PermissionController extends APIController
     /**
      * Delete permission.
      *
-     * @param Role              $role
+     * @param Role $role
      * @param DeleteRoleRequest $request
      *
      * @return \Illuminate\Http\JsonResponse
@@ -106,7 +106,7 @@ class PermissionController extends APIController
         $this->repository->delete($permission);
 
         return $this->respond([
-            'data'    => $permission->id,
+            'data' => $permission->id,
             'message' => trans('alerts.backend.permissions.deleted'),
         ]);
     }
@@ -115,14 +115,14 @@ class PermissionController extends APIController
      * validateUser Permission Requests.
      *
      * @param Request $request
-     * @param int     $id
+     * @param int $id
      *
      * @return Validator object
      */
     public function validatePermission(Request $request, $id = 0)
     {
         $validation = Validator::make($request->all(), [
-            'name'         => 'required|max:191|unique:permissions,name,'.$id,
+            'name' => 'required|max:191|unique:permissions,name,' . $id,
             'display_name' => 'required|max:191',
         ]);
 

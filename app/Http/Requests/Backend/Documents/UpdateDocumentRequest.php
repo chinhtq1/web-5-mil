@@ -24,8 +24,8 @@ class UpdateDocumentRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'              => 'required|max:191',
-            'categories'        => 'required',
+            'name' => 'required|max:191',
+            'categories' => 'required',
         ];
     }
 
@@ -33,7 +33,7 @@ class UpdateDocumentRequest extends FormRequest
     {
         return [
             'name.required' => 'Please insert Document Title',
-            'name.max'      => 'Document Title may not be greater than 191 characters.',
+            'name.max' => 'Document Title may not be greater than 191 characters.',
         ];
     }
 }

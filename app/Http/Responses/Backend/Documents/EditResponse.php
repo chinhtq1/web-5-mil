@@ -26,9 +26,9 @@ class EditResponse implements Responsable
 
         return view('backend.documents.edit')->with([
             'document' => $this->document,
-            'documentCategories'     => $this->documentCategories,
+            'documentCategories' => $this->documentCategories,
             'selectedCategories' => $selectedCategories,
-            'status'             => $this->status,
+            'status' => $this->status,
         ]);
     }
 }

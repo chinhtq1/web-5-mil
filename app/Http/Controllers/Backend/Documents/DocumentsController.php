@@ -29,7 +29,7 @@ class DocumentsController extends Controller
 
     protected $status = [
         'Published' => 'Published',
-        'InActive'  => 'InActive',
+        'InActive' => 'InActive',
     ];
 
     public function __construct(DocumentRepository $document)
@@ -69,7 +69,7 @@ class DocumentsController extends Controller
     public function update(UpdateDocumentRequest $request, Document $document)
     {
         $input = $request->except(['_token']);
-        $this->document->update( $document, $input );
+        $this->document->update($document, $input);
         return new RedirectResponse(route('admin.documents.index'), ['flash_success' => trans('alerts.backend.documents.updated')]);
     }
 
@@ -78,5 +78,5 @@ class DocumentsController extends Controller
         $this->document->delete($document);
         return new RedirectResponse(route('admin.documents.index'), ['flash_success' => trans('alerts.backend.documents.deleted')]);
     }
-    
+
 }

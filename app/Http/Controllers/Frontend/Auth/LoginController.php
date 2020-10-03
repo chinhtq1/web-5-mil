@@ -62,9 +62,9 @@ class LoginController extends Controller
      * @param Request $request
      * @param $user
      *
+     * @return \Illuminate\Http\RedirectResponse
      * @throws GeneralException
      *
-     * @return \Illuminate\Http\RedirectResponse
      */
     protected function authenticated(Request $request, $user)
     {
@@ -151,7 +151,7 @@ class LoginController extends Controller
             app()->make(Auth::class)->flushTempSession();
 
             //Re-login admin
-            access()->loginUsingId((int) $admin_id);
+            access()->loginUsingId((int)$admin_id);
 
             //Redirect to backend user page
             return redirect()->route('admin.access.user.index');

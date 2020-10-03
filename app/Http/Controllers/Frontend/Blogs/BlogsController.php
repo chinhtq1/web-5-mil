@@ -2,6 +2,7 @@
 
 
 namespace App\Http\Controllers\Frontend\Blogs;
+
 use App\Http\Controllers\Frontend\BaseController;
 use App\Repositories\Backend\BlogCategories\BlogCategoriesRepository;
 use App\Repositories\Backend\Blogs\BlogsRepository;
@@ -19,15 +20,17 @@ class BlogsController extends BaseController
     public function __construct(
         BlogCategoriesRepository $blogCategoryRepo,
         BlogsRepository $blosRepository
-    ){
+    )
+    {
         parent::__construct();
         $this->blogCategoryRepo = $blogCategoryRepo;
         $this->blogRepo = $blosRepository;
         $this->categories = $this->blogCategoryRepo->query()->whereStatus(1)->get();
     }
 
-    public function index() {
-        $blogs = $this->blogRepo->getPaginated(6, $this->status,'publish_datetime', 'asc');
+    public function index()
+    {
+        $blogs = $this->blogRepo->getPaginated(6, $this->status, 'publish_datetime', 'asc');
         return view('frontend.blogs.index')->with([
             'blogs' => $blogs,
             'blogMenus' => $this->blogMenus,
@@ -40,7 +43,7 @@ class BlogsController extends BaseController
     public function listByCategory($slug)
     {
         $category = $this->blogCategoryRepo->getBySlug($slug);
-        $blogs = $this->blogRepo->getByCategory($category, 6,'publish_datetime', 'asc' );
+        $blogs = $this->blogRepo->getByCategory($category, 6, 'publish_datetime', 'asc');
         return view('frontend.blogs.index')->with([
             'blogs' => $blogs,
             'blogMenus' => $this->blogMenus,
@@ -51,7 +54,8 @@ class BlogsController extends BaseController
         ]);
     }
 
-    public function detail($slug) {
+    public function detail($slug)
+    {
         $blog = $this->blogRepo->getBySlug($slug);
         $relatedBlogs = $this->blogRepo->getRandomBlogList(3)->get();
         return view('frontend.blogs.single-blog')->with([

@@ -106,13 +106,13 @@ if (!function_exists('includeRouteFiles')) {
         $directory_list = [$directory];
 
         while (false !== ($filename = readdir($handle))) {
-            if ($filename != '.' && $filename != '..' && is_dir($directory.$filename)) {
-                array_push($directory_list, $directory.$filename.'/');
+            if ($filename != '.' && $filename != '..' && is_dir($directory . $filename)) {
+                array_push($directory_list, $directory . $filename . '/');
             }
         }
 
         foreach ($directory_list as $directory) {
-            foreach (glob($directory.'*.php') as $filename) {
+            foreach (glob($directory . '*.php') as $filename) {
                 require $filename;
             }
         }
@@ -137,7 +137,7 @@ if (!function_exists('getRtlCss')) {
         array_pop($path);
         $filename = rtrim($filename, '.css');
 
-        return implode('/', $path).'/'.$filename.'.rtl.css';
+        return implode('/', $path) . '/' . $filename . '.rtl.css';
     }
 }
 
@@ -169,9 +169,9 @@ if (!function_exists('createNotification')) {
         $notification = new Notification();
 
         return $notification->insert([
-            'message'    => $message,
-            'user_id'    => $userId,
-            'type'       => 1,
+            'message' => $message,
+            'user_id' => $userId,
+            'type' => 1,
             'created_at' => Carbon::now(),
         ]);
     }
@@ -309,13 +309,13 @@ if (!function_exists('truncateStr')) {
     /**
      * @return bool
      */
-    function truncateStr($str, $limit = 64 )
+    function truncateStr($str, $limit = 64)
     {
         if ($str == null || $limit == null) return $str;
         if (strlen($str) > $limit) {
             return \Illuminate\Support\Str::limit($str, $limit, ' ...');
         } else {
-            return str_pad($str, $limit,"//");
+            return str_pad($str, $limit, "//");
         }
     }
 }

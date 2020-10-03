@@ -698,7 +698,8 @@ var Backend = {}; // common variable used in all the files of the backend
                 Backend.tinyMCE.init(locale);
             },
 
-            addHandlers: function () {}
+            addHandlers: function () {
+            }
         },
 
         /**
@@ -706,9 +707,7 @@ var Backend = {}; // common variable used in all the files of the backend
          *
          */
         Profile: {
-            selectors: {
-
-            },
+            selectors: {},
             init: function () {
                 this.setSelectors();
                 this.addHandlers();

@@ -42,7 +42,7 @@ class Socialite
         }
 
         for ($i = 0; $i < count($socialite_enable); $i++) {
-            $socialite_links .= ($socialite_links != '' ? '&nbsp;|&nbsp;' : '').$socialite_enable[$i];
+            $socialite_links .= ($socialite_links != '' ? '&nbsp;|&nbsp;' : '') . $socialite_enable[$i];
         }
 
         return $socialite_links;

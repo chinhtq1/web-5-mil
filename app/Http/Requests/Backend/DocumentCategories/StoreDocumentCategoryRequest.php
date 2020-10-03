@@ -32,7 +32,7 @@ class StoreDocumentCategoryRequest extends FormRequest
     {
         return [
             'name.required' => 'Document category name must required',
-            'name.max'      => 'Document category may not be greater than 191 characters.',
+            'name.max' => 'Document category may not be greater than 191 characters.',
         ];
     }
 }

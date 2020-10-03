@@ -20,7 +20,8 @@ trait DocumentCategoryRelationship
     /**
      * Get Blogs
      */
-    public function documents() {
+    public function documents()
+    {
         return $this->belongsToMany(
             Document::class,
             'document_map_categories',

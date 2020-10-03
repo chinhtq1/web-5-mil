@@ -50,7 +50,7 @@ class MenuController extends Controller
         $this->modules = $module;
 
         $this->types = [
-            'backend'  => 'Backend',
+            'backend' => 'Backend',
         ];
     }
 
@@ -95,7 +95,7 @@ class MenuController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\Models\Menu\Menu                           $menu
+     * @param \App\Models\Menu\Menu $menu
      * @param \App\Http\Requests\Backend\Menu\EditMenuRequest $request
      *
      * @return \App\Http\Responses\Backend\Menu\EditResponse
@@ -108,7 +108,7 @@ class MenuController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \App\Models\Menu\Menu                             $menu
+     * @param \App\Models\Menu\Menu $menu
      * @param \App\Http\Requests\Backend\Menu\UpdateMenuRequest $request
      *
      * @return \App\Http\Responses\RedirectResponse
@@ -123,7 +123,7 @@ class MenuController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Models\Menu\Menu                             $menu
+     * @param \App\Models\Menu\Menu $menu
      * @param \App\Http\Requests\Backend\Menu\DeleteMenuRequest $request
      *
      * @return \App\Http\Responses\RedirectResponse

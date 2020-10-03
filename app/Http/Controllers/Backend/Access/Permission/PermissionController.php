@@ -67,7 +67,7 @@ class PermissionController extends Controller
     }
 
     /**
-     * @param Permission            $permission
+     * @param Permission $permission
      * @param EditPermissionRequest $request
      *
      * @return \App\Http\Responses\Backend\Access\Permission\EditResponse
@@ -78,7 +78,7 @@ class PermissionController extends Controller
     }
 
     /**
-     * @param Permission              $permission
+     * @param Permission $permission
      * @param UpdatePermissionRequest $request
      *
      * @return \App\Http\Responses\RedirectResponse
@@ -91,7 +91,7 @@ class PermissionController extends Controller
     }
 
     /**
-     * @param Permission              $permission
+     * @param Permission $permission
      * @param DeletePermissionRequest $request
      *
      * @return \App\Http\Responses\RedirectResponse

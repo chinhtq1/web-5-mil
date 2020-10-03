@@ -1,12 +1,12 @@
 $(document).ready(function () {
 
-    $(".notifications-menu").on("hide.bs.dropdown", function(event){
+    $(".notifications-menu").on("hide.bs.dropdown", function (event) {
 
         $.ajax({
             type: 'GET',
             url: '/admin/notification/clearcurrentnotifications',
             dataType: "JSON",
-            success: function(data){
+            success: function (data) {
                 getNotifications();
             }
         });

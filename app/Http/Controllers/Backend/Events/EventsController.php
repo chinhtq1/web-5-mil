@@ -25,7 +25,7 @@ class EventsController extends Controller
 {
     protected $status = [
         'Published' => 'Published',
-        'InActive'  => 'InActive',
+        'InActive' => 'InActive',
     ];
 
     protected $event;
@@ -65,7 +65,7 @@ class EventsController extends Controller
     {
         $input = $request->except(['_token']);
         //Update the model using repository update method
-        $this->event->update( $event, $input );
+        $this->event->update($event, $input);
         return new RedirectResponse(route('admin.events.index'), ['flash_success' => trans('alerts.backend.events.updated')]);
     }
 
@@ -76,5 +76,5 @@ class EventsController extends Controller
         //returning with successfull message
         return new RedirectResponse(route('admin.events.index'), ['flash_success' => trans('alerts.backend.events.deleted')]);
     }
-    
+
 }

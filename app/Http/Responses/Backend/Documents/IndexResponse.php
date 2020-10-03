@@ -16,7 +16,7 @@ class IndexResponse implements Responsable
     public function toResponse($request)
     {
         return view('backend.documents.index')->with([
-            'status'=> $this->status,
+            'status' => $this->status,
         ]);
     }
 }

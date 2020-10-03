@@ -27,7 +27,7 @@ class GeneralException extends Exception
      * Constructor function.
      *
      * @param string $message
-     * @param bool   $dontHide
+     * @param bool $dontHide
      */
     public function __construct($message, $dontHide = false)
     {

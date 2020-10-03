@@ -32,14 +32,14 @@ class ProductCategoryRepository extends BaseRepository
     public function getForDataTable()
     {
         return $this->query()
-            ->leftjoin(config('access.users_table'), config('access.users_table').'.id', '=', config('module.productcategories.table').'.created_by')
+            ->leftjoin(config('access.users_table'), config('access.users_table') . '.id', '=', config('module.productcategories.table') . '.created_by')
             ->select([
-                config('module.productcategories.table').'.id',
-                config('module.productcategories.table').'.name',
-                config('module.productcategories.table').'.status',
-                config('module.productcategories.table').'.created_at',
-                config('module.productcategories.table').'.created_by',
-                config('access.users_table').'.first_name as user_name',
+                config('module.productcategories.table') . '.id',
+                config('module.productcategories.table') . '.name',
+                config('module.productcategories.table') . '.status',
+                config('module.productcategories.table') . '.created_at',
+                config('module.productcategories.table') . '.created_by',
+                config('access.users_table') . '.first_name as user_name',
             ]);
     }
 
@@ -101,7 +101,8 @@ class ProductCategoryRepository extends BaseRepository
     /**
      * Get category by slug
      */
-    public function getBySlug($slug) {
+    public function getBySlug($slug)
+    {
         if (!is_null($this->query()->whereSlug($slug)->firstOrFail())) {
             return $this->query()->whereSlug($slug)->firstOrFail();
         }

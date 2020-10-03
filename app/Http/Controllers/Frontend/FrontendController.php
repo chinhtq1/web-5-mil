@@ -27,7 +27,7 @@ class FrontendController extends BaseController
             'blogMenus' => $this->blogMenus,
             'productMenus' => $this->productMenus,
             'documentMenus' => $this->documentMenus,
-            ]);
+        ]);
     }
 
     /**

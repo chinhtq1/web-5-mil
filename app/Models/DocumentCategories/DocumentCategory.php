@@ -13,9 +13,9 @@ class DocumentCategory extends BaseModel
     use ModelTrait,
         SoftDeletes,
         DocumentCategoryAttribute,
-    	DocumentCategoryRelationship {
-            // DocumentCategoryAttribute::getEditButtonAttribute insteadof ModelTrait;
-        }
+        DocumentCategoryRelationship {
+        // DocumentCategoryAttribute::getEditButtonAttribute insteadof ModelTrait;
+    }
 
     protected $table;
 

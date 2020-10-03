@@ -13,9 +13,9 @@ class Document extends BaseModel
     use ModelTrait,
         SoftDeletes,
         DocumentAttribute,
-    	DocumentRelationship {
-            // DocumentAttribute::getEditButtonAttribute insteadof ModelTrait;
-        }
+        DocumentRelationship {
+        // DocumentAttribute::getEditButtonAttribute insteadof ModelTrait;
+    }
 
 
     protected $table;

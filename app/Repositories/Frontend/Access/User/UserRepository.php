@@ -50,9 +50,9 @@ class UserRepository extends BaseRepository
     /**
      * @param $token
      *
+     * @return mixed
      * @throws GeneralException
      *
-     * @return mixed
      */
     public function findByToken($token)
     {
@@ -62,9 +62,9 @@ class UserRepository extends BaseRepository
     /**
      * @param $token
      *
+     * @return mixed
      * @throws GeneralException
      *
-     * @return mixed
      */
     public function getEmailForPasswordToken($token)
     {
@@ -83,7 +83,7 @@ class UserRepository extends BaseRepository
      * Create User.
      *
      * @param array $data
-     * @param bool  $provider
+     * @param bool $provider
      *
      * @return static
      */
@@ -154,9 +154,9 @@ class UserRepository extends BaseRepository
      * @param $data
      * @param $provider
      *
+     * @return UserRepository|bool
      * @throws GeneralException
      *
-     * @return UserRepository|bool
      */
     public function findOrCreateSocial($data, $provider)
     {
@@ -178,7 +178,7 @@ class UserRepository extends BaseRepository
             }
 
             $user = $this->create([
-                'name'  => $data->name,
+                'name' => $data->name,
                 'email' => $user_email,
             ], true);
         }
@@ -187,15 +187,15 @@ class UserRepository extends BaseRepository
         if (!$user->hasProvider($provider)) {
             // Gather the provider data for saving and associate it with the user
             $user->providers()->save(new SocialLogin([
-                'provider'    => $provider,
+                'provider' => $provider,
                 'provider_id' => $data->id,
-                'token'       => $data->token,
-                'avatar'      => $data->avatar,
+                'token' => $data->token,
+                'avatar' => $data->avatar,
             ]));
         } else {
             // Update the users information, token and avatar can be updated.
             $user->providers()->update([
-                'token'  => $data->token,
+                'token' => $data->token,
                 'avatar' => $data->avatar,
             ]);
         }
@@ -207,9 +207,9 @@ class UserRepository extends BaseRepository
     /**
      * @param $token
      *
+     * @return bool
      * @throws GeneralException
      *
-     * @return bool
      */
     public function confirmAccount($token)
     {
@@ -234,9 +234,9 @@ class UserRepository extends BaseRepository
      * @param $id
      * @param $input
      *
+     * @return mixed
      * @throws GeneralException
      *
-     * @return mixed
      */
     public function updateProfile($id, $input)
     {
@@ -263,7 +263,7 @@ class UserRepository extends BaseRepository
                 $user->notify(new UserNeedsConfirmation($user->confirmation_code));
 
                 return [
-                    'success'       => $updated,
+                    'success' => $updated,
                     'email_changed' => true,
                 ];
             }
@@ -275,9 +275,9 @@ class UserRepository extends BaseRepository
     /**
      * @param $input
      *
+     * @return mixed
      * @throws GeneralException
      *
-     * @return mixed
      */
     public function changePassword($input)
     {

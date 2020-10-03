@@ -15,7 +15,7 @@ class ProductEventListener
     {
         history()->withType($this->history_slug)
             ->withEntity($event->products->id)
-            ->withText('trans("history.backend.products.created") <strong>'.$event->products->name.'</strong>')
+            ->withText('trans("history.backend.products.created") <strong>' . $event->products->name . '</strong>')
             ->withIcon('plus')
             ->withClass('bg-green')
             ->log();
@@ -29,7 +29,7 @@ class ProductEventListener
     {
         history()->withType($this->history_slug)
             ->withEntity($event->products->id)
-            ->withText('trans("history.backend.products.updated") <strong>'.$event->products->name.'</strong>')
+            ->withText('trans("history.backend.products.updated") <strong>' . $event->products->name . '</strong>')
             ->withIcon('save')
             ->withClass('bg-aqua')
             ->log();
@@ -43,7 +43,7 @@ class ProductEventListener
     {
         history()->withType($this->history_slug)
             ->withEntity($event->products->id)
-            ->withText('trans("history.backend.products.deleted") <strong>'.$event->products->name.'</strong>')
+            ->withText('trans("history.backend.products.deleted") <strong>' . $event->products->name . '</strong>')
             ->withIcon('trash')
             ->withClass('bg-maroon')
             ->log();

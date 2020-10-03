@@ -73,7 +73,7 @@ class BlogsController extends APIController
     /**
      * Update blog.
      *
-     * @param Blog    $blog
+     * @param Blog $blog
      * @param Request $request
      *
      * @return \Illuminate\Http\JsonResponse
@@ -96,7 +96,7 @@ class BlogsController extends APIController
     /**
      * Delete Blog.
      *
-     * @param Blog    $blog
+     * @param Blog $blog
      * @param Request $request
      *
      * @return \Illuminate\Http\JsonResponse
@@ -124,12 +124,12 @@ class BlogsController extends APIController
         $publish_datetime = $request->publish_datetime !== '' ? 'required|date' : 'required';
 
         $validation = Validator::make($request->all(), [
-            'name'              => 'required|max:191',
-            'featured_image'    => $featured_image,
-            'publish_datetime'  => $publish_datetime,
-            'content'           => 'required',
-            'categories'        => 'required',
-            'tags'              => 'required',
+            'name' => 'required|max:191',
+            'featured_image' => $featured_image,
+            'publish_datetime' => $publish_datetime,
+            'content' => 'required',
+            'categories' => 'required',
+            'tags' => 'required',
         ]);
 
         return $validation;
@@ -144,7 +144,7 @@ class BlogsController extends APIController
     {
         return [
             'name.required' => 'Please insert Blog Title',
-            'name.max'      => 'Blog Title may not be greater than 191 characters.',
+            'name.max' => 'Blog Title may not be greater than 191 characters.',
         ];
     }
 }

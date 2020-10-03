@@ -58,7 +58,7 @@ class DocumentCategoriesController extends Controller
     public function update(UpdateDocumentCategoryRequest $request, DocumentCategory $documentcategory)
     {
         $input = $request->except(['_token']);
-        $this->documentcategory->update( $documentcategory, $input );
+        $this->documentcategory->update($documentcategory, $input);
         return new RedirectResponse(route('admin.documentcategories.index'), ['flash_success' => trans('alerts.backend.documentcategories.updated')]);
     }
 
@@ -69,5 +69,5 @@ class DocumentCategoriesController extends Controller
         //returning with successfull message
         return new RedirectResponse(route('admin.documentcategories.index'), ['flash_success' => trans('alerts.backend.documentcategories.deleted')]);
     }
-    
+
 }

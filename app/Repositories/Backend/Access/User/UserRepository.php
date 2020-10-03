@@ -48,7 +48,7 @@ class UserRepository extends BaseRepository
     }
 
     /**
-     * @param int  $status
+     * @param int $status
      * @param bool $trashed
      *
      * @return mixed
@@ -63,15 +63,15 @@ class UserRepository extends BaseRepository
             ->leftJoin('role_user', 'role_user.user_id', '=', 'users.id')
             ->leftJoin('roles', 'role_user.role_id', '=', 'roles.id')
             ->select([
-                config('access.users_table').'.id',
-                config('access.users_table').'.first_name',
-                config('access.users_table').'.last_name',
-                config('access.users_table').'.email',
-                config('access.users_table').'.status',
-                config('access.users_table').'.confirmed',
-                config('access.users_table').'.created_at',
-                config('access.users_table').'.updated_at',
-                config('access.users_table').'.deleted_at',
+                config('access.users_table') . '.id',
+                config('access.users_table') . '.first_name',
+                config('access.users_table') . '.last_name',
+                config('access.users_table') . '.email',
+                config('access.users_table') . '.status',
+                config('access.users_table') . '.confirmed',
+                config('access.users_table') . '.created_at',
+                config('access.users_table') . '.updated_at',
+                config('access.users_table') . '.deleted_at',
                 DB::raw('GROUP_CONCAT(roles.name) as roles'),
             ])
             ->groupBy('users.id');
@@ -130,9 +130,9 @@ class UserRepository extends BaseRepository
      * @param Model $user
      * @param $request
      *
+     * @return bool
      * @throws GeneralException
      *
-     * @return bool
      */
     public function update($user, $request)
     {
@@ -168,9 +168,9 @@ class UserRepository extends BaseRepository
      * @param $user
      * @param $input
      *
+     * @return bool
      * @throws GeneralException
      *
-     * @return bool
      */
     public function updatePassword($user, $input)
     {
@@ -196,9 +196,9 @@ class UserRepository extends BaseRepository
      *
      * @param Model $user
      *
+     * @return bool
      * @throws GeneralException
      *
-     * @return bool
      */
     public function delete($user)
     {
@@ -220,9 +220,9 @@ class UserRepository extends BaseRepository
      *
      * @param Model $user
      *
+     * @return bool
      * @throws GeneralException
      *
-     * @return bool
      */
     public function deleteAll($ids)
     {
@@ -268,9 +268,9 @@ class UserRepository extends BaseRepository
     /**
      * @param $user
      *
+     * @return bool
      * @throws GeneralException
      *
-     * @return bool
      */
     public function restore($user)
     {
@@ -291,9 +291,9 @@ class UserRepository extends BaseRepository
      * @param $user
      * @param $status
      *
+     * @return bool
      * @throws GeneralException
      *
-     * @return bool
      */
     public function mark($user, $status)
     {
@@ -307,12 +307,12 @@ class UserRepository extends BaseRepository
             case 0:
                 event(new UserDeactivated($user));
 
-            break;
+                break;
 
             case 1:
                 event(new UserReactivated($user));
 
-            break;
+                break;
         }
 
         if ($user->save()) {
@@ -326,9 +326,9 @@ class UserRepository extends BaseRepository
      * @param  $input
      * @param  $user
      *
+     * @return null
      * @throws GeneralException
      *
-     * @return null
      */
     protected function checkUserByEmail($input, $user = null)
     {
@@ -417,7 +417,7 @@ class UserRepository extends BaseRepository
         }
 
         return $this->query()->whereHas('roles.permissions', function ($query) use ($permissions, $by) {
-            $query->whereIn('permissions.'.$by, $permissions);
+            $query->whereIn('permissions.' . $by, $permissions);
         })->get();
     }
 
@@ -434,7 +434,7 @@ class UserRepository extends BaseRepository
         }
 
         return $this->query()->whereHas('roles', function ($query) use ($roles, $by) {
-            $query->whereIn('roles.'.$by, $roles);
+            $query->whereIn('roles.' . $by, $roles);
         })->get();
     }
 }

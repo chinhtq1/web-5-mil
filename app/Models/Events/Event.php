@@ -13,11 +13,11 @@ class Event extends BaseModel
     use ModelTrait,
         SoftDeletes,
         EventAttribute,
-    	EventRelationship {
-            // EventAttribute::getEditButtonAttribute insteadof ModelTrait;
-        }
+        EventRelationship {
+        // EventAttribute::getEditButtonAttribute insteadof ModelTrait;
+    }
 
-    protected $table ;
+    protected $table;
 
     protected $fillable = [
         'name',

@@ -29,22 +29,22 @@ class DocumentRepository extends BaseRepository implements DocumentsRepositoryIn
 
     public function __construct()
     {
-        $this->upload_path = 'img'.DIRECTORY_SEPARATOR.'document'.DIRECTORY_SEPARATOR;
+        $this->upload_path = 'img' . DIRECTORY_SEPARATOR . 'document' . DIRECTORY_SEPARATOR;
         $this->storage = Storage::disk('public');
     }
 
     public function getForDataTable()
     {
         return $this->query()
-            ->leftjoin(config('access.users_table'), config('access.users_table').'.id', '=', config('module.documents.table').'.created_by')
+            ->leftjoin(config('access.users_table'), config('access.users_table') . '.id', '=', config('module.documents.table') . '.created_by')
             ->select([
-                config('module.documents.table').'.id',
-                config('module.documents.table').'.name',
-                config('module.documents.table').'.publish_datetime',
-                config('module.documents.table').'.status',
-                config('module.documents.table').'.created_at',
-                config('module.documents.table').'.updated_at',
-                config('access.users_table').'.first_name as user_name',
+                config('module.documents.table') . '.id',
+                config('module.documents.table') . '.name',
+                config('module.documents.table') . '.publish_datetime',
+                config('module.documents.table') . '.status',
+                config('module.documents.table') . '.created_at',
+                config('module.documents.table') . '.updated_at',
+                config('access.users_table') . '.first_name as user_name',
             ]);
     }
 
@@ -156,11 +156,11 @@ class DocumentRepository extends BaseRepository implements DocumentsRepositoryIn
 
         if (isset($input['file']) && !empty($input['file'])) {
             $fileType = $avatar->getClientOriginalExtension();
-            $fileName = time().'-'.Str::slug($input['name']);
-            $this->storage->put($this->upload_path.$fileName.'.'.$fileType, file_get_contents($avatar->getRealPath()));
+            $fileName = time() . '-' . Str::slug($input['name']);
+            $this->storage->put($this->upload_path . $fileName . '.' . $fileType, file_get_contents($avatar->getRealPath()));
 
             $input = array_merge($input, [
-                'file' => $fileName.'.'.$fileType,
+                'file' => $fileName . '.' . $fileType,
                 'type' => array_key_exists($fileType, config('common.file-type')) ? $fileType : 'other'
             ]);
 
@@ -173,12 +173,12 @@ class DocumentRepository extends BaseRepository implements DocumentsRepositoryIn
     {
         $fileName = $model->file;
 
-        return $this->storage->delete($this->upload_path.$fileName);
+        return $this->storage->delete($this->upload_path . $fileName);
     }
 
     private function deleteFile($fileName)
     {
-        return $this->storage->delete($this->upload_path.$fileName);
+        return $this->storage->delete($this->upload_path . $fileName);
     }
 
     public function getByCategory($category, $per_page, $order_by, $sort)
@@ -191,7 +191,8 @@ class DocumentRepository extends BaseRepository implements DocumentsRepositoryIn
     /**
      * Get category by slug
      */
-    public function getBySlug($slug) {
+    public function getBySlug($slug)
+    {
         if (!is_null($this->query()->whereSlug(['slug' => $slug, 'active' => 'Publish'])->firstOrFail())) {
             return $this->query()->whereSlug(['slug' => $slug, 'active' => 'Publish'])->firstOrFail();
         }
@@ -199,7 +200,8 @@ class DocumentRepository extends BaseRepository implements DocumentsRepositoryIn
         throw new GeneralException(trans('exceptions.backend.access.pages.not_found'));
     }
 
-    public function getByStatus($status) {
+    public function getByStatus($status)
+    {
         return $this->query()->whereStatus($status);
     }
 }

@@ -17,9 +17,9 @@ trait ProductAttribute
      */
     public function getActionButtonsAttribute()
     {
-        return '<div class="btn-group action-btn">'.
-            $this->getEditButtonAttribute("edit-product", "admin.products.edit").
-            $this->getDeleteButtonAttribute("delete-product", "admin.products.destroy").
+        return '<div class="btn-group action-btn">' .
+            $this->getEditButtonAttribute("edit-product", "admin.products.edit") .
+            $this->getDeleteButtonAttribute("delete-product", "admin.products.destroy") .
             '</div>';
     }
 }

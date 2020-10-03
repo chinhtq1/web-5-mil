@@ -11,8 +11,8 @@ class RedirectIfAuthenticated
      * Handle an incoming request.
      *
      * @param \Illuminate\Http\Request $request
-     * @param \Closure                 $next
-     * @param string|null              $guard
+     * @param \Closure $next
+     * @param string|null $guard
      *
      * @return mixed
      */
@@ -25,7 +25,7 @@ class RedirectIfAuthenticated
         if ($request->wantsJson() && auth()->guard('api')->user()) {
             return response([
                 'error' => [
-                    'message'     => 'Not allowed',
+                    'message' => 'Not allowed',
                     'status_code' => 403,
                 ],
             ], 403);

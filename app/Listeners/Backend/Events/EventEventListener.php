@@ -13,7 +13,7 @@ class EventEventListener
     {
         history()->withType($this->history_slug)
             ->withEntity($event->events->id)
-            ->withText('trans("history.backend.events.created") <strong>'.$event->events->name.'</strong>')
+            ->withText('trans("history.backend.events.created") <strong>' . $event->events->name . '</strong>')
             ->withIcon('plus')
             ->withClass('bg-green')
             ->log();
@@ -26,7 +26,7 @@ class EventEventListener
     {
         history()->withType($this->history_slug)
             ->withEntity($event->event->id)
-            ->withText('trans("history.backend.events.updated") <strong>'.$event->event->name.'</strong>')
+            ->withText('trans("history.backend.events.updated") <strong>' . $event->event->name . '</strong>')
             ->withIcon('save')
             ->withClass('bg-aqua')
             ->log();
@@ -39,7 +39,7 @@ class EventEventListener
     {
         history()->withType($this->history_slug)
             ->withEntity($event->event->id)
-            ->withText('trans("history.backend.events.deleted") <strong>'.$event->event->name.'</strong>')
+            ->withText('trans("history.backend.events.deleted") <strong>' . $event->event->name . '</strong>')
             ->withIcon('trash')
             ->withClass('bg-maroon')
             ->log();

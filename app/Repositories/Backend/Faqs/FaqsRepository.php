@@ -23,20 +23,20 @@ class FaqsRepository extends BaseRepository
     {
         return $this->query()
             ->select([
-                config('module.faqs.table').'.id',
-                config('module.faqs.table').'.question',
-                config('module.faqs.table').'.answer',
-                config('module.faqs.table').'.status',
-                config('module.faqs.table').'.created_at',
+                config('module.faqs.table') . '.id',
+                config('module.faqs.table') . '.question',
+                config('module.faqs.table') . '.answer',
+                config('module.faqs.table') . '.status',
+                config('module.faqs.table') . '.created_at',
             ]);
     }
 
     /**
      * @param array $input
      *
+     * @return bool
      * @throws \App\Exceptions\GeneralException
      *
-     * @return bool
      */
     public function create(array $input)
     {
@@ -52,7 +52,7 @@ class FaqsRepository extends BaseRepository
 
     /**
      * @param \App\Models\Faqs\Faq $faq
-     * @param array                $input
+     * @param array $input
      *
      * @throws \App\Exceptions\GeneralException
      *
@@ -73,9 +73,9 @@ class FaqsRepository extends BaseRepository
     /**
      * @param \App\Models\Faqs\Faq $faq
      *
+     * @return bool
      * @throws \App\Exceptions\GeneralException
      *
-     * @return bool
      */
     public function delete(Faq $faq)
     {
@@ -88,11 +88,11 @@ class FaqsRepository extends BaseRepository
 
     /**
      * @param \App\Models\Faqs\Faq $faq
-     * @param string               $status
-     *
-     * @throws \App\Exceptions\GeneralException
+     * @param string $status
      *
      * @return bool
+     * @throws \App\Exceptions\GeneralException
+     *
      */
     public function mark(Faq $faq, $status)
     {

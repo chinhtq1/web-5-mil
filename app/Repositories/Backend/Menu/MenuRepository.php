@@ -24,20 +24,20 @@ class MenuRepository extends BaseRepository
     {
         return $this->query()
             ->select([
-                config('access.menus_table').'.id',
-                config('access.menus_table').'.name',
-                config('access.menus_table').'.type',
-                config('access.menus_table').'.created_at',
-                config('access.menus_table').'.updated_at',
+                config('access.menus_table') . '.id',
+                config('access.menus_table') . '.name',
+                config('access.menus_table') . '.type',
+                config('access.menus_table') . '.created_at',
+                config('access.menus_table') . '.updated_at',
             ]);
     }
 
     /**
      * @param array $input
      *
+     * @return bool
      * @throws \App\Exceptions\GeneralException
      *
-     * @return bool
      */
     public function create(array $input)
     {
@@ -80,9 +80,9 @@ class MenuRepository extends BaseRepository
     /**
      * @param \App\Models\Menu\Menu $menu
      *
+     * @return bool
      * @throws \App\Exceptions\GeneralException
      *
-     * @return bool
      */
     public function delete(Menu $menu)
     {

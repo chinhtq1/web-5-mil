@@ -25,12 +25,12 @@ class UpdateProductRequest extends FormRequest
     {
         return [
 //            'name'              => 'required|max:191|unique:products,name,'.$this->segment(3),
-            'name'              => 'required|max:191',
-            'publish_datetime'  => 'required|date',
-            'base_feature'      => 'required',
-            'detail_feature'    => 'required',
-            'content'           => 'required',
-            'categories'        => 'required',
+            'name' => 'required|max:191',
+            'publish_datetime' => 'required|date',
+            'base_feature' => 'required',
+            'detail_feature' => 'required',
+            'content' => 'required',
+            'categories' => 'required',
         ];
     }
 
@@ -39,7 +39,7 @@ class UpdateProductRequest extends FormRequest
         return [
 //            'name.unique'   => 'Product name already exists, please enter a different name.',
             'name.required' => 'Please insert Product Title',
-            'name.max'      => 'Product Title may not be greater than 191 characters.',
+            'name.max' => 'Product Title may not be greater than 191 characters.',
         ];
     }
 }

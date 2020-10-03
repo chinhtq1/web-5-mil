@@ -30,24 +30,24 @@ class EventRepository extends BaseRepository
 
     public function __construct()
     {
-        $this->upload_path = 'img'.DIRECTORY_SEPARATOR.'event'.DIRECTORY_SEPARATOR;
+        $this->upload_path = 'img' . DIRECTORY_SEPARATOR . 'event' . DIRECTORY_SEPARATOR;
         $this->storage = Storage::disk('public');
     }
 
     public function getForDataTable()
     {
         return $this->query()
-            ->leftjoin(config('access.users_table'), config('access.users_table').'.id', '=', config('module.events.table').'.created_by')
+            ->leftjoin(config('access.users_table'), config('access.users_table') . '.id', '=', config('module.events.table') . '.created_by')
             ->select([
-                config('module.events.table').'.id',
-                config('module.events.table').'.name',
-                config('module.events.table').'.publish_datetime',
-                config('module.events.table').'.start_datetime',
-                config('module.events.table').'.end_datetime',
-                config('module.events.table').'.status',
-                config('module.events.table').'.created_by',
-                config('module.events.table').'.created_at',
-                config('access.users_table').'.first_name as user_name',
+                config('module.events.table') . '.id',
+                config('module.events.table') . '.name',
+                config('module.events.table') . '.publish_datetime',
+                config('module.events.table') . '.start_datetime',
+                config('module.events.table') . '.end_datetime',
+                config('module.events.table') . '.status',
+                config('module.events.table') . '.created_by',
+                config('module.events.table') . '.created_at',
+                config('access.users_table') . '.first_name as user_name',
             ]);
     }
 
@@ -61,7 +61,7 @@ class EventRepository extends BaseRepository
             $input['start_datetime'] = Carbon::parse($input['start_datetime']);
             $input['end_datetime'] = Carbon::parse($input['end_datetime']);
 
-            if ($input['start_datetime']->gt($input['end_datetime']) ) {
+            if ($input['start_datetime']->gt($input['end_datetime'])) {
                 throw new GeneralException(trans('exceptions.backend.events.create_time_error'));
             }
 
@@ -88,7 +88,7 @@ class EventRepository extends BaseRepository
         $input['end_datetime'] = Carbon::parse($input['end_datetime']);
         $input['updated_by'] = access()->user()->id;
 
-        if ($input['start_datetime']->gt($input['end_datetime']) ) {
+        if ($input['start_datetime']->gt($input['end_datetime'])) {
             throw new GeneralException(trans('exceptions.backend.events.create_time_error'));
         }
         // Uploading Image
@@ -134,13 +134,13 @@ class EventRepository extends BaseRepository
         if (isset($input['featured_image']) && !empty($input['featured_image'])) {
 
             if ($avatar->getSize())
-            $fileType = $avatar->getClientOriginalExtension();
+                $fileType = $avatar->getClientOriginalExtension();
 
-            $fileName = time().'-'.Str::slug($input['name']);
+            $fileName = time() . '-' . Str::slug($input['name']);
 
-            $this->storage->put($this->upload_path.$fileName.'.'.$fileType, file_get_contents($avatar->getRealPath()));
+            $this->storage->put($this->upload_path . $fileName . '.' . $fileType, file_get_contents($avatar->getRealPath()));
 
-            $input = array_merge($input, ['featured_image' => $fileName.'.'.$fileType]);
+            $input = array_merge($input, ['featured_image' => $fileName . '.' . $fileType]);
 
             return $input;
         }
@@ -150,12 +150,12 @@ class EventRepository extends BaseRepository
     {
         $fileName = $model->featured_image;
 
-        return $this->storage->delete($this->upload_path.$fileName);
+        return $this->storage->delete($this->upload_path . $fileName);
     }
 
     private function deleteFile($fileName)
     {
-        return $this->storage->delete($this->upload_path.$fileName);
+        return $this->storage->delete($this->upload_path . $fileName);
     }
 
     public function getBySlug($slug)

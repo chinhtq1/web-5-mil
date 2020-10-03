@@ -13,9 +13,9 @@ class ProductCategory extends BaseModel
     use ModelTrait,
         SoftDeletes,
         ProductCategoryAttribute,
-    	ProductCategoryRelationship {
-            // ProductCategoryAttribute::getEditButtonAttribute insteadof ModelTrait;
-        }
+        ProductCategoryRelationship {
+        // ProductCategoryAttribute::getEditButtonAttribute insteadof ModelTrait;
+    }
 
     /**
      * The database table used by the model.

@@ -95,7 +95,7 @@ class BlogTagsController extends APIController
     /**
      * Delete BlogTag.
      *
-     * @param BlogTag              $blog_tag
+     * @param BlogTag $blog_tag
      * @param DeleteBlogTagRequest $request
      *
      * @return \Illuminate\Http\JsonResponse
@@ -104,7 +104,7 @@ class BlogTagsController extends APIController
     {
         $this->repository->delete($blog_tag);
 
-        return ['message'=>'success'];
+        return ['message' => 'success'];
     }
 
     /**
@@ -117,7 +117,7 @@ class BlogTagsController extends APIController
     public function validatingRequest(Request $request, $id = 0)
     {
         $validation = Validator::make($request->all(), [
-            'name' => 'required|max:191|unique:blog_tags,name,'.$id,
+            'name' => 'required|max:191|unique:blog_tags,name,' . $id,
         ]);
 
         return $validation;

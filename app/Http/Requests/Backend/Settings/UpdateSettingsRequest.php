@@ -27,8 +27,8 @@ class UpdateSettingsRequest extends Request
     public function rules()
     {
         return [
-            'logo'       => 'image|dimensions:min_width=226,min_height=48',
-            'favicon'    => 'mimes:jpg,jpeg,png,ico|dimensions:min_width=16,min_height=16, max_width=32, max_height=32',
+            'logo' => 'image|dimensions:min_width=226,min_height=48',
+            'favicon' => 'mimes:jpg,jpeg,png,ico|dimensions:min_width=16,min_height=16, max_width=32, max_height=32',
         ];
     }
 
@@ -40,8 +40,8 @@ class UpdateSettingsRequest extends Request
     public function messages()
     {
         return [
-            'logo.dimensions'     => 'Invalid logo - should be minimum 226*48',
-            'favicon.dimensions'  => 'Invalid favicon - should be minimum 16*16 and maximum 32*32',
+            'logo.dimensions' => 'Invalid logo - should be minimum 226*48',
+            'favicon.dimensions' => 'Invalid favicon - should be minimum 16*16 and maximum 32*32',
         ];
     }
 }

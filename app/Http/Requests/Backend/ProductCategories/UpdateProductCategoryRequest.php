@@ -24,16 +24,16 @@ class UpdateProductCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:191|unique:productcategories,name,'.$this->segment(3),
+            'name' => 'required|max:191|unique:productcategories,name,' . $this->segment(3),
         ];
     }
 
     public function messages()
     {
         return [
-            'name.unique'   => 'Product category name already exists, please enter a different name.',
+            'name.unique' => 'Product category name already exists, please enter a different name.',
             'name.required' => 'Product category name must required',
-            'name.max'      => 'Product category may not be greater than 191 characters.',
+            'name.max' => 'Product category may not be greater than 191 characters.',
         ];
     }
 }

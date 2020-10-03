@@ -76,7 +76,7 @@ class RolesController extends APIController
      * Update Role.
      *
      * @param Request $request
-     * @param Role    $role
+     * @param Role $role
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -98,7 +98,7 @@ class RolesController extends APIController
     /**
      *  Delete Role.
      *
-     * @param Role    $role
+     * @param Role $role
      * @param Request $request
      *
      * @return \Illuminate\Http\JsonResponse
@@ -108,7 +108,7 @@ class RolesController extends APIController
         $this->repository->delete($role);
 
         return $this->respond([
-            'data'    => $role->id,
+            'data' => $role->id,
             'message' => trans('alerts.backend.roles.deleted'),
         ]);
     }
@@ -117,7 +117,7 @@ class RolesController extends APIController
      * validateUser Role Requests.
      *
      * @param Request $request
-     * @param int     $id
+     * @param int $id
      *
      * @return Validator object
      */
@@ -130,7 +130,7 @@ class RolesController extends APIController
         }
 
         $validation = Validator::make($request->all(), [
-            'name'        => 'required|max:191|unique:roles,name,'.$id,
+            'name' => 'required|max:191|unique:roles,name,' . $id,
             'permissions' => $permissions,
         ]);
 

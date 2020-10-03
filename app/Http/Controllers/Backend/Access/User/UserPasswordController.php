@@ -27,7 +27,7 @@ class UserPasswordController extends Controller
     }
 
     /**
-     * @param User              $user
+     * @param User $user
      * @param ManageUserRequest $request
      *
      * @return mixed
@@ -39,7 +39,7 @@ class UserPasswordController extends Controller
     }
 
     /**
-     * @param User                      $user
+     * @param User $user
      * @param UpdateUserPasswordRequest $request
      *
      * @return mixed

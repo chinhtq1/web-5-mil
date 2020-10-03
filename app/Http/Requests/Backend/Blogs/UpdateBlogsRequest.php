@@ -28,11 +28,11 @@ class UpdateBlogsRequest extends Request
     {
         return [
 //            'name'              => 'required|max:191|unique:blogs,name,'.$this->segment(3),
-            'name'              => 'required|max:191',
-            'publish_datetime'  => 'required|date',
-            'content'           => 'required',
-            'categories'        => 'required',
-            'tags'              => 'required',
+            'name' => 'required|max:191',
+            'publish_datetime' => 'required|date',
+            'content' => 'required',
+            'categories' => 'required',
+            'tags' => 'required',
         ];
     }
 
@@ -46,7 +46,7 @@ class UpdateBlogsRequest extends Request
         return [
 //            'name.unique'   => 'Blog name already exists, please enter a different name.',
             'name.required' => 'Please insert Blog Title',
-            'name.max'      => 'Blog Title may not be greater than 191 characters.',
+            'name.max' => 'Blog Title may not be greater than 191 characters.',
         ];
     }
 }

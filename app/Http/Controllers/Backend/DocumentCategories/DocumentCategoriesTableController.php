@@ -18,7 +18,7 @@ class DocumentCategoriesTableController extends Controller
 
     /**
      * contructor to initialize repository object
-     * @param DocumentCategoryRepository $documentcategory;
+     * @param DocumentCategoryRepository $documentcategory ;
      */
     public function __construct(DocumentCategoryRepository $documentcategory)
     {

@@ -73,7 +73,7 @@ class FaqsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\Models\Faqs\Faq                            $faq
+     * @param \App\Models\Faqs\Faq $faq
      * @param \App\Http\Requests\Backend\Faqs\EditFaqsRequest $request
      *
      * @return \App\Http\Responses\Backend\Faq\EditResponse
@@ -87,7 +87,7 @@ class FaqsController extends Controller
      * Update the specified resource in storage.
      *
      * @param \App\Http\Requests\Backend\Faqs\UpdateFaqsRequest $request
-     * @param \App\Models\Faqs\Faq                              $id
+     * @param \App\Models\Faqs\Faq $id
      *
      * @return \App\Http\Responses\RedirectResponse
      */
@@ -101,7 +101,7 @@ class FaqsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Models\Faqs\Faq                              $faq
+     * @param \App\Models\Faqs\Faq $faq
      * @param \App\Http\Requests\Backend\Faqs\DeleteFaqsRequest $request
      *
      * @return \App\Http\Responses\RedirectResponse

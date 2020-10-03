@@ -32,7 +32,7 @@ class StoreProductCategoryRequest extends FormRequest
     {
         return [
             'name.required' => 'Product category name must required',
-            'name.max'      => 'Product category may not be greater than 191 characters.',
+            'name.max' => 'Product category may not be greater than 191 characters.',
         ];
     }
 }

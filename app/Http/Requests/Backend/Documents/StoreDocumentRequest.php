@@ -24,9 +24,9 @@ class StoreDocumentRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'              => 'required|max:191',
-            'file'    => 'required',
-            'categories'        => 'required',
+            'name' => 'required|max:191',
+            'file' => 'required',
+            'categories' => 'required',
         ];
     }
 
@@ -34,7 +34,7 @@ class StoreDocumentRequest extends FormRequest
     {
         return [
             'name.required' => 'Please insert Document Title',
-            'name.max'      => 'Document Title may not be greater than 191 characters.',
+            'name.max' => 'Document Title may not be greater than 191 characters.',
         ];
     }
 }

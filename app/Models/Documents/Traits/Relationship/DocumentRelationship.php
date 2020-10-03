@@ -14,6 +14,7 @@ trait DocumentRelationship
     {
         return $this->belongsToMany(DocumentCategory::class, 'document_map_categories', 'document_id', 'category_id');
     }
+
     public function owner()
     {
         return $this->belongsTo(User::class, 'created_by');

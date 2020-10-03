@@ -18,7 +18,7 @@ class IndexResponse implements Responsable
     public function toResponse($request)
     {
         return view('backend.events.index')->with([
-            'status'=> $this->status,
+            'status' => $this->status,
         ]);
     }
 }

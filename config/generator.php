@@ -12,7 +12,7 @@ return [
 
     // After App\Repositories
     // Default : Backend
-    'repository_namespace'=> 'Backend',
+    'repository_namespace' => 'Backend',
 
     // views folder after resources/views
     // Default : backend

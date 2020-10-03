@@ -53,9 +53,9 @@ class EloquentHistoryRepository implements HistoryContract
     /**
      * @param $type
      *
+     * @return $this
      * @throws GeneralException
      *
-     * @return $this
      */
     public function withType($type)
     {
@@ -70,15 +70,15 @@ class EloquentHistoryRepository implements HistoryContract
             return $this;
         }
 
-        throw new GeneralException('An invalid history type was supplied: '.$type.'.');
+        throw new GeneralException('An invalid history type was supplied: ' . $type . '.');
     }
 
     /**
      * @param $text
      *
+     * @return $this
      * @throws GeneralException
      *
-     * @return $this
      */
     public function withText($text)
     {
@@ -145,20 +145,20 @@ class EloquentHistoryRepository implements HistoryContract
     public function log()
     {
         return History::create([
-            'type_id'   => $this->type->id,
-            'user_id'   => access()->id(),
+            'type_id' => $this->type->id,
+            'user_id' => access()->id(),
             'entity_id' => $this->entity_id,
-            'icon'      => $this->icon,
-            'class'     => $this->class,
-            'text'      => $this->text,
-            'assets'    => $this->assets,
+            'icon' => $this->icon,
+            'class' => $this->class,
+            'text' => $this->text,
+            'assets' => $this->assets,
         ]);
     }
 
     /**
      * @param null $limit
      * @param bool $paginate
-     * @param int  $pagination
+     * @param int $pagination
      *
      * @return string|\Symfony\Component\Translation\TranslatorInterface
      */
@@ -177,7 +177,7 @@ class EloquentHistoryRepository implements HistoryContract
      * @param $type
      * @param null $limit
      * @param bool $paginate
-     * @param int  $pagination
+     * @param int $pagination
      *
      * @return string|\Symfony\Component\Translation\TranslatorInterface
      */
@@ -198,7 +198,7 @@ class EloquentHistoryRepository implements HistoryContract
      * @param $entity_id
      * @param null $limit
      * @param bool $paginate
-     * @param int  $pagination
+     * @param int $pagination
      *
      * @return string|\Symfony\Component\Translation\TranslatorInterface
      */
@@ -242,36 +242,36 @@ class EloquentHistoryRepository implements HistoryContract
                         if (is_array($values)) {
                             switch (count($values)) {
                                 case 1:
-                                    $text = str_replace('{'.$key.'}', link_to_route($values[0], $values[0]), $text);
+                                    $text = str_replace('{' . $key . '}', link_to_route($values[0], $values[0]), $text);
 
-                                break;
+                                    break;
 
                                 case 2:
-                                    $text = str_replace('{'.$key.'}', link_to_route($values[0], $values[1]), $text);
+                                    $text = str_replace('{' . $key . '}', link_to_route($values[0], $values[1]), $text);
 
-                                break;
+                                    break;
 
                                 case 3:
-                                    $text = str_replace('{'.$key.'}', link_to_route($values[0], $values[1], $values[2]), $text);
+                                    $text = str_replace('{' . $key . '}', link_to_route($values[0], $values[1], $values[2]), $text);
 
-                                break;
+                                    break;
 
                                 case 4:
-                                    $text = str_replace('{'.$key.'}', link_to_route($values[0], $values[1], $values[2], $values[3]), $text);
+                                    $text = str_replace('{' . $key . '}', link_to_route($values[0], $values[1], $values[2], $values[3]), $text);
 
-                                break;
+                                    break;
                             }
                         } else {
                             //Normal url
-                            $text = str_replace('{'.$key.'}', link_to($values, $values), $text);
+                            $text = str_replace('{' . $key . '}', link_to($values, $values), $text);
                         }
 
-                    break;
+                        break;
 
                     case 'string':
-                        $text = str_replace('{'.$key.'}', $values, $text);
+                        $text = str_replace('{' . $key . '}', $values, $text);
 
-                    break;
+                        break;
                 }
 
                 $count++;

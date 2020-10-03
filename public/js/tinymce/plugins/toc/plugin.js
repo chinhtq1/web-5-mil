@@ -1,4 +1,4 @@
-tinymce.PluginManager.add("toc", function(e) {
+tinymce.PluginManager.add("toc", function (e) {
     function t(t) {
         return e.schema.isValidChild("div", t)
     }
@@ -9,7 +9,7 @@ tinymce.PluginManager.add("toc", function(e) {
 
     function r() {
         var t = this;
-        t.disabled(e.readonly || !o()), e.on("LoadContent SetContent change", function() {
+        t.disabled(e.readonly || !o()), e.on("LoadContent SetContent change", function () {
             t.disabled(e.readonly || !o())
         })
     }
@@ -27,9 +27,9 @@ tinymce.PluginManager.add("toc", function(e) {
     function a(t) {
         var n = i(t.depth),
             r = f(n);
-        return r.length && /^h[1-9]$/i.test(t.headerTag) && (r = r.filter(function(n, r) {
+        return r.length && /^h[1-9]$/i.test(t.headerTag) && (r = r.filter(function (n, r) {
             return !e.dom.hasClass(r.parentNode, t.className)
-        })), tinymce.map(r, function(e) {
+        })), tinymce.map(r, function (e) {
             return e.id || (e.id = g()), {
                 id: e.id,
                 level: parseInt(e.nodeName.replace(/^H/i, ""), 10),
@@ -72,21 +72,22 @@ tinymce.PluginManager.add("toc", function(e) {
         }
         return o
     }
+
     var d, f = e.$,
         p = {
             depth: 3,
             headerTag: "h2",
             className: "mce-toc"
         },
-        m = function(e) {
+        m = function (e) {
             var t = 0;
-            return function() {
+            return function () {
                 var n = (new Date).getTime().toString(32);
                 return e + n + (t++).toString(32)
             }
         },
         g = m("mcetoc_");
-    e.on("PreInit", function() {
+    e.on("PreInit", function () {
         var n = e.settings,
             r = parseInt(n.toc_depth, 10) || 0;
         d = {
@@ -94,22 +95,22 @@ tinymce.PluginManager.add("toc", function(e) {
             headerTag: t(n.toc_header) ? n.toc_header : p.headerTag,
             className: n.toc_class ? e.dom.encode(n.toc_class) : p.className
         }
-    }), e.on("PreProcess", function(e) {
+    }), e.on("PreProcess", function (e) {
         var t = f("." + d.className, e.node);
         t.length && (t.removeAttr("contentEditable"), t.find("[contenteditable]").removeAttr("contentEditable"))
-    }), e.on("SetContent", function() {
+    }), e.on("SetContent", function () {
         var e = f("." + d.className);
         e.length && (e.attr("contentEditable", !1), e.children(":first-child").attr("contentEditable", !0))
     });
-    var h = function(t) {
+    var h = function (t) {
         return !t.length || e.dom.getParents(t[0], ".mce-offscreen-selection").length > 0
     };
-    e.addCommand("mceInsertToc", function() {
+    e.addCommand("mceInsertToc", function () {
         var t = f("." + d.className);
         h(t) ? e.insertContent(c(d)) : e.execCommand("mceUpdateToc")
-    }), e.addCommand("mceUpdateToc", function() {
+    }), e.addCommand("mceUpdateToc", function () {
         var t = f("." + d.className);
-        t.length && e.undoManager.transact(function() {
+        t.length && e.undoManager.transact(function () {
             t.html(u(d))
         })
     }), e.addButton("toc", {

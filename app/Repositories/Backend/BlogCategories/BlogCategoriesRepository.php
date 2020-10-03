@@ -27,14 +27,14 @@ class BlogCategoriesRepository extends BaseRepository
     public function getForDataTable()
     {
         return $this->query()
-            ->leftjoin(config('access.users_table'), config('access.users_table').'.id', '=', config('module.blog_categories.table').'.created_by')
+            ->leftjoin(config('access.users_table'), config('access.users_table') . '.id', '=', config('module.blog_categories.table') . '.created_by')
             ->select([
-                config('module.blog_categories.table').'.id',
-                config('module.blog_categories.table').'.name',
-                config('module.blog_categories.table').'.status',
-                config('module.blog_categories.table').'.created_by',
-                config('module.blog_categories.table').'.created_at',
-                config('access.users_table').'.first_name as user_name',
+                config('module.blog_categories.table') . '.id',
+                config('module.blog_categories.table') . '.name',
+                config('module.blog_categories.table') . '.status',
+                config('module.blog_categories.table') . '.created_by',
+                config('module.blog_categories.table') . '.created_at',
+                config('access.users_table') . '.first_name as user_name',
             ]);
     }
 
@@ -99,7 +99,8 @@ class BlogCategoriesRepository extends BaseRepository
     /**
      * Get category by slug
      */
-    public function getBySlug($slug) {
+    public function getBySlug($slug)
+    {
         if (!is_null($this->query()->whereSlug(['slug' => $slug, 'active' => 'Publish'])->firstOrFail())) {
             return $this->query()->whereSlug(['slug' => $slug, 'active' => 'Publish'])->firstOrFail();
         }

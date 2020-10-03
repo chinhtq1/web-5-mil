@@ -2,6 +2,7 @@
 
 
 namespace App\Http\Controllers\Frontend;
+
 use App\Models\BlogCategories\BlogCategory;
 use App\Models\DocumentCategories\DocumentCategory;
 use App\Models\ProductCategories\ProductCategory;

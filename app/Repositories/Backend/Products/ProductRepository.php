@@ -31,22 +31,22 @@ class ProductRepository extends BaseRepository
 
     public function __construct()
     {
-        $this->upload_path = 'img'.DIRECTORY_SEPARATOR.'product'.DIRECTORY_SEPARATOR;
+        $this->upload_path = 'img' . DIRECTORY_SEPARATOR . 'product' . DIRECTORY_SEPARATOR;
         $this->storage = Storage::disk('public');
     }
 
     public function getForDataTable()
     {
         return $this->query()
-            ->leftjoin(config('access.users_table'), config('access.users_table').'.id', '=', config('module.products.table').'.created_by')
+            ->leftjoin(config('access.users_table'), config('access.users_table') . '.id', '=', config('module.products.table') . '.created_by')
             ->select([
-                config('module.products.table').'.id',
-                config('module.products.table').'.name',
-                config('module.products.table').'.publish_datetime',
-                config('module.products.table').'.status',
-                config('module.products.table').'.created_by',
-                config('module.products.table').'.created_at',
-                config('access.products').'.first_name as user_name',
+                config('module.products.table') . '.id',
+                config('module.products.table') . '.name',
+                config('module.products.table') . '.publish_datetime',
+                config('module.products.table') . '.status',
+                config('module.products.table') . '.created_by',
+                config('module.products.table') . '.created_at',
+                config('access.products') . '.first_name as user_name',
             ]);
     }
 
@@ -167,11 +167,11 @@ class ProductRepository extends BaseRepository
 
         if (isset($input['feature_image']) && !empty($input['feature_image'])) {
             $fileType = $avatar->getClientOriginalExtension();
-            $fileName = time().'-'.Str::slug($input['name']);
+            $fileName = time() . '-' . Str::slug($input['name']);
 
-            $this->storage->put($this->upload_path.$fileName.'.'.$fileType, file_get_contents($avatar->getRealPath()));
+            $this->storage->put($this->upload_path . $fileName . '.' . $fileType, file_get_contents($avatar->getRealPath()));
 
-            $input = array_merge($input, ['feature_image' => $fileName.'.'.$fileType]);
+            $input = array_merge($input, ['feature_image' => $fileName . '.' . $fileType]);
 
             return $input;
         }
@@ -181,12 +181,12 @@ class ProductRepository extends BaseRepository
     {
         $fileName = $model->feature_image;
 
-        return $this->storage->delete($this->upload_path.$fileName);
+        return $this->storage->delete($this->upload_path . $fileName);
     }
 
     private function deleteFile($fileName)
     {
-        return $this->storage->delete($this->upload_path.$fileName);
+        return $this->storage->delete($this->upload_path . $fileName);
     }
 
     public function getByCategory($category, $per_page, $order_by, $sort)
@@ -199,7 +199,8 @@ class ProductRepository extends BaseRepository
     /**
      * Get category by slug
      */
-    public function getBySlug($slug) {
+    public function getBySlug($slug)
+    {
         if (!is_null($this->query()->whereSlug($slug)->firstOrFail())) {
             return $this->query()->whereSlug($slug)->firstOrFail();
         }
@@ -207,7 +208,8 @@ class ProductRepository extends BaseRepository
         throw new GeneralException(trans('exceptions.backend.access.pages.not_found'));
     }
 
-    public function getByStatus($status) {
+    public function getByStatus($status)
+    {
         return $this->query()->whereStatus($status);
     }
 

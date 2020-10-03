@@ -17,21 +17,22 @@ trait ProductCategoryAttribute
      */
     public function getActionButtonsAttribute()
     {
-        return '<div class="btn-group action-btn">'.
-            $this->getEditButtonAttribute("edit-productcategory", "admin.productcategories.edit").
-            $this->getDeleteButtonAttribute("delete-productcategory", "admin.productcategories.destroy").
+        return '<div class="btn-group action-btn">' .
+            $this->getEditButtonAttribute("edit-productcategory", "admin.productcategories.edit") .
+            $this->getDeleteButtonAttribute("delete-productcategory", "admin.productcategories.destroy") .
             '</div>';
     }
+
     /**
      * @return string
      */
     public function getStatusLabelAttribute()
     {
         if ($this->isActive()) {
-            return "<label class='label label-success'>".trans('labels.general.active').'</label>';
+            return "<label class='label label-success'>" . trans('labels.general.active') . '</label>';
         }
 
-        return "<label class='label label-danger'>".trans('labels.general.inactive').'</label>';
+        return "<label class='label label-danger'>" . trans('labels.general.inactive') . '</label>';
     }
 
     /**

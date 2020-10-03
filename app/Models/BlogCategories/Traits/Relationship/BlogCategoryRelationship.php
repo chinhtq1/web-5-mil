@@ -24,7 +24,8 @@ trait BlogCategoryRelationship
     /**
      * Get Blogs
      */
-    public function blogs() {
+    public function blogs()
+    {
         return $this->belongsToMany(
             Blog::class,
             'blog_map_categories',

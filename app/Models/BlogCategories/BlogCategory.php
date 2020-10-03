@@ -14,8 +14,8 @@ class BlogCategory extends BaseModel
         SoftDeletes,
         BlogCategoryAttribute,
         BlogCategoryRelationship {
-            // BlogCategoryAttribute::getEditButtonAttribute insteadof ModelTrait;
-        }
+        // BlogCategoryAttribute::getEditButtonAttribute insteadof ModelTrait;
+    }
 
     /**
      * The database table used by the model.
@@ -24,7 +24,7 @@ class BlogCategory extends BaseModel
      */
     protected $table;
 
-    protected $fillable = ['name', 'status','slug','created_by', 'updated_by'];
+    protected $fillable = ['name', 'status', 'slug', 'created_by', 'updated_by'];
 
     public function __construct(array $attributes = [])
     {

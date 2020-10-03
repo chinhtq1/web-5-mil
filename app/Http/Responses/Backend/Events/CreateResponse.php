@@ -16,7 +16,7 @@ class CreateResponse implements Responsable
     public function toResponse($request)
     {
         return view('backend.events.create')->with([
-            'status'         => $this->status,
+            'status' => $this->status,
         ]);
     }
 }
