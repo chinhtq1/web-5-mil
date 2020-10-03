@@ -38,11 +38,7 @@ class Blog extends BaseModel
         'updated_at',
     ];
 
-    /**
-     * The database table used by the model.
-     *
-     * @var string
-     */
+
     protected $table;
 
     public function __construct(array $attributes = [])

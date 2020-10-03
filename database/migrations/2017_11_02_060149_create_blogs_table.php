@@ -22,9 +22,9 @@ class CreateBlogsTable extends Migration
             $table->string('meta_title', 191)->nullable();
             $table->string('cannonical_link', 191)->nullable();
             $table->string('slug', 191)->nullable();
-            $table->text('meta_description', 65535)->nullable();
-            $table->text('meta_keywords', 65535)->nullable();
-            $table->enum('status', ['Published', 'Draft', 'InActive', 'Scheduled']);
+            $table->text('meta_description')->nullable();
+            $table->text('meta_keywords')->nullable();
+            $table->enum('status', ['Published', 'InActive']);
             $table->integer('created_by')->unsigned();
             $table->integer('updated_by')->unsigned()->nullable();
             $table->timestamps();

@@ -2,11 +2,12 @@
 <html>
 
 <head>
-    <title>Heroes And Zeroes Team
-    </title>
+    <title>Zeroes 2 Heroes Team</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Heroes And Zeroes Team" />
+    <meta name="keywords" content="Zeroes 2 Heroes Team" />
+
+    <link type="image/x-icon" href="{{ Storage::disk('public')->url('img/favicon/'.settings()->favicon) }}" rel="icon">
 
     <!-- CSS -->
     @yield('before-css')

@@ -21,11 +21,12 @@ class FrontendController extends BaseController
 
         $blogs = $blogsRepository->getRandomBlogList(3)->get();
 
-        return view('frontend.pages.index', [
+        return view('frontend.index', [
             'google_analytics' => $google_analytics,
             'blogs' => $blogs,
             'blogMenus' => $this->blogMenus,
             'productMenus' => $this->productMenus,
+            'documentMenus' => $this->documentMenus,
             ]);
     }
 

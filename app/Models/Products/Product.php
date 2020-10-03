@@ -7,11 +7,13 @@ use App\Models\ModelTrait;
 use App\Models\Products\Traits\Attribute\ProductAttribute;
 use App\Models\Products\Traits\Relationship\ProductRelationship;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 
 class Product extends BaseModel
 {
     use ModelTrait,
+        SoftDeletes,
         ProductAttribute,
     	ProductRelationship {
             // ProductAttribute::getEditButtonAttribute insteadof ModelTrait;
@@ -43,7 +45,8 @@ class Product extends BaseModel
     protected $dates = [
         'publish_datetime',
         'created_at',
-        'updated_at'
+        'updated_at',
+
     ];
 
     protected $table;

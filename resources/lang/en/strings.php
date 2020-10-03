@@ -23,16 +23,16 @@ return [
         ],
 
         'dashboard' => [
-            'title'   => 'Administrative Dashboard',
+            'title'   => 'Trang quản trị',
             'welcome' => 'Welcome',
         ],
 
         'general' => [
             'all_rights_reserved' => 'All Rights Reserved.',
-            'are_you_sure'        => 'Are you sure you want to do this?',
+            'are_you_sure'        => 'Bạn đang cố gắng làm điều này ?',
             'boilerplate_link'    => 'Laravel AdminPanel',
             'continue'            => 'Continue',
-            'member_since'        => 'Member since',
+            'member_since'        => 'Thành viên từ',
             'minutes'             => ' minutes',
             'search_placeholder'  => 'Search...',
             'timeout'             => 'You were automatically logged out for security reasons since you had no activity in ',

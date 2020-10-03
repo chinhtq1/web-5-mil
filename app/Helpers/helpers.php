@@ -27,7 +27,7 @@ if (!function_exists('homeRoute')) {
         if (access()->allow('view-backend')) {
             return 'admin.dashboard';
         } elseif (auth()->check()) {
-            return 'frontend.user.dashboard';
+            return 'frontend.index';
         }
 
         return 'frontend.index';
@@ -46,6 +46,18 @@ if (!function_exists('app_name')) {
     function app_name()
     {
         return config('app.name');
+    }
+}
+
+if (!function_exists('app_version')) {
+    /**
+     * Helper to grab the application name.
+     *
+     * @return mixed
+     */
+    function app_version()
+    {
+        return config('app.version');
     }
 }
 

@@ -25,8 +25,8 @@ class CreateProductsTable extends Migration
             $table->enum('status', ['Published', 'InActive']);
 
             $table->string('meta_title', 191)->nullable();
-            $table->text('meta_description', 65535)->nullable();
-            $table->text('meta_keywords', 65535)->nullable();
+            $table->text('meta_description')->nullable();
+            $table->text('meta_keywords')->nullable();
             $table->string('cannonical_link', 191)->nullable();
 
             $table->integer('created_by')->unsigned();

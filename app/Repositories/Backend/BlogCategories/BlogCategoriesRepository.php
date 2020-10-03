@@ -38,13 +38,7 @@ class BlogCategoriesRepository extends BaseRepository
             ]);
     }
 
-    /**
-     * @param array $input
-     *
-     * @throws \App\Exceptions\GeneralException
-     *
-     * @return bool
-     */
+
     public function create(array $input)
     {
         if ($this->query()->where('name', $input['name'])->first()) {
@@ -66,14 +60,7 @@ class BlogCategoriesRepository extends BaseRepository
         });
     }
 
-    /**
-     * @param \App\Models\BlogCategories\BlogCategory $blogcategory
-     * @param  $input
-     *
-     * @throws \App\Exceptions\GeneralException
-     *
-     * return bool
-     */
+
     public function update(BlogCategory $blogcategory, array $input)
     {
         if ($this->query()->where('name', $input['name'])->where('id', '!=', $blogcategory->id)->first()) {
@@ -95,13 +82,7 @@ class BlogCategoriesRepository extends BaseRepository
         });
     }
 
-    /**
-     * @param \App\Models\BlogCategories\BlogCategory $blogcategory
-     *
-     * @throws \App\Exceptions\GeneralException
-     *
-     * @return bool
-     */
+
     public function delete(BlogCategory $blogcategory)
     {
         DB::transaction(function () use ($blogcategory) {
@@ -119,8 +100,8 @@ class BlogCategoriesRepository extends BaseRepository
      * Get category by slug
      */
     public function getBySlug($slug) {
-        if (!is_null($this->query()->whereSlug($slug)->firstOrFail())) {
-            return $this->query()->whereSlug($slug)->firstOrFail();
+        if (!is_null($this->query()->whereSlug(['slug' => $slug, 'active' => 'Publish'])->firstOrFail())) {
+            return $this->query()->whereSlug(['slug' => $slug, 'active' => 'Publish'])->firstOrFail();
         }
 
         throw new GeneralException(trans('exceptions.backend.access.pages.not_found'));

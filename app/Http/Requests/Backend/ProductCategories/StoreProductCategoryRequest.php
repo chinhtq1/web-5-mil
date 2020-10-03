@@ -24,9 +24,6 @@ class StoreProductCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            //Put your rules for the request in here
-            //For Example : 'title' => 'required'
-            //Further, see the documentation : https://laravel.com/docs/6.x/validation#creating-form-requests
             'name' => 'required|max:191',
         ];
     }
@@ -34,9 +31,8 @@ class StoreProductCategoryRequest extends FormRequest
     public function messages()
     {
         return [
-            //The Custom messages would go in here
-            //For Example : 'title.required' => 'You need to fill in the title field.'
-            //Further, see the documentation : https://laravel.com/docs/6.x/validation#customizing-the-error-messages
+            'name.required' => 'Product category name must required',
+            'name.max'      => 'Product category may not be greater than 191 characters.',
         ];
     }
 }

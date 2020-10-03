@@ -12,9 +12,9 @@
 
         <div class="col-lg-10">
             @if(!empty($selectedCategories))
-                {{ Form::select('categories[]', $productCategories, $selectedCategories, ['class' => 'form-control tags box-size', 'required' => 'required', 'multiple' => 'multiple']) }}
+                {{ Form::select('categories[]', $productCategories, $selectedCategories, ['class' => 'form-control categories box-size', 'required' => 'required', 'multiple' => 'multiple']) }}
             @else
-                {{ Form::select('categories[]', $productCategories, null, ['class' => 'form-control select2 tags box-size', 'required' => 'required', 'multiple' => 'multiple']) }}
+                {{ Form::select('categories[]', $productCategories, null, ['class' => 'form-control categories box-size', 'required' => 'required', 'multiple' => 'multiple']) }}
             @endif
         </div><!--col-lg-10-->
     </div><!--form control-->
@@ -114,7 +114,7 @@
         {{ Form::label('meta_description', trans('validation.attributes.backend.products.meta_description'), ['class' => 'col-lg-2 control-label']) }}
 
         <div class="col-lg-10 mce-box">
-            {{ Form::textarea('meta_description', null,['class' => 'form-control', 'placeholder' => trans('validation.attributes.backend.products.meta_description')]) }}
+            {{ Form::textarea('meta_description', null,['class' => 'form-control box-size', 'placeholder' => trans('validation.attributes.backend.products.meta_description')]) }}
         </div><!--col-lg-3-->
     </div><!--form control-->
 

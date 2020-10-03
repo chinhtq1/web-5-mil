@@ -5,9 +5,8 @@ namespace App\Repositories\Backend\Products;
 use App\Events\Backend\Products\ProductCreated;
 use App\Events\Backend\Products\ProductDeleted;
 use App\Events\Backend\Products\ProductUpdated;
-use App\Models\BlogMapCategories\BlogMapCategory;
-use App\Models\BlogMapTags\BlogMapTag;
 use App\Models\ProductCategories\ProductCategory;
+use App\Models\ProductMapCategories\ProductMapCategory;
 use DB;
 use Carbon\Carbon;
 use App\Models\Products\Product;
@@ -125,19 +124,15 @@ class ProductRepository extends BaseRepository
         });
     }
 
-    /**
-     * For deleting the respective model from storage
-     *
-     * @param Product $product
-     * @throws GeneralException
-     * @return bool
-     */
+
     public function delete(Product $product)
     {
         DB::transaction(function () use ($product) {
+            $fileName = $product->feature_image;
+
             if ($product->delete()) {
-                BlogMapCategory::where('blog_id', $product->id)->delete();
-                BlogMapTag::where('blog_id', $product->id)->delete();
+                ProductMapCategory::where('product_id', $product->id)->delete();
+                $this->deleteFile($fileName);
 
                 event(new ProductDeleted($product));
 
@@ -171,20 +166,26 @@ class ProductRepository extends BaseRepository
         $avatar = $input['feature_image'];
 
         if (isset($input['feature_image']) && !empty($input['feature_image'])) {
-            $fileName = time().$avatar->getClientOriginalName();
+            $fileType = $avatar->getClientOriginalExtension();
+            $fileName = time().'-'.Str::slug($input['name']);
 
-            $this->storage->put($this->upload_path.$fileName, file_get_contents($avatar->getRealPath()));
+            $this->storage->put($this->upload_path.$fileName.'.'.$fileType, file_get_contents($avatar->getRealPath()));
 
-            $input = array_merge($input, ['feature_image' => $fileName]);
+            $input = array_merge($input, ['feature_image' => $fileName.'.'.$fileType]);
 
             return $input;
         }
     }
 
-    public function deleteOldFile($model)
+    private function deleteOldFile($model)
     {
         $fileName = $model->feature_image;
 
+        return $this->storage->delete($this->upload_path.$fileName);
+    }
+
+    private function deleteFile($fileName)
+    {
         return $this->storage->delete($this->upload_path.$fileName);
     }
 
@@ -210,7 +211,7 @@ class ProductRepository extends BaseRepository
         return $this->query()->whereStatus($status);
     }
 
-    public function getRandomBlogList($count)
+    public function getRandomProductList($count)
     {
         return $this->getByStatus(['Published'])->take($count);
     }

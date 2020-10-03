@@ -25,9 +25,7 @@ class BlogsController extends Controller
      */
     protected $status = [
         'Published' => 'Published',
-        'Draft'     => 'Draft',
         'InActive'  => 'InActive',
-        'Scheduled' => 'Scheduled',
     ];
 
     protected $blog;

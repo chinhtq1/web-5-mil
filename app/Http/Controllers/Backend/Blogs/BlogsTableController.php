@@ -14,19 +14,13 @@ class BlogsTableController extends Controller
 {
     protected $blogs;
 
-    /**
-     * @param \App\Repositories\Backend\Blogs\BlogsRepository $cmspages
-     */
+
     public function __construct(BlogsRepository $blogs)
     {
         $this->blogs = $blogs;
     }
 
-    /**
-     * @param \App\Http\Requests\Backend\Blogs\ManageBlogsRequest $request
-     *
-     * @return mixed
-     */
+
     public function __invoke(ManageBlogsRequest $request)
     {
         return Datatables::of($this->blogs->getForDataTable())

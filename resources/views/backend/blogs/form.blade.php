@@ -118,7 +118,7 @@
         {{ Form::label('meta_description', trans('validation.attributes.backend.blogs.meta_description'), ['class' => 'col-lg-2 control-label']) }}
 
         <div class="col-lg-10 mce-box">
-            {{ Form::textarea('meta_description', null,['class' => 'form-control', 'placeholder' => trans('validation.attributes.backend.blogs.meta_description')]) }}
+            {{ Form::textarea('meta_description', null,['class' => 'form-control box-size', 'placeholder' => trans('validation.attributes.backend.blogs.meta_description')]) }}
         </div><!--col-lg-3-->
     </div><!--form control-->
 

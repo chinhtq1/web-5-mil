@@ -1,5 +1,9 @@
 @extends('frontend.layouts.app')
 
+@section('banner')
+    @include('frontend.includes.partials.banner')
+@endsection
+
 @section('main-content')
     <!--starts-welcome-->
     <div class="welcome" id="welcome">
@@ -8,25 +12,15 @@
                 <h2>Welcome</h2>
                 <!--				<p>Mauris malesuada mi sit amet quam euismod auctor quis quis urna. Cras a maximus ex. Vestibulum vitae vestibulum lectus, at maximus libero.</p>-->
             </div>
-            <div class="welcome-bottom">
-                <div class="col-md-4 welcome-left">
-                    <img src="{{ asset('img/frontend/w-1.jpg')}}" alt="" />
-                    <div class="welcome-btm">
-                        <a href="single.html">Phasellus eget <span class="arw"> </span></a>
+            <div class= "welcome-bottom">
+                @foreach($blogs as $blog)
+                    <div class="col-md-4 welcome-left">
+                        <img src="{{ Storage::disk('public')->url('img/blog/' . $blog->featured_image) }}" alt="" />
+                        <div class="welcome-btm">
+                            <a href="{{ route('frontend.blogs.detail', ['slug' => $blog->slug]) }}">{{ $blog->name }}<span class="arw"> </span></a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-4 welcome-left">
-                    <img src="{{ asset('img/frontend/w-2.jpg')}}" alt="" />
-                    <div class="welcome-btm">
-                        <a href="single.html">Phasellus eget <span class="arw"> </span></a>
-                    </div>
-                </div>
-                <div class="col-md-4 welcome-left">
-                    <img src="{{ asset('img/frontend/w-3.jpg')}}" alt="" />
-                    <div class="welcome-btm">
-                        <a href="single.html">Phasellus eget <span class="arw"> </span></a>
-                    </div>
-                </div>
+                @endforeach
                 <div class="clearfix"></div>
             </div>
         </div>

@@ -128,6 +128,27 @@ class ModulesTableSeeder extends Seeder
                 'created_by'            => 1,
                 'created_at'            => Carbon::now(),
             ],
+            [
+                'name'                  => trans('menus.backend.documentcategories.management'),
+                'url'                   => 'admin.documentcategories.index',
+                'view_permission_id'    => 'view-documentcategories-permission',
+                'created_by'            => 1,
+                'created_at'            => Carbon::now(),
+            ],
+            [
+                'name'                  => trans('menus.backend.documents.management'),
+                'url'                   => 'admin.documents.index',
+                'view_permission_id'    => 'view-documents-permission',
+                'created_by'            => 1,
+                'created_at'            => Carbon::now(),
+            ],
+            [
+                'name'                  => trans('menus.backend.events.management'),
+                'url'                   => 'admin.events.index',
+                'view_permission_id'    => 'view-event-permission',
+                'created_by'            => 1,
+                'created_at'            => Carbon::now(),
+            ],
         ];
 
         DB::table('modules')->insert($modules);

@@ -11,8 +11,8 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => env('APP_NAME', 'Laravel '.app()->version().' AdminPanel'),
-
+    'name' => env('APP_NAME', 'Zeros 2 Heroes'),
+    'version' => env('APP_VERSION', '1.0'),
     /*
     |--------------------------------------------------------------------------
     | Application Environment

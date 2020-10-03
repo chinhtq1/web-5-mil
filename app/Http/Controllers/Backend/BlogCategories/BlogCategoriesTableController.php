@@ -15,19 +15,13 @@ class BlogCategoriesTableController extends Controller
 {
     protected $blogcategory;
 
-    /**
-     * @param \App\Repositories\Backend\BlogCategories\BlogCategoriesRepository $cmspages
-     */
+
     public function __construct(BlogCategoriesRepository $blogcategory)
     {
         $this->blogcategory = $blogcategory;
     }
 
-    /**
-     * @param \App\Http\Requests\Backend\BlogCategories\ManageBlogCategoriesRequest $request
-     *
-     * @return mixed
-     */
+
     public function __invoke(ManageBlogCategoriesRequest $request)
     {
         return Datatables::of($this->blogcategory->getForDataTable())

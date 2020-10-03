@@ -25,7 +25,6 @@ class UpdateProductCategoryRequest extends FormRequest
     {
         return [
             'name' => 'required|max:191|unique:productcategories,name,'.$this->segment(3),
-
         ];
     }
 

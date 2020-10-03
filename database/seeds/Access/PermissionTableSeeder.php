@@ -640,6 +640,430 @@ class PermissionTableSeeder extends Seeder
         $viewBackend->deleted_at = null;
         $viewBackend->save();
 
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'view-event-permission';
+        $viewBackend->display_name = 'View Event';
+        $viewBackend->sort = 48;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'create-event';
+        $viewBackend->display_name = 'Create Event';
+        $viewBackend->sort = 49;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'delete-event';
+        $viewBackend->display_name = 'Delete Event';
+        $viewBackend->sort = 50;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'edit-event';
+        $viewBackend->display_name = 'Edit Event';
+        $viewBackend->sort = 51;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'manage-event';
+        $viewBackend->display_name = 'Manage Event';
+        $viewBackend->sort = 52;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'store-event';
+        $viewBackend->display_name = 'Store Event';
+        $viewBackend->sort = 53;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'update-event';
+        $viewBackend->display_name = 'Update Event';
+        $viewBackend->sort = 54;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        // Document Category
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'view-documentcategory-permission';
+        $viewBackend->display_name = 'View Document Category';
+        $viewBackend->sort = 55;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'create-documentcategory';
+        $viewBackend->display_name = 'Create Document Category';
+        $viewBackend->sort = 56;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'delete-documentcategory';
+        $viewBackend->display_name = 'Delete Document Category';
+        $viewBackend->sort = 57;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'edit-documentcategory';
+        $viewBackend->display_name = 'Edit Document Category';
+        $viewBackend->sort = 58;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'manage-documentcategory';
+        $viewBackend->display_name = 'Manage Document Category';
+        $viewBackend->sort = 59;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'store-documentcategory';
+        $viewBackend->display_name = 'Store Document Category';
+        $viewBackend->sort = 60;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'update-documentcategory';
+        $viewBackend->display_name = 'Update Document Category';
+        $viewBackend->sort = 61;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        // Document
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'view-document-permission';
+        $viewBackend->display_name = 'View Document';
+        $viewBackend->sort = 62;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'create-document';
+        $viewBackend->display_name = 'Create Document';
+        $viewBackend->sort = 63;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'delete-document';
+        $viewBackend->display_name = 'Delete Document';
+        $viewBackend->sort = 64;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'edit-document';
+        $viewBackend->display_name = 'Edit Document';
+        $viewBackend->sort = 65;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'manage-document';
+        $viewBackend->display_name = 'Manage Document';
+        $viewBackend->sort = 66;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'store-document';
+        $viewBackend->display_name = 'Store Document';
+        $viewBackend->sort = 67;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'update-document';
+        $viewBackend->display_name = 'Update Document';
+        $viewBackend->sort = 68;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        // Product Category
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'view-productcategory-permission';
+        $viewBackend->display_name = 'View Product Category';
+        $viewBackend->sort = 69;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'create-productcategory';
+        $viewBackend->display_name = 'Create Product Category';
+        $viewBackend->sort = 70;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'delete-productcategory';
+        $viewBackend->display_name = 'Delete Product Category';
+        $viewBackend->sort = 71;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'edit-productcategory';
+        $viewBackend->display_name = 'Edit Product Category';
+        $viewBackend->sort = 72;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'manage-productcategory';
+        $viewBackend->display_name = 'Manage Product Category';
+        $viewBackend->sort = 73;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'store-productcategory';
+        $viewBackend->display_name = 'Store Product Category';
+        $viewBackend->sort = 74;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'update-productcategory';
+        $viewBackend->display_name = 'Update Product Category';
+        $viewBackend->sort = 75;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        // Product
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'view-product-permission';
+        $viewBackend->display_name = 'View Product';
+        $viewBackend->sort = 76;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'create-product';
+        $viewBackend->display_name = 'Create Prodcut';
+        $viewBackend->sort = 77;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'delete-product';
+        $viewBackend->display_name = 'Delete Product';
+        $viewBackend->sort = 78;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'edit-product';
+        $viewBackend->display_name = 'Edit Product';
+        $viewBackend->sort = 79;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'manage-product';
+        $viewBackend->display_name = 'Manage Product';
+        $viewBackend->sort = 80;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'store-product';
+        $viewBackend->display_name = 'Store Product';
+        $viewBackend->sort = 81;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'update-product';
+        $viewBackend->display_name = 'Update Product';
+        $viewBackend->sort = 82;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
         $this->enableForeignKeys();
     }
 }

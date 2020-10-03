@@ -32,6 +32,7 @@ class ProductController extends BaseController
             'products' => $products,
             'blogMenus' => $this->blogMenus,
             'productMenus' => $this->productMenus,
+            'documentMenus' => $this->documentMenus,
             'categories' => $this->categories,
         ]);
     }
@@ -44,6 +45,7 @@ class ProductController extends BaseController
             'products' => $products,
             'blogMenus' => $this->blogMenus,
             'productMenus' => $this->productMenus,
+            'documentMenus' => $this->documentMenus,
             'categories' => $this->categories,
             'active_category' => $category
         ]);
@@ -52,11 +54,12 @@ class ProductController extends BaseController
 
     public function detail($slug) {
         $product = $this->productRepo->getBySlug($slug);
-        $relateProducts = $this->productRepo->getRandomBlogList(3)->get();
+        $relateProducts = $this->productRepo->getRandomProductList(3)->get();
         return view('frontend.products.single-product')->with([
             'product' => $product,
             'blogMenus' => $this->blogMenus,
             'productMenus' => $this->productMenus,
+            'documentMenus' => $this->documentMenus,
             'categories' => $this->categories,
             'related_products' => $relateProducts
         ]);

@@ -31,11 +31,7 @@ class SettingsRepository extends BaseRepository
      */
     protected $favicon_path;
 
-    /**
-     * Storage Class Object.
-     *
-     * @var \Illuminate\Support\Facades\Storage
-     */
+
     protected $storage;
 
     /**
@@ -48,14 +44,7 @@ class SettingsRepository extends BaseRepository
         $this->storage = Storage::disk('public');
     }
 
-    /**
-     * @param \App\Models\Settings\Setting $setting
-     * @param array                        $input
-     *
-     * @throws \App\Exceptions\GeneralException
-     *
-     * @return bool
-     */
+
     public function update(Setting $setting, array $input)
     {
         if (!empty($input['logo'])) {

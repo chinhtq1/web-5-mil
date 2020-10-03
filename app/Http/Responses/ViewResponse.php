@@ -26,13 +26,7 @@ class ViewResponse implements Responsable
         $this->with = $with;
     }
 
-    /**
-     * In Response.
-     *
-     * @param \Illuminate\Http\Request $request
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
+
     public function toResponse($request)
     {
         if (!empty($this->with)) {

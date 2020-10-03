@@ -19,3 +19,6 @@ require __DIR__.'/LogViewer.php';
 
 require __DIR__.'/Product.php';
 require __DIR__.'/ProductCategory.php';
+require __DIR__.'/Document.php';
+require __DIR__.'/DocumentCategory.php';
+require __DIR__.'/Event.php';

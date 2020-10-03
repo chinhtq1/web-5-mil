@@ -29,11 +29,7 @@ class BlogsRepository extends BaseRepository implements BlogRepositoryInterface
 
     protected $upload_path;
 
-    /**
-     * Storage Class Object.
-     *
-     * @var \Illuminate\Support\Facades\Storage
-     */
+
     protected $storage;
 
     public function __construct()
@@ -60,13 +56,7 @@ class BlogsRepository extends BaseRepository implements BlogRepositoryInterface
             ]);
     }
 
-    /**
-     * @param array $input
-     *
-     * @throws \App\Exceptions\GeneralException
-     *
-     * @return bool
-     */
+
     public function create(array $input)
     {
         $tagsArray = $this->createTags($input['tags']);
@@ -99,12 +89,7 @@ class BlogsRepository extends BaseRepository implements BlogRepositoryInterface
         });
     }
 
-    /**
-     * Update Blog.
-     *
-     * @param \App\Models\Blogs\Blog $blog
-     * @param array                  $input
-     */
+
     public function update(Blog $blog, array $input)
     {
         $tagsArray = $this->createTags($input['tags']);
@@ -194,19 +179,15 @@ class BlogsRepository extends BaseRepository implements BlogRepositoryInterface
         return $categories_array;
     }
 
-    /**
-     * @param \App\Models\Blogs\Blog $blog
-     *
-     * @throws GeneralException
-     *
-     * @return bool
-     */
+
     public function delete(Blog $blog)
     {
         DB::transaction(function () use ($blog) {
+            $fileName = $blog->featured_image;
             if ($blog->delete()) {
                 BlogMapCategory::where('blog_id', $blog->id)->delete();
                 BlogMapTag::where('blog_id', $blog->id)->delete();
+                $this->deleteFile($fileName);
 
                 event(new BlogDeleted($blog));
 
@@ -229,36 +210,35 @@ class BlogsRepository extends BaseRepository implements BlogRepositoryInterface
         $avatar = $input['featured_image'];
 
         if (isset($input['featured_image']) && !empty($input['featured_image'])) {
-            $fileName = time().$avatar->getClientOriginalName();
+            $fileType = $avatar->getClientOriginalExtension();
 
-            $this->storage->put($this->upload_path.$fileName, file_get_contents($avatar->getRealPath()));
+            $fileName = time().'-'.Str::slug($input['name']);
 
-            $input = array_merge($input, ['featured_image' => $fileName]);
+            $this->storage->put($this->upload_path.$fileName.'.'.$fileType, file_get_contents($avatar->getRealPath()));
+
+            $input = array_merge($input, ['featured_image' => $fileName.'.'.$fileType]);
 
             return $input;
         }
     }
 
-    /**
-     * Destroy Old Image.
-     *
-     * @param int $id
-     */
-    public function deleteOldFile($model)
+
+    private function deleteOldFile($model)
     {
         $fileName = $model->featured_image;
 
         return $this->storage->delete($this->upload_path.$fileName);
     }
 
-    /**
-     * Find by Slug
-     * @param string $blog_slug
-     */
+    private function deleteFile($fileName)
+    {
+        return $this->storage->delete($this->upload_path.$fileName);
+    }
+
     public function getBySlug($blog_slug)
     {
-        if (!is_null($this->query()->whereSlug($blog_slug)->firstOrFail())) {
-            return $this->query()->whereSlug($blog_slug)->firstOrFail();
+        if (!is_null($this->query()->whereSlug(['slug' => $blog_slug, 'active' => 'Publish'])->firstOrFail())) {
+            return $this->query()->whereSlug(['slug' => $blog_slug, 'active' => 'Publish'])->firstOrFail();
         }
         throw new GeneralException(trans('exceptions.backend.access.pages.not_found'));
     }

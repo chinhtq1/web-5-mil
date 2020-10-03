@@ -14,22 +14,13 @@ class SettingsLogoController extends Controller
 {
     protected $settings;
 
-    /**
-     * @param \App\Repositories\Backend\Settings\SettingsRepository $settings
-     */
+
     public function __construct(SettingsRepository $settings)
     {
         $this->settings = $settings;
     }
 
-    /**
-     * Remove logo or favicon icon.
-     *
-     * @param \App\Models\Settings\Setting $setting
-     * @param \Illuminate\Http\Request     $request
-     *
-     * @return mixed
-     */
+    // Remove logo or favicon icon
     public function destroy(Setting $setting, Request $request)
     {
         $this->settings->removeLogo($setting, $request->data);

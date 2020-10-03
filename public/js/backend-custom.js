@@ -11904,8 +11904,9 @@ var Backend = {}; // common variable used in all the files of the backend
             },
 
             addHandlers: function () {
-                console.log(this.selectors.categories);
-                this.selectors.categories.select2();
+                this.selectors.categories.select2({
+                    tags: true,
+                });
                 this.selectors.toDisplay.select2();
                 this.selectors.status.select2();
 
@@ -11936,6 +11937,133 @@ var Backend = {}; // common variable used in all the files of the backend
 
             }
         },
+
+        /**
+         * DocumentCategory
+         */
+        DocumentCategory: {
+            selectors: {
+                GenerateSlugUrl: "",
+                name: document.getElementById("name"),
+                SlugUrl: "",
+                slug: document.getElementById("slug"),
+            },
+
+            init: function () {
+                this.addHandlers();
+            },
+
+            addHandlers: function () {
+                // For generating the Slug  //changing slug on blur event
+                this.selectors.name.onblur = function (event) {
+                    url = event.target.value;
+                    if (url !== '') {
+                        callback = {
+                            success: function (request) {
+                                if (request.status >= 200 && request.status < 400) {
+                                    // Success!
+                                    response = request.responseText;
+                                    Backend.DocumentCategory.selectors.slug.value = Backend.DocumentCategory.selectors.SlugUrl + '/' + response.trim();
+                                }
+                            },
+                            error: function (request) {
+
+                            }
+                        };
+                        Backend.Utils.ajaxrequest(Backend.DocumentCategory.selectors.GenerateSlugUrl, "post", {
+                            text: url
+                        }, Backend.Utils.csrf, callback);
+                    }
+                };
+            }
+        },
+
+        /**
+         * Document
+         */
+        Document: {
+            selectors: {
+                categories: jQuery(".categories"),
+                toDisplay: jQuery(".toDisplay"),
+                status: jQuery(".status"),
+                datetimepicker1: jQuery("#datetimepicker1"),
+            },
+
+            init: function (locale) {
+                this.addHandlers();
+            },
+
+            addHandlers: function () {
+
+                this.selectors.categories.select2({
+                    tags: true,
+                });
+                this.selectors.toDisplay.select2();
+                this.selectors.status.select2();
+
+                //For Blog datetimepicker for publish_datetime
+                this.selectors.datetimepicker1.datetimepicker();
+
+            }
+        },
+
+        /**
+         * Event
+         */
+        Event: {
+            selectors: {
+                toDisplay: jQuery(".toDisplay"),
+                status: jQuery(".status"),
+                datetimepicker1: jQuery("#datetimepicker1"),
+                datetimepicker2: jQuery("#datetimepicker2"),
+                datetimepicker3: jQuery("#datetimepicker3"),
+                GenerateSlugUrl: "",
+                name: document.getElementById("name"),
+                SlugUrl: "",
+                slug: document.getElementById("slug"),
+            },
+
+            init: function (locale) {
+                this.addHandlers();
+                Backend.tinyMCE.init(locale);
+            },
+
+            addHandlers: function () {
+
+                this.selectors.toDisplay.select2();
+                this.selectors.status.select2();
+
+                //For Blog datetimepicker for publish_datetime
+                this.selectors.datetimepicker1.datetimepicker();
+                this.selectors.datetimepicker2.datetimepicker();
+                this.selectors.datetimepicker3.datetimepicker();
+
+
+                // For generating the Slug  //changing slug on blur event
+                this.selectors.name.onblur = function (event) {
+                    url = event.target.value;
+                    if (url !== '') {
+                        callback = {
+                            success: function (request) {
+                                if (request.status >= 200 && request.status < 400) {
+                                    // Success!
+                                    response = request.responseText;
+                                    Backend.Event.selectors.slug.value = Backend.Event.selectors.SlugUrl + '/' + response.trim();
+                                }
+                            },
+                            error: function (request) {
+
+                            }
+                        };
+                        Backend.Utils.ajaxrequest(Backend.Event.selectors.GenerateSlugUrl, "post", {
+                            text: url
+                        }, Backend.Utils.csrf, callback);
+                    }
+                };
+
+            }
+        },
+
 
         Menu: {
             selectors: {

@@ -27,8 +27,8 @@ class StoreProductRequest extends FormRequest
             'name'              => 'required|max:191',
             'feature_image'    => 'required',
             'publish_datetime'  => 'required|date',
-            'base_feature' => 'required',
-            'detail_feature' => 'required',
+            'base_feature'      => 'required',
+            'detail_feature'    => 'required',
             'content'           => 'required',
             'categories'        => 'required',
         ];
@@ -37,8 +37,8 @@ class StoreProductRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'Please insert Blog Title',
-            'name.max'      => 'Blog Title may not be greater than 191 characters.',
+            'name.required' => 'Please insert Product Title',
+            'name.max'      => 'Product Title may not be greater than 191 characters.',
         ];
     }
 }

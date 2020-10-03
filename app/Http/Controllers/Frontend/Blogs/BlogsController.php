@@ -32,6 +32,7 @@ class BlogsController extends BaseController
             'blogs' => $blogs,
             'blogMenus' => $this->blogMenus,
             'productMenus' => $this->productMenus,
+            'documentMenus' => $this->documentMenus,
             'categories' => $this->categories,
         ]);
     }
@@ -44,6 +45,7 @@ class BlogsController extends BaseController
             'blogs' => $blogs,
             'blogMenus' => $this->blogMenus,
             'productMenus' => $this->productMenus,
+            'documentMenus' => $this->documentMenus,
             'categories' => $this->categories,
             'active_category' => $category
         ]);
@@ -56,6 +58,7 @@ class BlogsController extends BaseController
             'blog' => $blog,
             'blogMenus' => $this->blogMenus,
             'productMenus' => $this->productMenus,
+            'documentMenus' => $this->documentMenus,
             'categories' => $this->categories,
             'related_blogs' => $relatedBlogs
         ]);

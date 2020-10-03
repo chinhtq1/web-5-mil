@@ -74615,12 +74615,12 @@ $(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/vagrant/Code/demo1/resources/assets/js/frontend/app.js */"./resources/assets/js/frontend/app.js");
-__webpack_require__(/*! /home/vagrant/Code/demo1/resources/assets/js/plugin/sweetalert/sweetalert.min.js */"./resources/assets/js/plugin/sweetalert/sweetalert.min.js");
-__webpack_require__(/*! /home/vagrant/Code/demo1/resources/assets/js/plugins.js */"./resources/assets/js/plugins.js");
-__webpack_require__(/*! /home/vagrant/Code/demo1/client/build/client-modules.min.js */"./client/build/client-modules.min.js");
-__webpack_require__(/*! /home/vagrant/Code/demo1/resources/assets/sass/frontend/app.scss */"./resources/assets/sass/frontend/app.scss");
-module.exports = __webpack_require__(/*! /home/vagrant/Code/demo1/resources/assets/sass/backend/app.scss */"./resources/assets/sass/backend/app.scss");
+__webpack_require__(/*! D:\Workspace\Laravel\Code\demo2\resources\assets\js\frontend\app.js */"./resources/assets/js/frontend/app.js");
+__webpack_require__(/*! D:\Workspace\Laravel\Code\demo2\resources\assets\js\plugin\sweetalert\sweetalert.min.js */"./resources/assets/js/plugin/sweetalert/sweetalert.min.js");
+__webpack_require__(/*! D:\Workspace\Laravel\Code\demo2\resources\assets\js\plugins.js */"./resources/assets/js/plugins.js");
+__webpack_require__(/*! D:\Workspace\Laravel\Code\demo2\client\build\client-modules.min.js */"./client/build/client-modules.min.js");
+__webpack_require__(/*! D:\Workspace\Laravel\Code\demo2\resources\assets\sass\frontend\app.scss */"./resources/assets/sass/frontend/app.scss");
+module.exports = __webpack_require__(/*! D:\Workspace\Laravel\Code\demo2\resources\assets\sass\backend\app.scss */"./resources/assets/sass/backend/app.scss");
 
 
 /***/ })

@@ -92,12 +92,12 @@
 
                         <li class="user-body">
                             <div class="col-xs-12 text-center">
-                                {{ link_to_route("admin.profile.edit", 'Edit Profile') }}
+                                {{ link_to_route("admin.profile.edit", 'Chỉnh sửa thông tin') }}
                             </div>
                         </li>
                         <li class="user-body border-left">
                             <div class="col-xs-12 text-center">
-                                {{ link_to_route('admin.access.user.change-password','Change Password', access()->user()->id) }}
+                                {{ link_to_route('admin.access.user.change-password','Đổi mật khẩu', access()->user()->id) }}
                             </div>
                             {{-- <div class="col-xs-4 text-center">
                                 {{ link_to_route('dashboard', 'Link') }}

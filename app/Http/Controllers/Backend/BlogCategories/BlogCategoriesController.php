@@ -29,12 +29,12 @@ class BlogCategoriesController extends Controller
 
     public function index(ManageBlogCategoriesRequest $request)
     {
-        return new ViewResponse('backend.blogCategories.index');
+        return new ViewResponse('backend.blogcategories.index');
     }
 
     public function create(CreateBlogCategoriesRequest $request)
     {
-        return new ViewResponse('backend.blogCategories.create');
+        return new ViewResponse('backend.blogcategories.create');
     }
 
     public function store(StoreBlogCategoriesRequest $request)

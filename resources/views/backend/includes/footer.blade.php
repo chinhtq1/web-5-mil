@@ -1,8 +1,8 @@
 <!-- Main Footer -->
-<footer class="main-footer">
+<footer class="main-footer" style="display: block">
     <!-- To the right -->
     <div class="pull-right hidden-xs">
-        <a href="http://laravel-admin.com" target="_blank">{{ trans('strings.backend.general.boilerplate_link') }}</a>
+        <p>Version {{ app_version() }}</p>
     </div>
     <!-- Default to the left -->
     <strong>Copyright &copy; {{ date('Y') }} <a href="#">{{ app_name() }}</a>.</strong> {{ trans('strings.backend.general.all_rights_reserved') }}

@@ -26,4 +26,13 @@ return [
 	"productcategories" => [
 	"table" => "product_categories",
 	],
+	"documents" => [
+	"table" => "documents",
+	],
+	"documentcategories" => [
+	"table" => "documentcategories",
+	],
+	"events" => [
+	"table" => "events",
+	],
 ];

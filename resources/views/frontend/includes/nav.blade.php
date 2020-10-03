@@ -30,7 +30,19 @@
                     </ul>
                 </div>
             </li>
-            <li class="menu-item"><a class="menu-link" href="download.html">Tải File</a></li>
+            <li class="menu-item"><a class="menu-link" href="{{ route('frontend.documents.index') }}">Tải file</a>
+                <div class="menu-mega-sub">
+                    <ul class="sub-menu">
+                        @isset($documentMenus)
+                            @foreach($documentMenus as $menu)
+                                <li class="menu-item ">
+                                    <a href="{{ route('frontend.documents.listByCategory', ['slug' => $menu->slug]) }}" class="menu-link">{{ $menu->name }}</a>
+                                </li>
+                            @endforeach
+                        @endisset
+                    </ul>
+                </div>
+            </li>
             <li class="menu-item"><a class="menu-link" href="about.html">Về chúng tôi</a></li>
             <li class="menu-item"><a class="menu-link" href="contact.html">Liên hệ</a></li>
         </ul>

@@ -45,7 +45,7 @@
                         <input class="radio" id="four" name="group" type="radio">
 
                         <div class="tabs">
-                            <label class="tab" id="one-tab" for="one">Tổng quan</label>
+                            <label class="tab" id="one-tab" for="one">Nội dung</label>
                             <label class="tab" id="two-tab" for="two">Chi tiết tính năng</label>
                             <!-- <label class="tab" id="three-tab" for="three">Tài liệu</label> -->
                             <label class="tab" id="four-tab" for="four">Sản phẩm liên quan</label>
