@@ -32,6 +32,9 @@
                 @else
                     <h3>Tất cả sản phẩm</h3>
                 @endisset
+
+                @if($products) <h4>Không có sản phẩm</h4> @endif
+
             </div>
             <div class="blog-bottom">
                 <div class="col-md-3 blog-left">

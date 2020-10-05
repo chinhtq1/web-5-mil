@@ -37,4 +37,5 @@ trait BlogCategoryAttribute
     {
         return $this->status == 1;
     }
+
 }

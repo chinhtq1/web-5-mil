@@ -435,8 +435,9 @@ ul.navig {
 .welcome-bottom{
 	margin-top:3%;
 }
-.welcome-left img{
-	width:100%;
+.welcome-left img {
+	width: 100%;
+	height: 250px;
 }
 .welcome-left{
 	position:relative;
@@ -508,7 +509,8 @@ ul.navig {
     width: 65%;
 }
 .news-left img{
-	width:100%;
+	width: 100%;
+	height: 250px;
 }
 .news-left{
 	position:relative;
@@ -2977,6 +2979,7 @@ a.product-redirect {
         padding: 5px 5px 10px 5px;
         list-style: none;
         position: relative;
+		width: 100%;
     }
 
         .menu-top-content .sub-menu > li:hover {
@@ -3201,4 +3204,12 @@ img.logo-footer {
 
 .blog-content img {
 	max-width: 100%;
+}
+
+/* FOOTER */
+.company-logo {
+	min-width: 32px;
+	min-height: 32px;
+	max-width: 64px;
+	max-height: 64px;
 }

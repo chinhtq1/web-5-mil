@@ -31,6 +31,15 @@ class PagesTableSeeder extends Seeder
                 'created_at'  => Carbon::now(),
                 'updated_at'  => Carbon::now(),
             ],
+            [
+                'title'       => 'Về chúng tôi',
+                'page_slug'   => 've-chung-toi',
+                'description' => '',
+                'status'      => '1',
+                'created_by'  => '1',
+                'created_at'  => Carbon::now(),
+                'updated_at'  => Carbon::now(),
+            ],
         ];
 
         DB::table(config('module.pages.table'))->insert($page);

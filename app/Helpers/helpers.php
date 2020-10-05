@@ -4,6 +4,7 @@ use App\Helpers\uuid;
 use App\Models\Notification\Notification;
 use App\Models\Settings\Setting;
 use Carbon\Carbon as Carbon;
+use Illuminate\Support\Facades\Session;
 
 /**
  * Henerate UUID.
@@ -152,6 +153,16 @@ if (!function_exists('settings')) {
         if (!empty($settings)) {
             return $settings;
         }
+    }
+}
+
+if (!function_exists('appSettings')) {
+    /**
+     * Access the settings helper.
+     */
+    function appSettings()
+    {
+        return session()->get('appSettings');
     }
 }
 

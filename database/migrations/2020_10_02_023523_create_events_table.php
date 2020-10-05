@@ -28,6 +28,7 @@ class CreateEventsTable extends Migration
             $table->text('meta_description')->nullable();
             $table->text('meta_keywords')->nullable();
             $table->enum('status', ['Published', 'InActive']);
+            $table->boolean('show')->default(0);
             $table->integer('created_by')->unsigned();
             $table->integer('updated_by')->unsigned()->nullable();
             $table->timestamps();

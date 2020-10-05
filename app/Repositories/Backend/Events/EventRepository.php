@@ -44,6 +44,7 @@ class EventRepository extends BaseRepository
                 config('module.events.table') . '.start_datetime',
                 config('module.events.table') . '.end_datetime',
                 config('module.events.table') . '.status',
+                config('module.events.table') . '.show',
                 config('module.events.table') . '.created_by',
                 config('module.events.table') . '.created_at',
                 config('access.users_table') . '.first_name as user_name',

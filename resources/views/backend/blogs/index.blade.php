@@ -24,6 +24,7 @@
                             <th>{{ trans('labels.backend.blogs.table.title') }}</th>
                             <th>{{ trans('labels.backend.blogs.table.publish') }}</th>
                             <th>{{ trans('labels.backend.blogs.table.status') }}</th>
+                            <th>{{ trans('labels.backend.blogs.table.show') }}</th>
                             <th>{{ trans('labels.backend.blogs.table.createdby') }}</th>
                             <th>{{ trans('labels.backend.blogs.table.createdat') }}</th>
                             <th>{{ trans('labels.general.actions') }}</th>
@@ -38,6 +39,9 @@
                             <th></th>
                             <th>
                                 {!! Form::select('status', $status, null, ["class" => "search-input-select form-control", "data-column" => 2, "placeholder" => trans('labels.backend.blogs.table.all')]) !!}
+                            </th>
+                            <th>
+                                {!! Form::select('show', [0 => "Không hiển thị", 1 => "Hiển thị"], null, ["class" => "search-input-select form-control", "data-column" => 3, "placeholder" => trans('labels.backend.blogcategories.table.all')]) !!}
                             </th>
                             <th></th>
                             <th></th>
@@ -85,6 +89,7 @@
                     {data: 'name', name: '{{config('module.blogs.table')}}.name'},
                     {data: 'publish_datetime', name: '{{config('module.blogs.table')}}.publish_datetime'},
                     {data: 'status', name: '{{config('module.blogs.table')}}.status'},
+                    {data: 'show', name: '{{config('module.blogs.table')}}.show'},
                     {data: 'created_by', name: '{{config('module.blogs.table')}}.created_by'},
                     {data: 'created_at', name: '{{config('module.blogs.table')}}.created_at'},
                     {data: 'actions', name: 'actions', searchable: false, sortable: false}

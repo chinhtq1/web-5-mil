@@ -12494,6 +12494,8 @@ var Backend = {}; // common variable used in all the files of the backend
                 this.selectors.removeLogo = document.querySelector(".remove-logo");
                 this.selectors.imageRemoveLogo = document.querySelector(".img-remove-logo");
                 this.selectors.imageRemoveFavicon = document.querySelector(".img-remove-favicon");
+                this.selectors.imageRemoveCompanyLogo = document.querySelector(".img-remove-company-logo");
+
             },
             addHandlers: function () {
                 var route = this.selectors.RouteURL;
@@ -12512,12 +12514,22 @@ var Backend = {}; // common variable used in all the files of the backend
                         closeOnConfirm: true
                     }, function (confirmed) {
                         if (confirmed) {
-                            if (data == 'logo') {
-                                value = 'logo';
-                                Backend.Utils.addClass(Backend.Settings.selectors.imageRemoveLogo, 'hidden');
-                            } else {
-                                value = 'favicon';
-                                Backend.Utils.addClass(Backend.Settings.selectors.imageRemoveFavicon, 'hidden');
+                            switch (data) {
+                                case "logo":
+                                    value = 'logo';
+                                    Backend.Utils.addClass(Backend.Settings.selectors.imageRemoveLogo, 'hidden');
+                                    break;
+                                case "favicon":
+                                    value = 'favicon';
+                                    Backend.Utils.addClass(Backend.Settings.selectors.imageRemoveFavicon, 'hidden');
+                                    break;
+
+                                case "company_logo":
+                                    value = 'company_logo';
+                                    Backend.Utils.addClass(Backend.Settings.selectors.imageRemoveFavicon, 'hidden');
+                                    break;
+                                default:
+                                    break;
                             }
 
                             callback = {

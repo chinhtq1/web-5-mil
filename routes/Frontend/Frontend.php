@@ -5,6 +5,13 @@
  * All route names are prefixed with 'frontend.'.
  */
 Route::get('/', 'FrontendController@index')->name('index');
+
+Route::get('/lien-he', function (){
+    return view('frontend.contact.contact');
+})->name('contact');
+
+Route::get('/ve-chung-toi', 'FrontendController@about')->name('about-us');
+
 /*
  * These frontend controllers require the user to be logged in
  * All route names are prefixed with 'frontend.'
@@ -36,4 +43,4 @@ Route::group(['middleware' => 'auth'], function () {
 /*
 * Show pages
 */
-Route::get('pages/{slug}', 'FrontendController@showPage')->name('pages.show');
+Route::get('/trang/{slug}', 'FrontendController@showPage')->name('pages.show');

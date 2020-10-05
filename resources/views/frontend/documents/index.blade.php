@@ -32,6 +32,9 @@
                 @else
                     <h3>Tài liệu</h3>
                 @endisset
+
+                @if($documents) <h4>Không có tài liệu</h4> @endif
+
             </div>
             <div class="blog-bottom">
                 <div class="col-md-3 blog-left">

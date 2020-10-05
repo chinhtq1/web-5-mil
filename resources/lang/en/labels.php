@@ -139,6 +139,7 @@ return [
             "title" => "Bài viết",
             "table" => [
                 "title" => "Bài viết",
+                'show' => 'Hiển thị lên trang chủ ?',
                 "publish" => "Ngày publish",
                 "status" => "Trạng thái",
                 "createdat" => "Ngày thêm mới",
@@ -189,8 +190,9 @@ return [
             "management" => "Settings Management",
             "title" => "Settings",
             "seo" => "SEO Settings",
-            "companydetails" => "Company Contact Details",
+            "companydetails" => "Thông tin công ty",
             "mail" => "Mail Settings",
+			"index" => "Trang chủ",
             "footer" => "Footer Settings",
             "terms" => "Terms and Condition Settings",
             "google" => "Google Analytics Track Code",
@@ -310,6 +312,7 @@ return [
             "table" => [
                 "title" => "Tên sự kiện",
                 "status" => "Trạng thái",
+                'show' => 'Hiển thị lên trang chủ ?',
                 "startdate" => "Ngày bắt đầu",
                 "endate" => "Ngày kết thúc",
                 "createdby" => "Người thêm mới",

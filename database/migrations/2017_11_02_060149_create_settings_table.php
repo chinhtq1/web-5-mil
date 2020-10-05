@@ -17,10 +17,20 @@ class CreateSettingsTable extends Migration
             $table->string('logo', 191)->nullable();
             $table->string('favicon', 191)->nullable();
             $table->string('seo_title', 191)->nullable();
-            $table->text('seo_keyword', 65535)->nullable();
-            $table->text('seo_description', 65535)->nullable();
-            $table->string('company_contact', 191)->nullable();
-            $table->text('company_address', 65535)->nullable();
+            $table->text('seo_keyword')->nullable();
+            $table->text('seo_description')->nullable();
+
+//            Conpany Info
+            $table->string('company_name', 191)->nullable();
+            $table->string('company_logo', 191)->nullable();
+            $table->string('company_contact_1', 191)->nullable();
+            $table->string('company_contact_2', 191)->nullable();
+            $table->text('company_address')->nullable();
+            $table->string('company_email', 191)->nullable();
+            $table->string('company_map', 191)->nullable();
+
+//            End Company Info
+
             $table->string('from_name', 191)->nullable();
             $table->string('from_email', 191)->nullable();
             $table->string('facebook', 191)->nullable();
@@ -29,9 +39,9 @@ class CreateSettingsTable extends Migration
             $table->string('google', 191)->nullable();
             $table->string('copyright_text', 191)->nullable();
             $table->string('footer_text', 191)->nullable();
-            $table->text('terms', 65535)->nullable();
-            $table->text('disclaimer', 65535)->nullable();
-            $table->text('google_analytics', 65535)->nullable();
+            $table->text('terms')->nullable();
+            $table->text('disclaimer')->nullable();
+            $table->text('google_analytics')->nullable();
             $table->string('home_video1', 191)->nullable();
             $table->string('home_video2', 191)->nullable();
             $table->string('home_video3', 191)->nullable();

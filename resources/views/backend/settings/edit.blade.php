@@ -28,10 +28,10 @@
 				<a href="#tab2" aria-controls="1" role="tab" data-toggle="tab">{{ trans('labels.backend.settings.companydetails') }}</a>
 			</li>
 			<li role="presentation">
-				<a href="#tab3" aria-controls="2" role="tab" data-toggle="tab">{{ trans('labels.backend.settings.mail') }}</a>
+				<a href="#tab3" aria-controls="2" role="tab" data-toggle="tab">{{ trans('labels.backend.settings.index') }}</a>
 			</li>
 			<li role="presentation">
-				<a href="#tab4" aria-controls="3" role="tab" data-toggle="tab">{{ trans('labels.backend.settings.footer') }}</a>
+				<a href="#tab4" aria-controls="3" role="tab" data-toggle="tab">{{ trans('labels.backend.settings.banner') }}</a>
 			</li>
 			<li role="presentation">
 				<a href="#tab5" aria-controls="4" role="tab" data-toggle="tab">{{ trans('labels.backend.settings.terms') }}</a>

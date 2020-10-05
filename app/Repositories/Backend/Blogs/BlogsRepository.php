@@ -50,6 +50,7 @@ class BlogsRepository extends BaseRepository implements BlogRepositoryInterface
                 config('module.blogs.table') . '.name',
                 config('module.blogs.table') . '.publish_datetime',
                 config('module.blogs.table') . '.status',
+                config('module.blogs.table') . '.show',
                 config('module.blogs.table') . '.created_by',
                 config('module.blogs.table') . '.created_at',
                 config('access.users_table') . '.first_name as user_name',

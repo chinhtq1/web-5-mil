@@ -43,8 +43,8 @@
                     </ul>
                 </div>
             </li>
-            <li class="menu-item"><a class="menu-link" href="about.html">Về chúng tôi</a></li>
-            <li class="menu-item"><a class="menu-link" href="contact.html">Liên hệ</a></li>
+            <li class="menu-item"><a class="menu-link" href="{{ route('frontend.about-us') }}">Về chúng tôi</a></li>
+            <li class="menu-item"><a class="menu-link" href="{{ route('frontend.contact') }}">Liên hệ</a></li>
         </ul>
     </div>
 

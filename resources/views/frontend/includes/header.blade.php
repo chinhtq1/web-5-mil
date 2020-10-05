@@ -16,7 +16,7 @@
             <div class="col-md-4 head-right">
                 <div id="sb-search" class="sb-search">
                     <form>
-                        <input class="sb-search-input" placeholder="Search" type="search" name="search" id="search">
+                        <input class="sb-search-input" placeholder="Tìm kiếm" type="search" name="search" id="search">
                         <input class="sb-search-submit" type="submit" value="">
                         <span class="sb-icon-search"> </span>
                     </form>

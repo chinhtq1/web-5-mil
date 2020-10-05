@@ -13,56 +13,23 @@
                 <!--				<p>Mauris malesuada mi sit amet quam euismod auctor quis quis urna. Cras a maximus ex. Vestibulum vitae vestibulum lectus, at maximus libero.</p>-->
             </div>
             <div class= "welcome-bottom">
-                @foreach($blogs as $blog)
+                @forelse($blogs as $blog)
                     <div class="col-md-4 welcome-left">
                         <img src="{{ Storage::disk('public')->url('img/blog/' . $blog->featured_image) }}" alt="" />
                         <div class="welcome-btm">
                             <a href="{{ route('frontend.blogs.detail', ['slug' => $blog->slug]) }}">{{ $blog->name }}<span class="arw"> </span></a>
                         </div>
                     </div>
-                @endforeach
+                @empty
+                    <div class="text-center">
+                        <h4>Không có bài viết nào</h4>
+                    </div>
+                @endforelse
                 <div class="clearfix"></div>
             </div>
         </div>
     </div>
-    <!--welcome-End-->
-    <!--our-starts-->
-    <!--	<div class="our" id="furniture">-->
-    <!--		<div class="container">-->
-    <!--			<div class="our-top">-->
-    <!--				<div class="col-md-7 our-left heading">-->
-    <!--					<h3>Our Furniture</h3>-->
-    <!--					<p>Curabitur volutpat turpis et metus molestie tincidunt. Morbi blandit dapibus efficitur. Fusce a efficitur massa. Donec a fermentum libero.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras condimentum euismod mollis. </p>-->
-    <!--				</div>-->
-    <!--				<div class="col-md-5 our-right">-->
-    <!--					<a href="single.html"><img src="{{ asset('img/frontend/o-1.jpg')}}" alt="" /></a>-->
-    <!--				</div>-->
-    <!--				<div class="clearfix"></div>-->
-    <!--			</div>-->
-    <!--			<div class="our-top">-->
-    <!--				<div class="col-md-7 o-left">					-->
-    <!--					<a href="single.html"><img src="{{ asset('img/frontend/o-2.jpg')}}" alt="" /></a>-->
-    <!--				</div>-->
-    <!--				<div class="col-md-5 o-right  heading">-->
-    <!--					<h3>Furniture Design</h3>-->
-    <!--					<p>Curabitur volutpat turpis et metus molestie tincidunt. Morbi blandit dapibus efficitur. Fusce a efficitur massa. Donec a fermentum libero.</p>-->
-    <!--				</div>-->
-    <!--				<div class="clearfix"></div>-->
-    <!--			</div>-->
-    <!--			<div class="our-top">-->
-    <!--				<div class="col-md-7 our-left heading">-->
-    <!--					<h3>Special Design</h3>-->
-    <!--					<p>Curabitur volutpat turpis et metus molestie tincidunt. Morbi blandit dapibus efficitur. Fusce a efficitur massa. Donec a fermentum libero.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras condimentum euismod mollis. </p>-->
-    <!--				</div>-->
-    <!--				<div class="col-md-5 our-right">-->
-    <!--					<a href="single.html"><img src="{{ asset('img/frontend/o-3.jpg')}}" alt="" /></a>-->
-    <!--				</div>-->
-    <!--				<div class="clearfix"></div>-->
-    <!--			</div>-->
-    <!--		</div>-->
-    <!--	</div>-->
-    <!--our-End-->
-    <!--news-starts-->
+
     <div class="news" id="news">
         <div class="container">
             <div class="news-top heading">
@@ -70,27 +37,19 @@
                 <!--				<p>Mauris malesuada mi sit amet quam euismod auctor quis quis urna. Cras a maximus ex. Vestibulum vitae vestibulum lectus, at maximus libero.</p>-->
             </div>
             <div class="news-bottom">
-                <div class="col-md-4 news-left">
-                    <img src="{{ asset('img/frontend/n-1.jpg')}}" alt="" />
-                    <div class="mask">
-                        <h4>29/11</h4>
-                        <p>Morbi eget mauris ut urna iaculis ultrices ut nec turpis.</p>
+                @forelse($events as $event)
+                    <div class="col-md-4 news-left">
+                        <img src="{{ Storage::disk('public')->url('img/event/' . $event->featured_image) }}" alt="" />
+                        <div class="mask">
+                            <h4>{{ $event->start_datetime->format('d/m') }}</h4>
+                            <p style="word-break: break-word">{{ $event->description }}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-4 news-left">
-                    <img src="{{ asset('img/frontend/n-2.jpg')}}" alt="" />
-                    <div class="mask">
-                        <h4>29/11</h4>
-                        <p>Morbi eget mauris ut urna iaculis ultrices ut nec turpis.</p>
+                @empty
+                    <div class="text-center">
+                        <h4>Không có sự kiện nào</h4>
                     </div>
-                </div>
-                <div class="col-md-4 news-left">
-                    <img src="{{ asset('img/frontend/n-3.jpg')}}" alt="" />
-                    <div class="mask">
-                        <h4>29/11</h4>
-                        <p>Morbi eget mauris ut urna iaculis ultrices ut nec turpis.</p>
-                    </div>
-                </div>
+                @endforelse
                 <div class="clearfix"></div>
             </div>
         </div>

@@ -191,6 +191,7 @@ return [
                 'meta_keyword' => 'Thẻ Meta Keyword',
                 'meta_description' => 'Thẻ Meta Description',
                 'status' => 'Trạng thái',
+                'show' => 'Hiển thị lên trang chủ',
             ],
             'productcategories' => [
                 'title' => 'Danh mục',
@@ -242,6 +243,7 @@ return [
                 'meta_keyword' => 'Thẻ Meta Keyword',
                 'meta_description' => 'Thẻ Meta Description',
                 'status' => 'Trạng thái',
+                'show' => 'Hiển thị lên trang chủ',
             ],
 
             'settings' => [
@@ -251,8 +253,13 @@ return [
                 'metakeyword' => 'Meta Keyawords',
                 'metadescription' => 'Meta Description',
                 'companydetails' => [
-                    'address' => 'Company Address',
-                    'contactnumber' => 'Contact Number',
+                    'name' => 'Tên công ty',
+                    'logo' => 'Logo công ty',
+                    'address' => 'Địa chỉ',
+                    'contact_1' => 'Số điện thoại 1',
+                    'contact_2' => 'Số điện thoại 2',
+                    'email' => 'Địa chỉ email',
+                    'map' => 'Map'
                 ],
                 'mail' => [
                     'fromname' => 'From Name',

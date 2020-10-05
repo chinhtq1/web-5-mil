@@ -8,6 +8,23 @@
     </div><!--form control-->
 
     <div class="form-group">
+        {{ Form::label('show', trans('validation.attributes.backend.events.show'), ['class' => 'col-lg-2 control-label']) }}
+
+        <div class="col-lg-10">
+            <div class="control-group">
+                <label class="control control--checkbox">
+                    @if(isset($event->show) && !empty ($event->show))
+                        {{ Form::checkbox('show', 1, true) }}
+                    @else
+                        {{ Form::checkbox('show', 1, false) }}
+                    @endif
+                    <div class="control__indicator"></div>
+                </label>
+            </div>
+        </div><!--col-lg-3-->
+    </div>
+
+    <div class="form-group">
         {{ Form::label('publish_datetime', trans('validation.attributes.backend.events.publish'), ['class' => 'col-lg-2 control-label required']) }}
 
         <div class="col-lg-10">

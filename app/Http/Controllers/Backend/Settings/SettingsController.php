@@ -32,6 +32,7 @@ class SettingsController extends Controller
     public function update(Setting $setting, UpdateSettingsRequest $request)
     {
         $this->settings->update($setting, $request->except(['_token', '_method']));
+        session()->forget('appSettings');
 
         return new RedirectResponse(route('admin.settings.edit', $setting->id), ['flash_success' => trans('alerts.backend.settings.updated')]);
     }

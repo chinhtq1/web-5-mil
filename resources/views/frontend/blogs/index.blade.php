@@ -33,6 +33,8 @@
                     @else
                     <h3>Tin tức</h3>
                 @endisset
+
+                @if($blogs) <h4>Không có bài viết</h4> @endif
             </div>
             <div class="blog-bottom">
                 <div class="col-md-3 blog-left">
@@ -61,7 +63,8 @@
                             </div>
                         @endforeach
                     </div>
-                @endforeach
+
+                    @endforeach
                 </div>
                 <!-- END LIST BLOG -->
 

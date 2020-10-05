@@ -15,7 +15,6 @@ trait PageAttribute
         return '<div class="btn-group action-btn">
                     ' . $this->getEditButtonAttribute('edit-page', 'admin.pages.edit') . '
                     ' . $this->getViewButtonAttribute() . '                    
-                    ' . $this->getDeleteButtonAttribute('delete-page', 'admin.pages.destroy') . '
                 </div>';
     }
 

@@ -13,7 +13,8 @@
             </div>
             <div class="img-remove-logo">
                 @if($setting->logo)
-                    <img height="50" width="50" src="{{ Storage::disk('public')->url('img/logo/' . $setting->logo) }}">
+                    </br>
+                    <img height="200" src="{{ Storage::disk('public')->url('img/settings/logo/' . $setting->logo) }}">
                     <i id="remove-logo-img" class="fa fa-times remove-logo" data-id="logo" aria-hidden="true"></i>
                 @endif
             </div>
@@ -36,7 +37,7 @@
             </div>
             <div class="img-remove-favicon">
                 @if($setting->favicon)
-                    <img height="50" width="50" src="{{ Storage::disk('public')->url('img/favicon/' . $setting->favicon) }}">
+                    <img height="64" src="{{ Storage::disk('public')->url('img/settings/favicon/' . $setting->favicon) }}">
                     <i id="remove-favicon-img" class="fa fa-times remove-logo" data-id="favicon" aria-hidden="true"></i>
                 @endif
             </div>

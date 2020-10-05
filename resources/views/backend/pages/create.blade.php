@@ -34,7 +34,7 @@
                     {{ Form::label('description', trans('validation.attributes.backend.pages.description'), ['class' => 'col-lg-2 control-label required']) }}
 
                     <div class="col-lg-10">
-                        {{ Form::textarea('description', null,['class' => 'form-control box-size', 'placeholder' => trans('validation.attributes.backend.pages.description')]) }}
+                        {{ Form::textarea('description', null,['class' => 'form-control box-size editor', 'placeholder' => trans('validation.attributes.backend.pages.description')]) }}
                     </div><!--col-lg-3-->
                 </div><!--form control-->
 

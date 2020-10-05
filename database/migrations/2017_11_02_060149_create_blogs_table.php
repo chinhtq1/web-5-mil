@@ -27,6 +27,7 @@ class CreateBlogsTable extends Migration
             $table->enum('status', ['Published', 'InActive']);
             $table->integer('created_by')->unsigned();
             $table->integer('updated_by')->unsigned()->nullable();
+            $table->boolean('show')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });

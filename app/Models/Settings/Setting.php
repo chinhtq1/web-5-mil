@@ -24,8 +24,25 @@ class Setting extends BaseModel
         'seo_title',
         'seo_keyword',
         'seo_description',
-        'company_contact',
+
+//        Company Detail
+        'company_logo',
+        'company_name',
+        'company_contact_1',
+        'company_contact_2',
         'company_address',
+        'company_email',
+        'company_map',
+//        End Company Detail
+
+//    Banner
+        'banners',
+//    End Banner
+
+//    Partner
+        'partners',
+//    End Partner
+
         'from_name',
         'from_email',
         'footer_text',
@@ -35,8 +52,14 @@ class Setting extends BaseModel
         'google_analytics'
     ];
 
-    public function __construct()
+    protected $casts = [
+        'banner' => 'array',
+        'partner' => 'array',
+    ];
+    // $attributes
+    public function __construct(array $attributes = [])
     {
+        parent::__construct($attributes);
         $this->table = config('access.settings_table');
     }
 }

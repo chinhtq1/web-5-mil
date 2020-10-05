@@ -8,6 +8,23 @@
     </div><!--form control-->
 
     <div class="form-group">
+        {{ Form::label('show', trans('validation.attributes.backend.blogs.show'), ['class' => 'col-lg-2 control-label']) }}
+
+        <div class="col-lg-10">
+            <div class="control-group">
+                <label class="control control--checkbox">
+                    @if(isset($blog->show) && !empty ($blog->show))
+                        {{ Form::checkbox('show', 1, true) }}
+                    @else
+                        {{ Form::checkbox('show', 1, false) }}
+                    @endif
+                    <div class="control__indicator"></div>
+                </label>
+            </div>
+        </div><!--col-lg-3-->
+    </div>
+
+    <div class="form-group">
         {{ Form::label('categories', trans('validation.attributes.backend.blogs.category'), ['class' => 'col-lg-2 control-label required']) }}
 
         <div class="col-lg-10">

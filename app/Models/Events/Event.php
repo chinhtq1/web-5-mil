@@ -32,6 +32,7 @@ class Event extends BaseModel
         'meta_keywords',
         'meta_description',
         'status',
+        'show',
         'featured_image',
         'created_by',
     ];

@@ -147,7 +147,7 @@ return [
             "all" => "Tất cả sự kiện",
             "create" => "Thêm sự kiện",
             "edit" => "Chỉnh sửa sự kiện",
-            "management" => "Tất cả sự kiện",
+            "management" => "Quản lý sự kiện",
             "main" => "Các sự kiện",
         ],
     ],
