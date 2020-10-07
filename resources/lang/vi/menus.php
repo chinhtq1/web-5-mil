@@ -103,7 +103,7 @@ return [
             "main" => "Menus",
         ],
         "modules" => [
-            "all" => "All Modules Page",
+            "all" => " Modules Page",
             "create" => "Create Module Page",
             "management" => "Module Management",
             "main" => "Module Pages",

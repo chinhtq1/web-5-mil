@@ -12301,26 +12301,8 @@ var Backend = {}; // common variable used in all the files of the backend
                     //                toolbar2: 'print preview media | forecolor backcolor emoticons | codesample',
                     image_advtab: true,
                     relative_urls: false,
-                    file_browser_callback: function (field_name, url, type, win) {
-                        var x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
-                        var y = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
-
-                        var cmsURL = "/" + 'laravel-filemanager?field_name=' + field_name;
-                        if (type == 'image') {
-                            cmsURL = cmsURL + "&type=Images";
-                        } else {
-                            cmsURL = cmsURL + "&type=Files";
-                        }
-
-                        tinyMCE.activeEditor.windowManager.open({
-                            file: cmsURL,
-                            title: 'Filemanager',
-                            width: x * 0.8,
-                            height: y * 0.8,
-                            resizable: "yes",
-                            close_previous: "no"
-                        });
-                    },
+                    images_upload_url: 'postAcceptor.php',
+                    automatic_uploads: true,
                     content_css: [
                         '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
                         '//www.tinymce.com/css/codepen.min.css'

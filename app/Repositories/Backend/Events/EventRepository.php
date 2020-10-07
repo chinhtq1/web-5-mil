@@ -106,7 +106,7 @@ class EventRepository extends BaseRepository
             }
 
             throw new GeneralException(
-                trans('exceptions.backend.blogs.update_error')
+                trans('exceptions.backend.events.update_error')
             );
         });
     }
@@ -129,10 +129,8 @@ class EventRepository extends BaseRepository
 
     public function uploadImage($input)
     {
-        $avatar = $input['featured_image'];
-
         if (isset($input['featured_image']) && !empty($input['featured_image'])) {
-
+            $avatar = $input['featured_image'];
             if ($avatar->getSize())
                 $fileType = $avatar->getClientOriginalExtension();
 
@@ -160,8 +158,8 @@ class EventRepository extends BaseRepository
 
     public function getBySlug($slug)
     {
-        if (!is_null($this->query()->where(['slug' => $slug, 'active' => 'Publish'])->firstOrFail())) {
-            return $this->query()->where(['slug' => $slug, 'active' => 'Publish'])->firstOrFail();
+        if (!is_null($this->query()->whereSlug(['slug' => $slug, 'active' => 'Publish'])->firstOrFail())) {
+            return $this->query()->whereSlug(['slug' => $slug, 'active' => 'Publish'])->firstOrFail();
         }
         throw new GeneralException(trans('exceptions.backend.access.pages.not_found'));
     }

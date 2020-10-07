@@ -34,3 +34,12 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'as' => 'admin.', '
      */
     includeRouteFiles(__DIR__.'/Backend/');
 });
+
+/*
+* Routes From Module Generator
+*/
+
+/*
+* Routes From Module Generator
+*/
+includeRouteFiles(__DIR__.'/Generator/');

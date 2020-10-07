@@ -1,8 +1,8 @@
 <!--navigation-starts-->
 <div class="navigation menu">
-    <div class="menu-top-content">
+    <div class="menu-top-content" id="nav-menu">
         <ul class="navig cl-effect-1">
-            <li class="menu-item active"><a  class="menu-link" href="{{ route('frontend.index') }}">Trang chủ</a></li>
+            <li class="menu-item"><a  class="menu-link" href="{{ route('frontend.index') }}">Trang chủ</a></li>
             <li class="menu-item">
                 <a class="menu-link" href="{{ route('frontend.products.index') }}">Sản Phẩm</a>
                 <div class="menu-mega-sub">
@@ -35,7 +35,7 @@
                     <ul class="sub-menu">
                         @isset($documentMenus)
                             @foreach($documentMenus as $menu)
-                                <li class="menu-item ">
+                                <li class="menu-item">
                                     <a href="{{ route('frontend.documents.listByCategory', ['slug' => $menu->slug]) }}" class="menu-link">{{ $menu->name }}</a>
                                 </li>
                             @endforeach
@@ -53,3 +53,4 @@
 
 </div>
 <!--navigation-end-->
+

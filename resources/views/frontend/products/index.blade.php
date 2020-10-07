@@ -1,5 +1,7 @@
 @extends('frontend.layouts.app')
-
+@section('title')
+    | @isset($active_category) {{ $active_category->name }} @else {{ appSettings()->blog_title ? appSettings()->blog_title : '' }}  @endisset
+@endsection
 @section('after-css')
     <link rel="stylesheet" href="{{ asset('css/frontend/chocolat.css') }}" type="text/css" media="screen" charset="utf-8">
 @endsection
@@ -33,7 +35,7 @@
                     <h3>Tất cả sản phẩm</h3>
                 @endisset
 
-                @if($products) <h4>Không có sản phẩm</h4> @endif
+                @if(count($products)==0)<h4>Không có sản phẩm</h4> @endif
 
             </div>
             <div class="blog-bottom">
@@ -46,18 +48,25 @@
                     @foreach($products->chunk(3) as $chunk_product)
                         <div class="row">
                             @foreach($chunk_product as $product)
-                                <div class="col-md-4 blog-one">
+                                <div class="col-md-6 col-lg-4   blog-one">
                                     <div class="product-item">
-                                        <a href="{{ route('frontend.products.detail', ['slug' => $product->slug]) }}" title="">
-                                            <img class="product-image" src="{{ Storage::disk('public')->url('img/product/' . $product->feature_image) }}" alt="" class="img-responsive">
-                                        </a>
-                                        <a href="{{ route('frontend.products.detail', ['slug' => $product->slug]) }}">
-                                            <a href="{{ route('frontend.products.detail', ['slug' => $product->slug]) }}">
-                                                <h4 class="product-title">{{ $product->name }}</h4>
+                                        <div class="text-center" style="display: block; width: 100%">
+                                            <a href="{{ route('frontend.products.detail', ['slug' => $product->slug]) }}" title="">
+                                                <img class="product-image" src="{{ Storage::disk('public')->url('img/product/' . $product->feature_image) }}" alt="{{ $product->name }}">
                                             </a>
-                                        </a>
+                                        </div>
+
+                                        <div class="blog-title">
+                                            <a href="{{ route('frontend.products.detail', ['slug' => $product->slug]) }}">
+                                                <a href="{{ route('frontend.products.detail', ['slug' => $product->slug]) }}">
+                                                    <h4 class="product-title">{{ Illuminate\Support\Str::limit($product->name, 30, '...') }}</h4>
+                                                </a>
+                                            </a>
+                                        </div>
+
                                         <div class="wrap-text">
-                                            <p class="content">{{ $product->base_feature }}</p><p><a href="{{ route('frontend.products.detail', ['slug' => $product->slug]) }}" class="product-redirect"> [Xem tiếp ...]</a></p>
+                                            <p class="content blog-description">{{ Illuminate\Support\Str::limit($product->base_feature, 100, '...') }}</p>
+                                            <p><a href="{{ route('frontend.products.detail', ['slug' => $product->slug]) }}" class="product-redirect"> [Xem tiếp ...]</a></p>
                                         </div>
                                     </div>
                                 </div>

@@ -26,7 +26,7 @@
                     {{ Form::label('title', trans('validation.attributes.backend.pages.title'), ['class' => 'col-lg-2 control-label required']) }}
 
                     <div class="col-lg-10">
-                        {{ Form::text('title', null, ['class' => 'form-control box-size', 'placeholder' => trans('validation.attributes.backend.pages.title'), 'required' => 'required']) }}
+                        {{ Form::text('title', null, ['class' => 'form-control box-size', 'placeholder' => trans('validation.attributes.backend.pages.title'), 'required' => 'required', 'readonly']) }}
                     </div><!--col-lg-10-->
                 </div><!--form control-->
 

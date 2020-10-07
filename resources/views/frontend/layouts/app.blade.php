@@ -2,12 +2,15 @@
 <html>
 
 <head>
-    <title>Zero 2 Hero Team</title>
+    <title>
+        {{ appSettings()->app_name ? appSettings()->app_name : app_name() }}
+        @yield('title')
+    </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Zero 2 Hero Team" />
 
-    <link type="image/x-icon" href="{{ Storage::disk('public')->url('img/settings/favicon/'.settings()->favicon) }}" rel="icon">
+    <link type="image/x-icon" href="{{ appSettings()->favicon ?  Storage::disk('public')->url('img/settings/favicon/'.appSettings()->favicon) : '' }}" rel="icon">
 
     <!-- CSS -->
     @yield('before-css')
@@ -46,6 +49,14 @@
 <!-- SCRIPT -->
 @yield('before-js')
 @include('frontend.includes.base-js')
+<script>
+    $(document).ready(function() {
+        // get current URL path and assign 'active' class
+        var pathname = window.location.href;
+        if(pathname.endsWith('/')) pathname = pathname.slice(0, -1);
+        $('.menu  .menu-item > a[href="'+pathname+'"]').parent().addClass('active');
+    })
+</script>
 @yield('after-js')
 <!-- End SCRIPT -->
 </body>

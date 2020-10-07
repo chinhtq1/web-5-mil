@@ -19,12 +19,12 @@ class BlogsController extends BaseController
 
     public function __construct(
         BlogCategoriesRepository $blogCategoryRepo,
-        BlogsRepository $blosRepository
+        BlogsRepository $blogRepository
     )
     {
         parent::__construct();
         $this->blogCategoryRepo = $blogCategoryRepo;
-        $this->blogRepo = $blosRepository;
+        $this->blogRepo = $blogRepository;
         $this->categories = $this->blogCategoryRepo->query()->whereStatus(1)->get();
     }
 

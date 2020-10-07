@@ -208,9 +208,9 @@ class BlogsRepository extends BaseRepository implements BlogRepositoryInterface
      */
     public function uploadImage($input)
     {
-        $avatar = $input['featured_image'];
-
         if (isset($input['featured_image']) && !empty($input['featured_image'])) {
+            $avatar = $input['featured_image'];
+
             $fileType = $avatar->getClientOriginalExtension();
 
             $fileName = time() . '-' . Str::slug($input['name']);

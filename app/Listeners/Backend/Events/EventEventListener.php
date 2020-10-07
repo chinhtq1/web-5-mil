@@ -25,8 +25,8 @@ class EventEventListener
     public function onUpdated($event)
     {
         history()->withType($this->history_slug)
-            ->withEntity($event->event->id)
-            ->withText('trans("history.backend.events.updated") <strong>' . $event->event->name . '</strong>')
+            ->withEntity($event->events->id)
+            ->withText('trans("history.backend.events.updated") <strong>' . $event->events->name . '</strong>')
             ->withIcon('save')
             ->withClass('bg-aqua')
             ->log();
@@ -38,8 +38,8 @@ class EventEventListener
     public function onDeleted($event)
     {
         history()->withType($this->history_slug)
-            ->withEntity($event->event->id)
-            ->withText('trans("history.backend.events.deleted") <strong>' . $event->event->name . '</strong>')
+            ->withEntity($event->events->id)
+            ->withText('trans("history.backend.events.deleted") <strong>' . $event->events->name . '</strong>')
             ->withIcon('trash')
             ->withClass('bg-maroon')
             ->log();

@@ -8,8 +8,8 @@
     <!--starts-welcome-->
     <div class="welcome" id="welcome">
         <div class="container">
-            <div class="welcome-top heading">
-                <h2>Welcome</h2>
+            <div class="welcome-top section heading">
+                <h3>{{ appSettings()->section_index_1 ? appSettings()->section_index_1 : "Welcome" }}</h3>
                 <!--				<p>Mauris malesuada mi sit amet quam euismod auctor quis quis urna. Cras a maximus ex. Vestibulum vitae vestibulum lectus, at maximus libero.</p>-->
             </div>
             <div class= "welcome-bottom">
@@ -17,7 +17,9 @@
                     <div class="col-md-4 welcome-left">
                         <img src="{{ Storage::disk('public')->url('img/blog/' . $blog->featured_image) }}" alt="" />
                         <div class="welcome-btm">
-                            <a href="{{ route('frontend.blogs.detail', ['slug' => $blog->slug]) }}">{{ $blog->name }}<span class="arw"> </span></a>
+                            <a href="{{ route('frontend.blogs.detail', ['slug' => $blog->slug]) }}">
+                                {{ Illuminate\Support\Str::limit($blog->name, 40, '...') }}
+                                <span class="arw" style="float: right"> </span></a>
                         </div>
                     </div>
                 @empty
@@ -32,8 +34,8 @@
 
     <div class="news" id="news">
         <div class="container">
-            <div class="news-top heading">
-                <h3>News & Events</h3>
+            <div class="news-top section heading">
+                <h3>{{ appSettings()->section_index_2 ? appSettings()->section_index_2 : "News and Events" }}</h3>
                 <!--				<p>Mauris malesuada mi sit amet quam euismod auctor quis quis urna. Cras a maximus ex. Vestibulum vitae vestibulum lectus, at maximus libero.</p>-->
             </div>
             <div class="news-bottom">
@@ -42,7 +44,7 @@
                         <img src="{{ Storage::disk('public')->url('img/event/' . $event->featured_image) }}" alt="" />
                         <div class="mask">
                             <h4>{{ $event->start_datetime->format('d/m') }}</h4>
-                            <p style="word-break: break-word">{{ $event->description }}</p>
+                            <a href="{{ route('frontend.events.detail', ['slug' => $event->slug]) }}" class="event-name" style="word-break: break-word">{{ Illuminate\Support\Str::limit($event->name, 50, '...') }}</a>
                         </div>
                     </div>
                 @empty
@@ -57,73 +59,22 @@
 
     <div class="partner" id="partner">
         <div class="container">
-            <div class="news-top heading">
-                <h3>Partner</h3>
+            <div class="news-top section heading">
+                <h3>{{ appSettings()->section_index_3 ? appSettings()->section_index_3 : "Partner" }}</h3>
             </div>
 
             <div class="news-bottom">
+                @empty($partners)
+
+                @else
                 <div class="owl-carousel owl-theme">
-                    <div class="item text-center">
-                        <img class="logo" src="{{ asset('img/frontend/logo/1.png')}}"/>
-                    </div>
-                    <div class="item">
-                        <img class="logo" src="{{ asset('img/frontend/logo/2.png')}}"/>
-                    </div>
-                    <div class="item">
-                        <img class="logo" src="{{ asset('img/frontend/logo/3.png')}}"/>
-                    </div>
-                    <div class="item">
-                        <img class="logo" src="{{ asset('img/frontend/logo/4.png')}}"/>
-                    </div>
-                    <div class="item">
-                        <img class="logo" src="{{ asset('img/frontend/logo/5.png')}}"/>
-                    </div>
-                    <div class="item">
-                        <img class="logo" src="{{ asset('img/frontend/logo/6.png')}}"/>
-                    </div>
-                    <div class="item">
-                        <img class="logo" src="{{ asset('img/frontend/logo/7.png')}}"/>
-                    </div>
-                    <div class="item">
-                        <img class="logo" src="{{ asset('img/frontend/logo/8.png')}}"/>
-                    </div>
-                    <div class="item">
-                        <img class="logo" src="{{ asset('img/frontend/logo/9.png')}}"/>
-                    </div>
-                    <div class="item">
-                        <img class="logo" src="{{ asset('img/frontend/logo/10.png')}}"/>
-                    </div>
-                    <div class="item">
-                        <img class="logo" src="{{ asset('img/frontend/logo/11.png')}}"/>
-                    </div>
-                    <div class="item">
-                        <img class="logo" src="{{ asset('img/frontend/logo/12.png')}}"/>
-                    </div>
-                    <div class="item">
-                        <img class="logo" src="{{ asset('img/frontend/logo/13.png')}}"/>
-                    </div>
-                    <div class="item">
-                        <img class="logo" src="{{ asset('img/frontend/logo/14.png')}}"/>
-                    </div>
-                    <div class="item">
-                        <img class="logo" src="{{ asset('img/frontend/logo/15.png')}}"/>
-                    </div>
-                    <div class="item">
-                        <img class="logo" src="{{ asset('img/frontend/logo/16.png')}}"/>
-                    </div>
-                    <div class="item">
-                        <img class="logo" src="{{ asset('img/frontend/logo/17.png')}}"/>
-                    </div>
-                    <div class="item">
-                        <img class="logo" src="{{ asset('img/frontend/logo/18.png')}}"/>
-                    </div>
-                    <div class="item">
-                        <img class="logo" src="{{ asset('img/frontend/logo/19.png')}}"/>
-                    </div>
-                    <div class="item">
-                        <img class="logo" src="{{ asset('img/frontend/logo/20.png')}}"/>
-                    </div>
+                    @foreach($partners as $partner)
+                        <div class="item text-center">
+                            <img class="logo" src="{{ Storage::disk('public')->url('img/partner/').$partner->featured_image }}" alt="{{ $partner->name }}"/>
+                        </div>
+                    @endforeach
                 </div>
+                @endempty
             </div>
             <div class="clearfix"></div>
 

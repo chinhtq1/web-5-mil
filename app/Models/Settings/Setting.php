@@ -19,11 +19,32 @@ class Setting extends BaseModel
      * @var array
      */
     protected $fillable = [
+        'app_name',
         'logo',
         'favicon',
         'seo_title',
         'seo_keyword',
         'seo_description',
+//        Chỉnh sửa chung
+        'fb_link',
+        'twitter_link',
+        'printerest_link',
+        'rss_link',
+
+        'header_color',
+        'footer_color',
+        'header_title',
+
+        'blog_title',
+        'product_title',
+        'contact_title',
+        'document_title',
+        'event_title',
+
+//        Trang chủ
+        'section_index_1',
+        'section_index_2',
+        'section_index_3',
 
 //        Company Detail
         'company_logo',
@@ -35,27 +56,45 @@ class Setting extends BaseModel
         'company_map',
 //        End Company Detail
 
-//    Banner
-        'banners',
-//    End Banner
+//    Contact
+//            Contact 1
+        'contact_1_title',
+        'contact_name_1_0',
+        'contact_number_1_0',
+        'contact_name_1_1',
+        'contact_number_1_1',
+        'contact_name_1_2',
+        'contact_number_1_2',
+        'contact_name_1_3',
+        'contact_number_1_3',
 
-//    Partner
-        'partners',
-//    End Partner
+//            Contact 2
+        'contact_2_title',
+        'contact_name_2_0',
+        'contact_number_2_0',
+        'contact_name_2_1',
+        'contact_number_2_1',
+        'contact_name_2_2',
+        'contact_number_2_2',
+        'contact_name_2_3',
+        'contact_number_2_3',
 
-        'from_name',
-        'from_email',
-        'footer_text',
-        'copyright_text',
+//            Contact 3
+        'contact_3_title',
+        'contact_name_3_0',
+        'contact_number_3_0',
+        'contact_name_3_1',
+        'contact_number_3_1',
+        'contact_name_3_2',
+        'contact_number_3_2',
+        'contact_name_3_3',
+        'contact_number_3_3',
+//    End Contact
         'terms',
         'disclaimer',
         'google_analytics'
     ];
 
-    protected $casts = [
-        'banner' => 'array',
-        'partner' => 'array',
-    ];
     // $attributes
     public function __construct(array $attributes = [])
     {

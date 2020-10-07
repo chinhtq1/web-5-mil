@@ -1,5 +1,7 @@
 @extends('frontend.layouts.app')
-
+@section('title')
+    | @isset($active_category) {{ $active_category->name }} @else {{ appSettings()->blog_title ? appSettings()->blog_title : '' }}  @endisset
+@endsection
 @section('after-css')
     <link rel="stylesheet" href="{{ asset('css/frontend/chocolat.css') }}" type="text/css" media="screen" charset="utf-8">
 @endsection
@@ -34,7 +36,7 @@
                     <h3>Tin tức</h3>
                 @endisset
 
-                @if($blogs) <h4>Không có bài viết</h4> @endif
+                    @if(count($blogs)==0)<h4>Không có bài viết</h4> @endif
             </div>
             <div class="blog-bottom">
                 <div class="col-md-3 blog-left">
@@ -46,19 +48,25 @@
                 @foreach($blogs->chunk(3) as $chunk_blog)
                     <div class="row">
                         @foreach($chunk_blog as $blog)
-                            <div class="col-md-4 blog-one">
+                            <div class="col-md-6 col-lg-4 blog-one">
                                 <a href="{{ route('frontend.blogs.detail', ['slug' => $blog->slug]) }}">
                                     <img class="img-blog-thumbnail" src="{{ Storage::disk('public')->url('img/blog/' . $blog->featured_image) }}" alt="" />
                                 </a>
                                 <div class="blog-btm">
-                                    <a href="{{ route('frontend.blogs.detail', ['slug' => $blog->slug]) }}">
-                                        <h2>{{ $blog->name }}</h2>
-                                    </a>
+                                    <div class="blog-title">
+                                        <a href="{{ route('frontend.blogs.detail', ['slug' => $blog->slug]) }}">
+                                            <h2>{{ Illuminate\Support\Str::limit($blog->name, 35, '...') }}</h2>
+                                        </a>
+                                    </div>
                                     <p>{{ $blog->publish_datetime }}</p>
-                                    <p class="one">{{ $blog->description }}</p>
+
+                                    <div class="blog-description">
+                                        <p class="one">{{  Illuminate\Support\Str::limit($blog->description, 100, '...')}}</p>
+                                    </div>
                                     <div class="b-btn">
                                         <a href="{{ route('frontend.blogs.detail', ['slug' => $blog->slug]) }}">Xem tiếp</a>
                                     </div>
+
                                 </div>
                             </div>
                         @endforeach

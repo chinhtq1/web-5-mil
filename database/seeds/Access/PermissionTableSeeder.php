@@ -1064,6 +1064,178 @@ class PermissionTableSeeder extends Seeder
         $viewBackend->deleted_at = null;
         $viewBackend->save();
 
+        // Banner
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'view-banner-permission';
+        $viewBackend->display_name = 'View Banner';
+        $viewBackend->sort = 77;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'create-banner';
+        $viewBackend->display_name = 'Create Banner';
+        $viewBackend->sort = 77;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'delete-banner';
+        $viewBackend->display_name = 'Delete Banner';
+        $viewBackend->sort = 78;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'edit-banner';
+        $viewBackend->display_name = 'Edit Banner';
+        $viewBackend->sort = 79;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'manage-banner';
+        $viewBackend->display_name = 'Manage Banner';
+        $viewBackend->sort = 80;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'store-banner';
+        $viewBackend->display_name = 'Store Banner';
+        $viewBackend->sort = 81;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'update-banner';
+        $viewBackend->display_name = 'Update Banner';
+        $viewBackend->sort = 82;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        // Partner
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'view-partner-permission';
+        $viewBackend->display_name = 'View Partner';
+        $viewBackend->sort = 83;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'create-partner';
+        $viewBackend->display_name = 'Create Partner';
+        $viewBackend->sort = 84;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'delete-partner';
+        $viewBackend->display_name = 'Delete Partner';
+        $viewBackend->sort = 85;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'edit-partner';
+        $viewBackend->display_name = 'Edit Partner';
+        $viewBackend->sort = 86;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'manage-partner';
+        $viewBackend->display_name = 'Manage Partner';
+        $viewBackend->sort = 87;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'store-partner';
+        $viewBackend->display_name = 'Store Partner';
+        $viewBackend->sort = 88;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+        $permission_model = config('access.permission');
+        $viewBackend = new $permission_model();
+        $viewBackend->name = 'update-partner';
+        $viewBackend->display_name = 'Update Partner';
+        $viewBackend->sort = 89;
+        $viewBackend->created_by = 1;
+        $viewBackend->updated_by = null;
+        $viewBackend->created_at = Carbon::now();
+        $viewBackend->updated_at = Carbon::now();
+        $viewBackend->deleted_at = null;
+        $viewBackend->save();
+
+
+
         $this->enableForeignKeys();
     }
 }

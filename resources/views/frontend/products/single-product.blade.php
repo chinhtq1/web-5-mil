@@ -1,5 +1,7 @@
 @extends('frontend.layouts.app')
-
+@section('title')
+    | {{ $product->name }}
+@endsection
 @section('main-content')
     <!--start-breadcrumbs-->
     <div class="breadcrumbs">
@@ -7,7 +9,7 @@
             <div class="breadcrumbs-main">
                 <ol class="breadcrumb">
                     <li><a href="{{ route('frontend.index') }}">Trang chủ</a></li>
-                    <li ><a href="{{ route('frontend.products.index') }}">Các sản phẩm</a></li>
+                    <li ><a href="{{ route('frontend.products.index') }}">Sản phẩm</a></li>
                     <li class="active">{{ $product->name }}</li>
                 </ol>
             </div>
@@ -53,10 +55,20 @@
                         </div>
                         <div class="panels">
                             <div class="panel" id="one-panel">
-                                {!! $product->content !!}
+                                <div id="product-content">
+                                    {!! $product->content !!}
+                                </div>
+                                <button class="btn btn-info expand-button" id="expand-product-content">
+                                    Đọc tiếp
+                                </button>
                             </div>
                             <div class="panel" id="two-panel">
-                                {!! $product->detail_feature !!}
+                                <div id="product-description">
+                                    {!! $product->detail_feature !!}
+                                </div>
+                                <button class="btn btn-info expand-button" id="expand-product-description">
+                                    Đọc tiếp
+                                </button>
 
                             </div>
                             <!-- <div class="panel" id="three-panel">
@@ -74,7 +86,7 @@
                                                 <a href="{{ route('frontend.products.detail', ['slug' => $r_product->slug ]) }}">
                                                     <h6>{{ $r_product->name }}</h6>
                                                 </a>
-                                                <p>{{ $r_product->base_feature }}</p>
+                                                <p>{{ Illuminate\Support\Str::limit($r_product->base_feature, 100, '...') }}</p>
                                             </div>
                                         @endforeach
 
@@ -87,51 +99,7 @@
                 </div>
 
                 <div class="col-md-3 blog-left">
-
-                    <div class="taituychon">
-                        <!-- tải báo giá -->
-                        <!-- tải khóa cứng -->
-                    </div>
-                    <div class="them1">
-                        <a href="">Liên hệ</a>
-                    </div>
-                    <div class="taituychon">
-                        <div class="kdmbac">
-                            <div class="muoi">
-                                <p>Đinh Trần Tuấn <span><a href="tel:085 999 9698" rel="nofollow"> 085 999 9698</a></span></p>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="them1">
-                        <a href="">Liên hệ hỗ trợ kỹ thuật</a>
-                    </div>
-                    <div class="taituychon">
-                        <div class="kdmbac">
-                            <div class="muoi">
-                                <p>Huỳnh Thái <span><a href="tel:0939 261 463" rel="nofollow"> 0939 261 463</a></span></p>
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="them1">
-                        <a href="">Liên hệ kinh doanh Miền Nam</a>
-                    </div>
-                    <div class="taituychon">
-                        <div class="kdmbac">
-                            <div class="muoi">
-                                <p>Huỳnh Thái <span><a href="tel:0939 261 463" rel="nofollow"> 0939 261 463</a></span></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="taituychon">
-                        <div class="kdmbac">
-                            <div class="muoi">
-                                <p>Hoàng Yến <span><a href="tel:0934 045 088" rel="nofollow"> 0934 045 088</a></span></p>
-                            </div>
-                        </div>
-                    </div>
+                    @include('frontend.products.partials.contact')
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -139,4 +107,54 @@
         </div>
     </div>
     <!--blog-end-->
+@endsection
+
+@section('after-css')
+<style>
+
+    #product-description, #product-content {
+        position: relative;
+        max-height: 300px;
+        overflow: hidden;
+        transition: max-height 1s ease;
+    }
+    #product-description.expanded, #product-content.expanded {
+         max-height: 100%;
+     }
+
+    #product-description:not(.expanded)::after, #product-content:not(.expanded)::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+    }
+</style>
+@endsection
+
+@section('after-js')
+<script>
+    $('#expand-product-description').on('click', function(){
+        var productDescription = $('#product-description');
+        productDescription.toggleClass('expanded');
+
+        if (productDescription.hasClass('expanded')) {
+            $(this).html('Đóng');
+        } else {
+            $(this).html('Đọc tiếp');
+        }
+    });
+    $('#expand-product-content').on('click', function(){
+        var productContent = $('#product-content');
+        productContent.toggleClass('expanded');
+
+        if (productContent.hasClass('expanded')) {
+            $(this).html('Đóng');
+        } else {
+            $(this).html('Đọc tiếp');
+        }
+    });
+</script>
 @endsection

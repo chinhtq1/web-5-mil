@@ -29,7 +29,7 @@ class BlogsTableController extends Controller
                 return $blogs->status;
             })
             ->addColumn('show', function ($blogs) {
-                return $blogs->show;
+                return $blogs->show_label;
             })
             ->addColumn('publish_datetime', function ($blogs) {
                 return $blogs->publish_datetime->format('d/m/Y h:i A');

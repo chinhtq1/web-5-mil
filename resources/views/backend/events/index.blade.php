@@ -24,7 +24,7 @@
                             <th>{{ trans('labels.backend.events.table.title') }}</th>
                             <th>{{ trans('labels.backend.events.table.startdate') }}</th>
                             <th>{{ trans('labels.backend.events.table.endate') }}</th>
-                            <th>{{ trans('labels.backend.blogs.table.show') }}</th>
+                            <th>{{ trans('labels.backend.events.table.show') }}</th>
                             <th>{{ trans('labels.backend.events.table.status') }}</th>
                             <th>{{ trans('labels.backend.events.table.createdby') }}</th>
                             <th>{{ trans('labels.general.actions') }}</th>
@@ -78,8 +78,8 @@
                     {data: 'name', name: '{{config('module.events.table')}}.name'},
                     {data: 'start_datetime', name: '{{config('module.events.table')}}.start_datetime'},
                     {data: 'end_datetime', name: '{{config('module.events.table')}}.end_datetime'},
-                    {data: 'status', name: '{{config('module.events.table')}}.status'},
                     {data: 'show', name: '{{config('module.events.table')}}.show'},
+                    {data: 'status', name: '{{config('module.events.table')}}.status'},
                     {data: 'created_by', name: '{{config('module.events.table')}}.created_by'},
                     {data: 'actions', name: 'actions', searchable: false, sortable: false}
                 ],

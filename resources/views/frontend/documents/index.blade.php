@@ -1,5 +1,8 @@
 @extends('frontend.layouts.app')
+@section('title')
+     | @isset($active_category) {{ $active_category->name }} @else {{ appSettings()->document_title ? appSettings()->document_title : '' }}  @endisset
 
+@endsection
 @section('after-css')
     <link rel="stylesheet" href="{{ asset('css/frontend/chocolat.css') }}" type="text/css" media="screen" charset="utf-8">
 @endsection
@@ -32,8 +35,7 @@
                 @else
                     <h3>Tài liệu</h3>
                 @endisset
-
-                @if($documents) <h4>Không có tài liệu</h4> @endif
+                    @if(count($documents)==0)<h4>Không có tài liệu</h4> @endif
 
             </div>
             <div class="blog-bottom">
@@ -45,10 +47,12 @@
                 <div class="col-md-9 blog-left">
                     @foreach($documents as $document)
                         <div class="single-youtube-channel">
+                            <img src="{{ asset(config('common.file-type')[$document->type]) }}" style="width: 30px; height: 30px; margin-right: 2rem;"  alt="{{ $document->description }}"/>
                             <a href="{{ Storage::disk('public')->url('img/document/' . $document->file) }}">
-                                <img src="{{ asset(config('common.file-type')[$document->type]) }}" style="width: 30px; height: 30px; margin-right: 2rem;"  alt="{{ $document->description }}"/>{{ $document->name }}
+                                {{ Illuminate\Support\Str::limit($document->name, 96, "...") }}
                             </a>
-                            <a style="float: right;" href="javascript:void(0)" class="download-file"
+                            <a style="float: right" href="javascript:void(0)" class="download-file"
+                               target="_blank"
                                data-file-url="{{ Storage::disk('public')->url('img/document/' . $document->file) }}"
                                data-file-name="{{ $document->file }}">
                                 <i class="fa fa-download" aria-hidden="true"></i>  Tải về</a>

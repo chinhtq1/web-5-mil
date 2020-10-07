@@ -149,6 +149,20 @@ class ModulesTableSeeder extends Seeder
                 'created_by'            => 1,
                 'created_at'            => Carbon::now(),
             ],
+            [
+                'name'                  => trans('menus.backend.banners.management'),
+                'url'                   => 'admin.banners.index',
+                'view_permission_id'    => 'view-banner-permission',
+                'created_by'            => 1,
+                'created_at'            => Carbon::now(),
+            ],
+            [
+                'name'                  => trans('menus.backend.partners.management'),
+                'url'                   => 'admin.partners.index',
+                'view_permission_id'    => 'view-partners-permission',
+                'created_by'            => 1,
+                'created_at'            => Carbon::now(),
+            ],
         ];
 
         DB::table('modules')->insert($modules);

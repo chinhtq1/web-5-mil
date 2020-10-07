@@ -29,7 +29,7 @@ class EventsTableController extends Controller
                 return $events->status;
             })
             ->addColumn('show', function ($events) {
-                return $events->show;
+                return $events->show_label;
             })
             ->addColumn('start_datetime', function ($events) {
                 return $events->start_datetime->format('d/m/Y h:i A');

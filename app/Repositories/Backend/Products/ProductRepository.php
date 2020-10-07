@@ -163,9 +163,8 @@ class ProductRepository extends BaseRepository
 
     public function uploadImage($input)
     {
-        $avatar = $input['feature_image'];
-
         if (isset($input['feature_image']) && !empty($input['feature_image'])) {
+            $avatar = $input['feature_image'];
             $fileType = $avatar->getClientOriginalExtension();
             $fileName = time() . '-' . Str::slug($input['name']);
 

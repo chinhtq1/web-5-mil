@@ -22,19 +22,19 @@
 		<!-- Nav tabs -->
 		<ul id="myTab" class="nav nav-tabs setting-tab-list" role="tablist">
 			<li role="presentation" class="active">
-				<a href="#tab1" aria-controls="home" role="tab" data-toggle="tab">{{ trans('labels.backend.settings.seo') }}</a>
+				<a href="#tab1" aria-controls="home" role="tab" data-toggle="tab">SEO</a>
 			</li>
 			<li role="presentation">
-				<a href="#tab2" aria-controls="1" role="tab" data-toggle="tab">{{ trans('labels.backend.settings.companydetails') }}</a>
+				<a href="#tab2" aria-controls="1" role="tab" data-toggle="tab">Thông tin công ty</a>
 			</li>
 			<li role="presentation">
-				<a href="#tab3" aria-controls="2" role="tab" data-toggle="tab">{{ trans('labels.backend.settings.index') }}</a>
+				<a href="#tab3" aria-controls="2" role="tab" data-toggle="tab">Trang chủ</a>
 			</li>
 			<li role="presentation">
-				<a href="#tab4" aria-controls="3" role="tab" data-toggle="tab">{{ trans('labels.backend.settings.banner') }}</a>
+				<a href="#tab4" aria-controls="3" role="tab" data-toggle="tab">Chỉnh sửa chung</a>
 			</li>
 			<li role="presentation">
-				<a href="#tab5" aria-controls="4" role="tab" data-toggle="tab">{{ trans('labels.backend.settings.terms') }}</a>
+				<a href="#tab5" aria-controls="4" role="tab" data-toggle="tab">Thông tin liên hệ</a>
 			</li>
 			<li role="presentation">
 				<a href="#tab6" aria-controls="5" role="tab" data-toggle="tab">{{ trans('labels.backend.settings.google') }}</a>

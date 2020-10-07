@@ -151,9 +151,8 @@ class DocumentRepository extends BaseRepository implements DocumentsRepositoryIn
 
     public function uploadFile($input)
     {
-        $avatar = $input['file'];
-
         if (isset($input['file']) && !empty($input['file'])) {
+            $avatar = $input['file'];
             $fileType = $avatar->getClientOriginalExtension();
             $fileName = time() . '-' . Str::slug($input['name']);
             $this->storage->put($this->upload_path . $fileName . '.' . $fileType, file_get_contents($avatar->getRealPath()));

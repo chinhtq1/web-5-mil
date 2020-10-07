@@ -1,5 +1,7 @@
 @extends('frontend.layouts.app')
-
+@section('title')
+    | {{ appSettings()->contact_title ? appSettings()->contact_title : ''  }}
+@endsection
 @section('main-content')
     <!--start-breadcrumbs-->
     <div class="breadcrumbs">
@@ -14,10 +16,10 @@
     </div>
     <!--end-breadcrumbs-->
     <!--contact-starts-->
-    <div class="contact">
+    <div class="blog">
         <div class="container">
-            <div class="contact-top heading">
-                <h3 style="color: rgba(247, 114, 51, 1) !important;">Liên hệ với chúng tôi</h3>
+            <div class="blog-top  heading">
+                <h3>Liên hệ với chúng tôi</h3>
             </div>
             <div class="contact-bottom">
                 <div class="col-md-4 contact-left">

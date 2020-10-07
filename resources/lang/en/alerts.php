@@ -79,5 +79,15 @@ return [
 	"deleted" => "The Event was successfully deleted.",
 	"updated" => "The Event was successfully updated.",
 	],
+	"banners" => [
+	"created" => "The Banner was successfully created.",
+	"deleted" => "The Banner was successfully deleted.",
+	"updated" => "The Banner was successfully updated.",
+	],
+	"partners" => [
+	"created" => "The Partner was successfully created.",
+	"deleted" => "The Partner was successfully deleted.",
+	"updated" => "The Partner was successfully updated.",
+	],
 	],
 ];

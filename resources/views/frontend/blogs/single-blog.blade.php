@@ -1,5 +1,7 @@
 @extends('frontend.layouts.app')
-
+@section('title')
+   | {{ $blog->name }}
+@endsection
 @section('main-content')
     <!--start-breadcrumbs-->
     <div class="breadcrumbs">
@@ -35,9 +37,9 @@
 
                             @foreach($related_blogs as $blog)
                                 <div class="col-md-4 post-left">
-                                    <a href="{{ route('frontend.blogs.detail', ['slug' => $blog->slug]) }}"><img class="img-blog-thumbnail " src="{{ Storage::disk('public')->url('img/blog/' . $blog->featured_image) }}" alt=""></a>
+                                    <a href="{{ route('frontend.blogs.detail', ['slug' => $blog->slug]) }}"><img class="img-related-blog-thumbnail " src="{{ Storage::disk('public')->url('img/blog/' . $blog->featured_image) }}" alt=""></a>
                                     <a href="{{ route('frontend.blogs.detail', ['slug' => $blog->slug]) }}"><h6>{{  $blog->name }}</h6></a>
-                                    <p class="fz-80">{{ $blog->description }}</p>
+                                    <p class="fz-80">{{ Illuminate\Support\Str::limit($blog->description, 100, '...') }}</p>
                                 </div>
                             @endforeach
 

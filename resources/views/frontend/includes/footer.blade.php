@@ -1,10 +1,10 @@
 <!--footer-starts-->
-<div class="footer" style="margin-top:4%">
+<div class="footer" style="margin-top:4% ; background: {{ appSettings()->footer_color ? appSettings()->footer_color : 'rgba(71, 71, 71, 1.0)'}}">
     <div class="container">
         <div class="footer-top">
             <div class="col-md-6 footer-left">
                 <div class="a-1">
-                    <img class="logo-footer company-logo" src="{{ Storage::disk('public')->url('img/settings/company-details/' . appSettings()->company_logo)}}" /><br>
+                    <img class="logo-footer company-logo" src="{{ appSettings()->company_logo ? Storage::disk('public')->url('img/settings/company-details/' . appSettings()->company_logo) : ''}}" /><br>
                     <p class="company-name"><strong>{{ appSettings()->company_name }}</strong></p>
                 </div>
                 <br>
@@ -28,11 +28,11 @@
             <div class="col-md-6 footer-right">
                 <form>
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-6" style="margin-top: 1rem;">
                             <input  type="text" value="Tên" onfocus="this.value = '';"
                                     onblur="if (this.value == '') {this.value = 'Tên';}">
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6" style="margin-top: 1rem;">
                             <input  type="text" value="Số điện thoại" onfocus="this.value = '';"
                                     onblur="if (this.value == '') {this.value = 'Số điện thoại';}">
                         </div>

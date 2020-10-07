@@ -246,6 +246,18 @@ return [
                 'show' => 'Hiển thị lên trang chủ',
             ],
 
+            'banners' => [
+                'title1' => 'Tiêu đề 1',
+                'title2' => 'Tiêu đề 2',
+                'status' => 'Active',
+                'image' => 'Ảnh Banner',
+            ],
+            'partners' => [
+                'name' => 'Tên đối tác',
+                'status' => 'Active',
+                'image' => 'Logo',
+            ],
+
             'settings' => [
                 'sitelogo' => 'Site Logo',
                 'favicon' => 'Fav Icon',
