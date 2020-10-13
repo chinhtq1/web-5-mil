@@ -12301,8 +12301,18 @@ var Backend = {}; // common variable used in all the files of the backend
                     //                toolbar2: 'print preview media | forecolor backcolor emoticons | codesample',
                     image_advtab: true,
                     relative_urls: false,
-                    images_upload_url: 'postAcceptor.php',
                     automatic_uploads: true,
+                    images_upload_handler: function (blobInfo, success, failure) {
+                        let data = new FormData();
+                        data.append('file', blobInfo.blob(), blobInfo.filename());
+                        axios.post('/file-upload', data)
+                            .then(function (res) {
+                                success(res.data.location);
+                            })
+                            .catch(function (err) {
+                                failure('HTTP Error: ' + err.message);
+                            });
+                    },
                     content_css: [
                         '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
                         '//www.tinymce.com/css/codepen.min.css'

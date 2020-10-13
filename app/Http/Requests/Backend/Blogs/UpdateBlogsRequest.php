@@ -33,6 +33,7 @@ class UpdateBlogsRequest extends Request
             'content' => 'required',
             'categories' => 'required',
             'tags' => 'required',
+            'featured_image' => 'mimes:jpg,jpeg,png,ico|dimensions:min_width=500,min_height=200, max_width=1500, max_height=1000 | max: 5000',
         ];
     }
 
@@ -47,6 +48,10 @@ class UpdateBlogsRequest extends Request
 //            'name.unique'   => 'Blog name already exists, please enter a different name.',
             'name.required' => 'Please insert Blog Title',
             'name.max' => 'Blog Title may not be greater than 191 characters.',
+            'featured_image.dimensions' => 'Kích thước ảnh đề xuất: 900 x 500 ( hoặc tỉ lệ: 3 x 2 ) - min_width=500,min_height=200, max_width=1500, max_height=1000',
+            'featured_image.max' => 'Dung lượng ảnh dưới 5MB',
+            'featured_image.mimes' => 'Ảnh đuôi jpg, jpeg, png, ico',
+
         ];
     }
 }

@@ -31,6 +31,7 @@ class Product extends BaseModel
         'detail_feature',
         'content',
         'status',
+        'show',
 
         'meta_title',
         'meta_keywords',

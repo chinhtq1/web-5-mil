@@ -44,6 +44,7 @@ class ProductRepository extends BaseRepository
                 config('module.products.table') . '.name',
                 config('module.products.table') . '.publish_datetime',
                 config('module.products.table') . '.status',
+                config('module.products.table') . '.show',
                 config('module.products.table') . '.created_by',
                 config('module.products.table') . '.created_at',
                 config('access.products') . '.first_name as user_name',
@@ -59,6 +60,7 @@ class ProductRepository extends BaseRepository
 
         DB::transaction(function () use ($input, $categoriesArray) {
             $input['slug'] = Str::slug($input['name']);
+            $input['show'] = isset($input['show']) ? 1 : 0;
             $input['publish_datetime'] = Carbon::parse($input['publish_datetime']);
             $input = $this->uploadImage($input);
             $input['created_by'] = access()->user()->id;
@@ -90,6 +92,7 @@ class ProductRepository extends BaseRepository
         $categoriesArray = $this->createCategories($input['categories']);
         unset($input['categories']);
 
+        $input['show'] = isset($input['show']) ? 1 : 0;
         $input['slug'] = Str::slug($input['name']);
         $input['publish_datetime'] = Carbon::parse($input['publish_datetime']);
         $input['updated_by'] = access()->user()->id;

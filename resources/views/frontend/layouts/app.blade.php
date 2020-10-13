@@ -8,7 +8,7 @@
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Zero 2 Hero Team" />
+    @yield('meta', view('frontend.includes.partials.seo'))
 
     <link type="image/x-icon" href="{{ appSettings()->favicon ?  Storage::disk('public')->url('img/settings/favicon/'.appSettings()->favicon) : '' }}" rel="icon">
 
@@ -57,6 +57,11 @@
         $('.menu  .menu-item > a[href="'+pathname+'"]').parent().addClass('active');
     })
 </script>
+<?php
+if (!empty($google_analytics)) {
+    echo $google_analytics;
+}
+?>
 @yield('after-js')
 <!-- End SCRIPT -->
 </body>

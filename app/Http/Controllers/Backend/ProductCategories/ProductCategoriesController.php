@@ -48,7 +48,7 @@ class ProductCategoriesController extends Controller
         return new EditResponse($productcategory);
     }
 
-    public function update(UpdateProductCategoryRequest $request, ProductCategory $productcategory)
+    public function update(ProductCategory $productcategory, UpdateProductCategoryRequest $request)
     {
         $this->productcategory->update($productcategory, $request->all());
         //return with successfull message

@@ -11,7 +11,7 @@ trait DocumentCategoryAttribute
     {
         return '<div class="btn-group action-btn">
                     ' . $this->getEditButtonAttribute('edit-documentcategory', 'admin.documentcategories.edit') . '
-                    ' . $this->getDeleteButtonAttribute('delete-blogcategory', 'admin.documentcategories.destroy') . '
+                    ' . $this->getDeleteButtonAttribute('delete-documentcategory', 'admin.documentcategories.destroy') . '
                 </div>';
     }
 

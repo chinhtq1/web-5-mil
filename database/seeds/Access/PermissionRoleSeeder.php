@@ -26,13 +26,21 @@ class PermissionRoleSeeder extends Seeder
         /*
          * Assign permission to executive role
         */
-        $executivePermission = [1, 3, 4, 5, 6, 7, 8, 16, 20,
-            24, 25, 26, 27, // CMS Pages
-            28, 29, 30, 31, // Email template
-            33, 34, 35, 36, // Blog Category
-            37, 38, 39, 40, // Blog Tag
-            41, 42, 43, 44, // Blogs
-            45, 46, 47, 48, // FAQ
+        $executivePermission = [
+            1,2,
+            24,25,26,27, // Page
+            32, // Setting
+            33,34,35,36, // Blog Categories
+            37,38,39,40, // Blog Tag
+            41,42,43,44, // Blog
+            49,50,51,52,53,54,55, // Event
+            56,57,58,59,60,61,62, // Document Categories
+            63,64,65,66,67,68,69, // Document
+            70,71,72,73,74,75,76, // Product Category
+            77,78,79,80,81,82,83, // Product
+            84,85,86,87,88,89,90, // Banner
+            91,92,93,94,95,96,97, // Partner
+
         ];
         Role::find(2)->permissions()->sync($executivePermission);
 

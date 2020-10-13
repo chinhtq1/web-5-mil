@@ -31,6 +31,8 @@ class UpdateProductRequest extends FormRequest
             'detail_feature' => 'required',
             'content' => 'required',
             'categories' => 'required',
+            'feature_image' => 'mimes:jpg,jpeg,png,ico| max: 5000 | dimensions:min_width=400,min_height=200, max_width=1200, max_height=800',
+
         ];
     }
 
@@ -40,6 +42,9 @@ class UpdateProductRequest extends FormRequest
 //            'name.unique'   => 'Product name already exists, please enter a different name.',
             'name.required' => 'Please insert Product Title',
             'name.max' => 'Product Title may not be greater than 191 characters.',
-        ];
+            'feature_image.dimensions' => "Kích thước ảnh đề xuất: 450 x 300 ( hoặc tỉ lệ: 3 x 2 - min_width=400,min_height=200, max_width=1200, max_height=800 )",
+            'feature_image.max' => 'Dung lượng ảnh dưới 5MB',
+            'feature_image.mimes' => 'Ảnh đuôi jpg, jpeg, png, ico',
+            ];
     }
 }

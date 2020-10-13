@@ -6,10 +6,10 @@
 
 @section('main-content')
     <!--starts-welcome-->
-    <div class="welcome" id="welcome">
+    <div class="welcome" id="welcome" style="background: {{ appSettings()->section_index_1_background }}">
         <div class="container">
             <div class="welcome-top section heading">
-                <h3>{{ appSettings()->section_index_1 ? appSettings()->section_index_1 : "Welcome" }}</h3>
+                <h3>{{ \Illuminate\Support\Str::upper(appSettings()->section_index_1 ? appSettings()->section_index_1 : "Welcome" )}}</h3>
                 <!--				<p>Mauris malesuada mi sit amet quam euismod auctor quis quis urna. Cras a maximus ex. Vestibulum vitae vestibulum lectus, at maximus libero.</p>-->
             </div>
             <div class= "welcome-bottom">
@@ -24,7 +24,7 @@
                     </div>
                 @empty
                     <div class="text-center">
-                        <h4>Không có bài viết nào</h4>
+                        <h4>Không có bài viết</h4>
                     </div>
                 @endforelse
                 <div class="clearfix"></div>
@@ -32,24 +32,24 @@
         </div>
     </div>
 
-    <div class="news" id="news">
+    <div class="news" id="news" style="background: {{ appSettings()->section_index_2_background }}">
         <div class="container">
             <div class="news-top section heading">
-                <h3>{{ appSettings()->section_index_2 ? appSettings()->section_index_2 : "News and Events" }}</h3>
+                <h3>{{ \Illuminate\Support\Str::upper(appSettings()->section_index_2 ? appSettings()->section_index_2 : "News and Events")}}</h3>
                 <!--				<p>Mauris malesuada mi sit amet quam euismod auctor quis quis urna. Cras a maximus ex. Vestibulum vitae vestibulum lectus, at maximus libero.</p>-->
             </div>
             <div class="news-bottom">
-                @forelse($events as $event)
+                @forelse($products as $product)
                     <div class="col-md-4 news-left">
-                        <img src="{{ Storage::disk('public')->url('img/event/' . $event->featured_image) }}" alt="" />
+                        <img src="{{ Storage::disk('public')->url('img/product/' . $product->feature_image) }}" alt="" />
                         <div class="mask">
-                            <h4>{{ $event->start_datetime->format('d/m') }}</h4>
-                            <a href="{{ route('frontend.events.detail', ['slug' => $event->slug]) }}" class="event-name" style="word-break: break-word">{{ Illuminate\Support\Str::limit($event->name, 50, '...') }}</a>
+                            <h4>{{ $product->publish_datetime->format('d/m') }}</h4>
+                            <a href="{{ route('frontend.products.detail', ['slug' => $product->slug]) }}" class="event-name" style="word-break: break-word">{{ Illuminate\Support\Str::limit($product->name, 50, '...') }}</a>
                         </div>
                     </div>
                 @empty
                     <div class="text-center">
-                        <h4>Không có sự kiện nào</h4>
+                        <h4>Không có sản phẩm</h4>
                     </div>
                 @endforelse
                 <div class="clearfix"></div>
@@ -57,15 +57,17 @@
         </div>
     </div>
 
-    <div class="partner" id="partner">
+    <div class="partner" id="partner" style="background: {{ appSettings()->section_index_3_background }}">
         <div class="container">
             <div class="news-top section heading">
-                <h3>{{ appSettings()->section_index_3 ? appSettings()->section_index_3 : "Partner" }}</h3>
+                <h3>{{ \Illuminate\Support\Str::upper(appSettings()->section_index_3 ? appSettings()->section_index_3 : "Partner") }}</h3>
             </div>
 
             <div class="news-bottom">
-                @empty($partners)
-
+                @if(count($partners) == 0)
+                    <div class="text-center">
+                        <h4>Không có đối tác</h4>
+                    </div>
                 @else
                 <div class="owl-carousel owl-theme">
                     @foreach($partners as $partner)

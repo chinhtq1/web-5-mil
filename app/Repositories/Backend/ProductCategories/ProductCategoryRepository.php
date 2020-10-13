@@ -62,19 +62,19 @@ class ProductCategoryRepository extends BaseRepository
     }
 
 
-    public function update(ProductCategory $productCategory, array $input)
+    public function update(ProductCategory $productcategory, array $input)
     {
-        if ($this->query()->where('name', $input['name'])->where('id', '!=', $productCategory->id)->first()) {
+        if ($this->query()->where('name', $input['name'])->where('id', '!=', $productcategory->id)->first()) {
             throw new GeneralException(trans('exceptions.backend.productcategories.already_exists'));
         }
 
-        DB::transaction(function () use ($productCategory, $input) {
+        DB::transaction(function () use ($productcategory, $input) {
             $input['status'] = isset($input['status']) ? 1 : 0;
             $input['updated_by'] = access()->user()->id;
             $input['slug'] = Str::slug($input['name']);
 
-            if ($productCategory->update($input)) {
-                event(new ProductCategoryUpdated($productCategory));
+            if ($productcategory->update($input)) {
+                event(new ProductCategoryUpdated($productcategory));
 
                 return true;
             }

@@ -1,7 +1,12 @@
 @extends('frontend.layouts.app')
 @section('title')
-    | @isset($active_category) {{ $active_category->name }} @else {{ appSettings()->blog_title ? appSettings()->blog_title : '' }}  @endisset
+     @isset($active_category) | {{ $active_category->name }} @else  {{ appSettings()->blog_title ? '| '.appSettings()->blog_title : '' }}  @endisset
 @endsection
+
+@section('meta')
+    @include('frontend.blogs.partials.seo-index')
+@endsection
+
 @section('after-css')
     <link rel="stylesheet" href="{{ asset('css/frontend/chocolat.css') }}" type="text/css" media="screen" charset="utf-8">
 @endsection
@@ -31,9 +36,9 @@
         <div class="container">
             <div class="blog-top heading">
                 @isset($active_category)
-                    <h3>{{ $active_category->name }}</h3>
+                    <h1>{{ $active_category->name }}</h1>
                     @else
-                    <h3>Tin tức</h3>
+                    <h1>Tin tức</h1>
                 @endisset
 
                     @if(count($blogs)==0)<h4>Không có bài viết</h4> @endif
@@ -45,12 +50,11 @@
 
                 <!-- LIST BLOG -->
                 <div class="col-md-9 blog-left">
-                @foreach($blogs->chunk(3) as $chunk_blog)
                     <div class="row">
-                        @foreach($chunk_blog as $blog)
+                        @foreach($blogs as $blog)
                             <div class="col-md-6 col-lg-4 blog-one">
                                 <a href="{{ route('frontend.blogs.detail', ['slug' => $blog->slug]) }}">
-                                    <img class="img-blog-thumbnail" src="{{ Storage::disk('public')->url('img/blog/' . $blog->featured_image) }}" alt="" />
+                                    <img class="img-blog-thumbnail img-blog-border" src="{{ Storage::disk('public')->url('img/blog/' . $blog->featured_image) }}" alt="" />
                                 </a>
                                 <div class="blog-btm">
                                     <div class="blog-title">
@@ -71,8 +75,6 @@
                             </div>
                         @endforeach
                     </div>
-
-                    @endforeach
                 </div>
                 <!-- END LIST BLOG -->
 

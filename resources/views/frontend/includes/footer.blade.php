@@ -5,7 +5,7 @@
             <div class="col-md-6 footer-left">
                 <div class="a-1">
                     <img class="logo-footer company-logo" src="{{ appSettings()->company_logo ? Storage::disk('public')->url('img/settings/company-details/' . appSettings()->company_logo) : ''}}" /><br>
-                    <p class="company-name"><strong>{{ appSettings()->company_name }}</strong></p>
+{{--                    <p class="company-name"><strong>{{ appSettings()->company_name }}</strong></p>--}}
                 </div>
                 <br>
                 <div class="a-1">

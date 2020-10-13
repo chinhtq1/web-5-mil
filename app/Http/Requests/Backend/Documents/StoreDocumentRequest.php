@@ -25,7 +25,7 @@ class StoreDocumentRequest extends FormRequest
     {
         return [
             'name' => 'required|max:191',
-            'file' => 'required',
+            'file' => 'required | max: 10000',
             'categories' => 'required',
         ];
     }
@@ -35,6 +35,7 @@ class StoreDocumentRequest extends FormRequest
         return [
             'name.required' => 'Please insert Document Title',
             'name.max' => 'Document Title may not be greater than 191 characters.',
+            'file.max' => 'Kích thước file dưới 10MB'
         ];
     }
 }

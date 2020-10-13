@@ -1,4 +1,4 @@
-@empty($banners)
+@if(count($banners) == 0)
 
 @else
     <div class="banner">
@@ -23,4 +23,4 @@
             </div>
         </section>
     </div>
-@endempty
+@endif

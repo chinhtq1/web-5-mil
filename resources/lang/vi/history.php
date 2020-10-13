@@ -58,6 +58,31 @@ return [
             'deleted' => 'deleted Product',
             'updated' => 'updated Product',
 		],
+        'documentcategories' => [
+            'created' => 'created Document Category',
+            'deleted' => 'deleted Document Category',
+            'updated' => 'updated Document Category',
+        ],
+        'documents' => [
+            'created' => 'created Document',
+            'deleted' => 'deleted Document',
+            'updated' => 'updated Document',
+        ],
+        'events' => [
+            'created' => 'created Event',
+            'deleted' => 'deleted Event',
+            'updated' => 'updated Event',
+        ],
+        'banners' => [
+            'created' => 'created Banners',
+            'deleted' => 'deleted Banners',
+            'updated' => 'updated Banners',
+        ],
+        'partners' => [
+            'created' => 'created Partners',
+            'deleted' => 'deleted Partners',
+            'updated' => 'updated Partners',
+        ],
         'users' => [
             'changed_password'    => 'changed password for user',
             'created'             => 'created user',

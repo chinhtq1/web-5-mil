@@ -262,7 +262,7 @@ return [
                 'sitelogo' => 'Site Logo',
                 'favicon' => 'Fav Icon',
                 'metatitle' => 'Meta Title',
-                'metakeyword' => 'Meta Keyawords',
+                'metakeyword' => 'Meta Keywords',
                 'metadescription' => 'Meta Description',
                 'companydetails' => [
                     'name' => 'Tên công ty',

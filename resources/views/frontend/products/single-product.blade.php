@@ -2,6 +2,12 @@
 @section('title')
     | {{ $product->name }}
 @endsection
+
+@section('meta')
+    @include('frontend.products.partials.seo')
+@endsection
+
+
 @section('main-content')
     <!--start-breadcrumbs-->
     <div class="breadcrumbs">
@@ -26,7 +32,7 @@
                 </div>
                 <div class="col-md-6 about-right" style="margin-top: 15px;">
                     <a>
-                        <h4>{{ $product->name }}</h4>
+                        <h1>{{ $product->name }}</h1>
                     </a>
                     <h5><strong>Giá:</strong><span style="color:red; margin-left: 1.5rem">Liên hệ</span></h5>
                     <h5><strong>Tính năng cơ bản</strong></h5>

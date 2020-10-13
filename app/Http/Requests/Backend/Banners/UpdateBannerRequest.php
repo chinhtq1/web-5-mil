@@ -24,6 +24,9 @@ class UpdateBannerRequest extends FormRequest
     public function rules()
     {
         return [
+            'title1' => 'required|max:191',
+            'title2' => 'required|max:191',
+            'featured_image' => 'max: 5000 | mimes:jpg,jpeg,png,ico|dimensions:min_width=1300,min_height=450, max_width=1800, max_height=700',
             //Put your rules for the request in here
             //For Example : 'title' => 'required'
             //Further, see the documentation : https://laravel.com/docs/6.x/validation#creating-form-requests
@@ -33,9 +36,9 @@ class UpdateBannerRequest extends FormRequest
     public function messages()
     {
         return [
-            //The Custom messages would go in here
-            //For Example : 'title.required' => 'You need to fill in the title field.'
-            //Further, see the documentation : https://laravel.com/docs/6.x/validation#customizing-the-error-messages
+            'featured_image.dimensions' => 'Kích thước ảnh không phù hợp. Đề xuất tỷ lệ 3 x 1 - min_width=1300,min_height=450, max_width=1800, max_height=700', //The Custom messages would go in here
+            'featured_image.max' => 'Dung lượng ảnh dưới 5MB',
+            'featured_image.mimes' => 'Ảnh đuôi jpg, jpeg, png, ico',
         ];
     }
 }

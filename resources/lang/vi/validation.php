@@ -191,6 +191,7 @@ return [
                 'meta_keyword' => 'Thẻ Meta Keyword',
                 'meta_description' => 'Thẻ Meta Description',
                 'status' => 'Trạng thái',
+                'show' => 'Hiển thị lên trang chủ',
             ],
             'productcategories' => [
                 'title' => 'Danh mục',
@@ -242,21 +243,35 @@ return [
                 'meta_keyword' => 'Thẻ Meta Keyword',
                 'meta_description' => 'Thẻ Meta Description',
                 'status' => 'Trạng thái',
+                'show' => 'Hiển thị lên trang chủ',
+            ],
+
+            'banners' => [
+                'title1' => 'Tiêu đề 1',
+                'title2' => 'Tiêu đề 2',
+                'status' => 'Active',
+                'image' => 'Ảnh Banner',
+            ],
+            'partners' => [
+                'name' => 'Tên đối tác',
+                'status' => 'Active',
+                'image' => 'Logo',
             ],
 
             'settings' => [
                 'sitelogo' => 'Site Logo',
                 'favicon' => 'Fav Icon',
                 'metatitle' => 'Meta Title',
-                'metakeyword' => 'Meta Keyawords',
+                'metakeyword' => 'Meta Keywords',
                 'metadescription' => 'Meta Description',
                 'companydetails' => [
-					'name' => 'Tên công ty',
-					'logo' => 'Logo công ty',
+                    'name' => 'Tên công ty',
+                    'logo' => 'Logo công ty',
                     'address' => 'Địa chỉ',
                     'contact_1' => 'Số điện thoại 1',
-					'contact_2' => 'Số điện thoại 2',
-					'email' => 'Địa chỉ email',
+                    'contact_2' => 'Số điện thoại 2',
+                    'email' => 'Địa chỉ email',
+                    'map' => 'Map'
                 ],
                 'mail' => [
                     'fromname' => 'From Name',

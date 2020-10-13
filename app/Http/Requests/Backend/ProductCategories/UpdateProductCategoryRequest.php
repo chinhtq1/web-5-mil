@@ -24,7 +24,7 @@ class UpdateProductCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:191|unique:productcategories,name,' . $this->segment(3),
+            'name' => 'required|max:191|unique:product_categories,name,' . $this->segment(3),
         ];
     }
 

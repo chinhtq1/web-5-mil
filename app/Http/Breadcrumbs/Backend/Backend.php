@@ -25,3 +25,4 @@ require __DIR__ . '/Event.php';
 
 require __DIR__.'/Banner.php';
 require __DIR__.'/Partner.php';
+require __DIR__.'/Subcribe.php';

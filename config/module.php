@@ -41,4 +41,7 @@ return [
 	"partners" => [
 	"table" => "partners",
 	],
+	"subcribes" => [
+	"table" => "subcribes",
+	],
 ];

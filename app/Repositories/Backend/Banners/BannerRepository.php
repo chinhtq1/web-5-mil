@@ -55,6 +55,8 @@ class BannerRepository extends BaseRepository
     public function create(array $input)
     {
         DB::transaction(function () use ($input) {
+            $input['status'] = isset($input['status']) ? 1 : 0;
+
             $input = $this->uploadImage($input);
             $input['created_by'] = access()->user()->id;
 
@@ -73,7 +75,7 @@ class BannerRepository extends BaseRepository
     public function update(Banner $banner, array $input)
     {
         $input['updated_by'] = access()->user()->id;
-
+        $input['status'] = isset($input['status']) ? 1 : 0;
         // Uploading Image
         if (array_key_exists('featured_image', $input)) {
             $this->deleteOldFile($banner);

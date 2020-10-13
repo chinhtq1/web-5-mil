@@ -89,5 +89,10 @@ return [
 	"deleted" => "The Partner was successfully deleted.",
 	"updated" => "The Partner was successfully updated.",
 	],
+	"subcribes" => [
+	"created" => "The Subcribe was successfully created.",
+	"deleted" => "The Subcribe was successfully deleted.",
+	"updated" => "The Subcribe was successfully updated.",
+	],
 	],
 ];

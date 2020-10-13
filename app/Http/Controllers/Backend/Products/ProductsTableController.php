@@ -40,6 +40,9 @@ class ProductsTableController extends Controller
             ->addColumn('status', function ($product) {
                 return $product->status;
             })
+            ->addColumn('show', function ($product) {
+                return $product->show_label;
+            })
             ->addColumn('publish_datetime', function ($product) {
                 return $product->publish_datetime->format('d/m/Y h:i A');
             })

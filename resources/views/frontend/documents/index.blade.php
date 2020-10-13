@@ -1,8 +1,12 @@
 @extends('frontend.layouts.app')
 @section('title')
-     | @isset($active_category) {{ $active_category->name }} @else {{ appSettings()->document_title ? appSettings()->document_title : '' }}  @endisset
-
+     @isset($active_category) {{ $active_category->name }} @else {{ appSettings()->document_title ?  '| '.appSettings()->document_title : '' }}  @endisset
 @endsection
+
+@section('meta')
+    @include('frontend.documents.partials.seo')
+@endsection
+
 @section('after-css')
     <link rel="stylesheet" href="{{ asset('css/frontend/chocolat.css') }}" type="text/css" media="screen" charset="utf-8">
 @endsection
@@ -31,9 +35,9 @@
         <div class="container">
             <div class="blog-top heading">
                 @isset($active_category)
-                    <h3>{{ $active_category->name }}</h3>
+                    <h1>{{ $active_category->name }}</h1>
                 @else
-                    <h3>Tài liệu</h3>
+                    <h1>Tài liệu</h1>
                 @endisset
                     @if(count($documents)==0)<h4>Không có tài liệu</h4> @endif
 

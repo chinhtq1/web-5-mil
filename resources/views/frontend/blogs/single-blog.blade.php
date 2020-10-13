@@ -2,6 +2,11 @@
 @section('title')
    | {{ $blog->name }}
 @endsection
+
+@section('meta')
+    @include('frontend.blogs.partials.seo')
+@endsection
+
 @section('main-content')
     <!--start-breadcrumbs-->
     <div class="breadcrumbs">
@@ -24,8 +29,14 @@
                     <img class="img-single-blog" src="{{ Storage::disk('public')->url('img/blog/' . $blog->featured_image) }}" alt="" />
                 </div>
                 <div class="single-bottom">
-                    <h4>{{ $blog->name }}</h4>
+                    <h1>{{ $blog->name }}</h1>
                     <p class="sn">{{ $blog->publish_datetime }}</p>
+
+                    <hr>
+
+                    <div style="font-weight: bold">
+                        {!! $blog->description !!}
+                    </div>
                     <div class="blog-content" style="margin-top: 3rem;">
                         {!! $blog->content !!}
                     </div>

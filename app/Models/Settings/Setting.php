@@ -45,6 +45,9 @@ class Setting extends BaseModel
         'section_index_1',
         'section_index_2',
         'section_index_3',
+        'section_index_1_background',
+        'section_index_2_background',
+        'section_index_3_background',
 
 //        Company Detail
         'company_logo',

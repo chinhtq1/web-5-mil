@@ -67,6 +67,7 @@ class BlogsRepository extends BaseRepository implements BlogRepositoryInterface
         DB::transaction(function () use ($input, $tagsArray, $categoriesArray) {
             $input['slug'] = Str::slug($input['name']);
             $input['publish_datetime'] = Carbon::parse($input['publish_datetime']);
+            $input['show'] = isset($input['show']) ? 1 : 0;
             $input = $this->uploadImage($input);
             $input['created_by'] = access()->user()->id;
 
@@ -96,6 +97,7 @@ class BlogsRepository extends BaseRepository implements BlogRepositoryInterface
         $tagsArray = $this->createTags($input['tags']);
         $categoriesArray = $this->createCategories($input['categories']);
         unset($input['tags'], $input['categories']);
+        $input['show'] = isset($input['show']) ? 1 : 0;
 
         $input['slug'] = Str::slug($input['name']);
         $input['publish_datetime'] = Carbon::parse($input['publish_datetime']);

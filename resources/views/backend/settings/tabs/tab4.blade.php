@@ -58,31 +58,31 @@
         </div>
     </div>
     <div class="form-group">
-        {{ Form::label('twitter_link', 'Twitter Link', ['class' => 'col-lg-2 control-label'])
+        {{ Form::label('twitter_link', 'Link Youtube', ['class' => 'col-lg-2 control-label'])
         }}
 
         <div class="col-lg-10">
-            {{ Form::text('twitter_link', null,['class' => 'form-control', 'placeholder' => 'Twitter Link','rows' => 2]) }}
+            {{ Form::text('twitter_link', null,['class' => 'form-control', 'placeholder' => 'Link Youtube','rows' => 2]) }}
         </div>
     </div>
 
     <div class="form-group">
-        {{ Form::label('printerest_link', 'Pinterest Link', ['class' => 'col-lg-2 control-label'])
+        {{ Form::label('printerest_link', 'Link Linkedin', ['class' => 'col-lg-2 control-label'])
         }}
 
         <div class="col-lg-10">
-            {{ Form::text('printerest_link', null,['class' => 'form-control', 'placeholder' =>'Pinterest link','rows' => 2]) }}
+            {{ Form::text('printerest_link', null,['class' => 'form-control', 'placeholder' =>'Link Linkedin','rows' => 2]) }}
         </div>
     </div>
 
-    <div class="form-group">
-        {{ Form::label('printerest_link', 'RSS Link', ['class' => 'col-lg-2 control-label'])
-        }}
+{{--    <div class="form-group">--}}
+{{--        {{ Form::label('printerest_link', 'RSS Link', ['class' => 'col-lg-2 control-label'])--}}
+{{--        }}--}}
 
-        <div class="col-lg-10">
-            {{ Form::text('printerest_link', null,['class' => 'form-control', 'placeholder' =>'RSS link','rows' => 2]) }}
-        </div>
-    </div>
+{{--        <div class="col-lg-10">--}}
+{{--            {{ Form::text('printerest_link', null,['class' => 'form-control', 'placeholder' =>'RSS link','rows' => 2]) }}--}}
+{{--        </div>--}}
+{{--    </div>--}}
 
     <hr>
     <div class="form-group">

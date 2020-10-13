@@ -55,7 +55,7 @@ class PartnerRepository extends BaseRepository
         DB::transaction(function () use ($input) {
             $input = $this->uploadImage($input);
             $input['created_by'] = access()->user()->id;
-
+            $input['status'] = isset($input['status']) ? 1 : 0;
             if ($partner = Partner::create($input)) {
 
                 event(new PartnerCreated($partner));
@@ -71,7 +71,7 @@ class PartnerRepository extends BaseRepository
     public function update(Partner $partner, array $input)
     {
         $input['updated_by'] = access()->user()->id;
-
+        $input['status'] = isset($input['status']) ? 1 : 0;
         // Uploading Image
         if (array_key_exists('featured_image', $input)) {
             $this->deleteOldFile($partner);

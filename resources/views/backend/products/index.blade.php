@@ -24,6 +24,7 @@
                             <th>{{ trans('labels.backend.products.table.title') }}</th>
                             <th>{{ trans('labels.backend.products.table.publish') }}</th>
                             <th>{{ trans('labels.backend.products.table.status') }}</th>
+                            <th>Hiển thị lên trang chủ</th>
                             <th>{{ trans('labels.backend.products.table.createdby') }}</th>
                             <th>{{ trans('labels.backend.products.table.createdat') }}</th>
                             <th>{{ trans('labels.general.actions') }}</th>
@@ -38,6 +39,9 @@
                             <th></th>
                             <th>
                                 {!! Form::select('status', $status, null, ["class" => "search-input-select form-control", "data-column" => 2, "placeholder" => trans('labels.backend.products.table.all')]) !!}
+                            </th>
+                            <th>
+                                {!! Form::select('show', [0 => "Không hiển thị", 1 => "Hiển thị"], null, ["class" => "search-input-select form-control", "data-column" => 3, "placeholder" => trans('labels.backend.products.table.all')]) !!}
                             </th>
                             <th></th>
                             <th></th>
@@ -74,6 +78,7 @@
                     {data: 'name', name: '{{config('module.products.table')}}.name'},
                     {data: 'publish_datetime', name: '{{config('module.products.table')}}.publish_datetime'},
                     {data: 'status', name: '{{config('module.products.table')}}.status'},
+                    {data: 'show', name: '{{config('module.products.table')}}.show'},
                     {data: 'created_by', name: '{{config('module.products.table')}}.created_by'},
                     {data: 'created_at', name: '{{config('module.products.table')}}.created_at'},
                     {data: 'actions', name: 'actions', searchable: false, sortable: false}

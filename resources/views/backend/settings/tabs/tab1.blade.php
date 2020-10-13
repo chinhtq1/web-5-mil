@@ -10,7 +10,7 @@
     </div>
     <!--form control-->
     <div class="form-group">
-        {{ Form::label('logo', trans('validation.attributes.backend.settings.sitelogo'), ['class' => 'col-lg-2 control-label']) }}
+        {{ Form::label('logo', "Shared Photo", ['class' => 'col-lg-2 control-label']) }}
 
         <div class="col-lg-10">
 

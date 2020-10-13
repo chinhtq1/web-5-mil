@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('name', 191);
             $table->string('slug', 191)->nullable();
             $table->string('publish_datetime');
+            $table->boolean('show')->default(0);
             $table->string('feature_image', 191);
             $table->text('base_feature');
             $table->text('detail_feature');

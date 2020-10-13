@@ -16,6 +16,7 @@ class CreateSettingsTable extends Migration
             $table->increments('id');
             $table->string('app_name', 191)->nullable();
             $table->string('logo', 191)->nullable();
+            $table->string('logo', 191)->nullable();
             $table->string('favicon', 191)->nullable();
             $table->string('seo_title', 191)->nullable();
             $table->text('seo_keyword')->nullable();
@@ -40,6 +41,9 @@ class CreateSettingsTable extends Migration
             $table->string('section_index_1', 191)->nullable();
             $table->string('section_index_2', 191)->nullable();
             $table->string('section_index_3', 191)->nullable();
+            $table->string('section_index_1_background', 191)->nullable();
+            $table->string('section_index_2_background', 191)->nullable();
+            $table->string('section_index_3_background', 191)->nullable();
 
 
 //            Conpany Info

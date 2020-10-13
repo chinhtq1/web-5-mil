@@ -25,16 +25,17 @@ class StorePartnerRequest extends FormRequest
     {
         return [
             'name' => 'required|max:191',
-            'featured_image' => 'required|',
+            'featured_image' => 'required | max: 2000 | mimes:jpg,jpeg,png,ico|dimensions:min_width=64,min_height=64, max_width=300, max_height=300',
         ];
     }
 
     public function messages()
     {
         return [
-            //The Custom messages would go in here
-            //For Example : 'title.required' => 'You need to fill in the title field.'
-            //Further, see the documentation : https://laravel.com/docs/6.x/validation#customizing-the-error-messages
-        ];
+            'name.required' => 'Please insert name',
+            'featured_image.dimensions' => 'Kích thước ảnh đề xuất: 150 x 150 ( hoặc tỉ lệ: 3 x 2, 1 x 1 ) - min_width=64,min_height=64, max_width=300, max_height=300',
+            'featured_image.max' => 'Dung lượng ảnh dưới 2MB',
+            'featured_image.mimes' => 'Ảnh đuôi jpg, jpeg, png, ico',
+            ];
     }
 }
