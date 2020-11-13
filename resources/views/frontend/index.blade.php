@@ -15,7 +15,9 @@
             <div class= "welcome-bottom">
                 @forelse($blogs as $blog)
                     <div class="col-md-4 welcome-left">
-                        <img src="{{ Storage::disk('public')->url('img/blog/' . $blog->featured_image) }}" alt="" />
+                        <a href="{{ route('frontend.blogs.detail', ['slug' => $blog->slug]) }}">
+                            <img src="{{ Storage::disk('public')->url('img/blog/' . $blog->featured_image) }}" alt="" />
+                        </a>
                         <div class="welcome-btm">
                             <a href="{{ route('frontend.blogs.detail', ['slug' => $blog->slug]) }}">
                                 {{ Illuminate\Support\Str::limit($blog->name, 40, '...') }}
@@ -41,9 +43,9 @@
             <div class="news-bottom">
                 @forelse($products as $product)
                     <div class="col-md-4 news-left">
-                        <img src="{{ Storage::disk('public')->url('img/product/' . $product->feature_image) }}" alt="" />
+                        <a href="{{ route('frontend.products.detail', ['slug' => $product->slug]) }}"><img src="{{ Storage::disk('public')->url('img/product/' . $product->feature_image) }}" alt="" /></a>
                         <div class="mask">
-                            <h4>{{ $product->publish_datetime->format('d/m') }}</h4>
+                            <a href="{{ route('frontend.products.detail', ['slug' => $product->slug]) }}"><h4>{{ $product->publish_datetime->format('d/m') }}</h4></a>
                             <a href="{{ route('frontend.products.detail', ['slug' => $product->slug]) }}" class="event-name" style="word-break: break-word">{{ Illuminate\Support\Str::limit($product->name, 50, '...') }}</a>
                         </div>
                     </div>

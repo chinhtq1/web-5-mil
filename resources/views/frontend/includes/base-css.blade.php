@@ -6,4 +6,6 @@
 
 <!--FlexSlider-->
 <link rel="stylesheet" href="{{ asset('css/frontend/flexslider.css') }}" type="text/css" media="screen" />
+<link rel="stylesheet" href="{{ asset('css/frontend/font-awesome/all.css') }}">
+
 <!--End-slider-script-->

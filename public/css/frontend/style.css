@@ -157,7 +157,7 @@ img.logo-header {
     z-index: 90;
     width: 40px;
     height: 40px;
-    border-radius: 50%;
+    /*border-radius: 50%;*/
 }
 
 /* Open state */
@@ -169,6 +169,7 @@ img.logo-header {
     background: url('../../img/frontend/search.png') no-repeat 13px 13px #fff;
     color: #fff;
     z-index: 11;
+    border-radius: 50%;
 }
 
 .sb-search.sb-search-open .sb-search-submit, .no-js .sb-search .sb-search-submit {
@@ -208,9 +209,9 @@ img.logo-header {
 }
 
 .head-left ul li a span {
-    background: url(../../img/frontend/social.png) no-repeat;
-    width: 16px;
-    height: 16px;
+    background: url(../../img/frontend/social_3.png) no-repeat;
+    width: 24px;
+    height: 24px;
     display: block;
 }
 
@@ -232,11 +233,11 @@ img.logo-header {
 }
 
 .head-left ul li a span.twit {
-    background-position: -16px 0px;
+    background-position: -24px 0px;
 }
 
 .head-left ul li a span.pin {
-    background-position: -32px 0px;
+    background-position: -48px 0px;
 }
 
 .head-left ul li a span.rss {
@@ -4377,7 +4378,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         max-height: 500px;
     }
 
-    /* Phân trang */
+    /* Ph창n trang */
     .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
         z-index: 2;
         color: #fff;
@@ -4741,7 +4742,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     height: 3rem;
 }
 
-.welcome-left a {
+.welcome-left .welcome-btm a {
     padding: 14px 9px;
     background: rgba(247, 114, 51, 0.85);
     color: rgba(71, 71, 71, 1.0);
@@ -4750,7 +4751,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     font-size: 16px;
 }
 
-.welcome-left a:hover {
+.welcome-left .welcome-btm a:hover {
     background: rgba(247, 114, 51, 0.85);
     color: rgba(71, 71, 71, 1.0);
 }
@@ -5309,7 +5310,7 @@ p.one {
     color: #999;
     line-height: 1.8em;
     margin-top: 10px;
-    word-break: break-all;
+    text-align: justify;
 }
 
 .b-btn {
@@ -7782,7 +7783,7 @@ section2_left1.menu ul li a {
     line-height: 1.8em;
     margin-top: 10px;
     display: block;
-    word-break: break-all;
+    text-align: justify;;
 }
 
 .product-image {
@@ -8227,7 +8228,7 @@ img.logo-footer {
     max-height: 500px;
 }
 
-/* Phân trang */
+/* Ph창n trang */
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
     z-index: 2;
     color: #fff;
@@ -8308,4 +8309,13 @@ img.img-blog-border {
     align-items: center;
 }
 
+.head-left a i.fa, .head-left a i.fab, .head-left a i.fas, .head-left a i.far {
+    color: rgba(255,255,255,0.8);
+    font-size: 1.2rem;
+}
+
+.head-left a:hover i.fa, .head-left a:hover i.fab, .head-left a:hover i.fas, .head-left a:hover i.far {
+    color: #cccccc;
+    font-size: 1.2rem;
+}
 

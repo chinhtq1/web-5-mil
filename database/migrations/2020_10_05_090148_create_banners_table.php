@@ -17,6 +17,7 @@ class CreateBannersTable extends Migration
             $table->increments('id');
             $table->string('title1', 191);
             $table->string('title2', 191);
+            $table->string('link', 500)->nullable();
             $table->string('featured_image', 191);
             $table->boolean('status')->default(0);
             $table->integer('created_by')->unsigned();

@@ -143,6 +143,7 @@
 @section('after-js')
 <script>
     $('#expand-product-description').on('click', function(){
+        this.blur();
         var productDescription = $('#product-description');
         productDescription.toggleClass('expanded');
 
@@ -153,6 +154,7 @@
         }
     });
     $('#expand-product-content').on('click', function(){
+        this.blur();
         var productContent = $('#product-content');
         productContent.toggleClass('expanded');
 

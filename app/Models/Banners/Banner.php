@@ -22,6 +22,7 @@ class Banner extends BaseModel
     protected $fillable = [
         'title1',
         'title2',
+        'link',
         'featured_image',
         'status',
         'created_by',
